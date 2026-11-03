@@ -10,13 +10,36 @@
 ```bash
 cd E:\design-portfolio
 
-npm install          # 首次
-npm run dev          # 开发，默认 http://127.0.0.1:5173
+npm install                        # 首次
+npm run sync:assets                # 从 E://作品集 复制素材并生成清单
+npm run optimize:images -- --apply # 转 WebP 并把清单切到 /works-opt/
+npm run dev                        # 开发，默认 http://127.0.0.1:5173
 npm run build        # 类型检查 + 生产构建
 npm run preview      # 预览构建产物
 ```
 
 要求 Node 20.19+ 或 22.12+（项目在 Node 22.22 上验证）。
+`sync:assets` 与 `optimize:images` 是 `build` 的前提：前者生成 `src/data/works.json`，
+后者把原图压成线上用的 WebP，缺一步页面会没有图。平时不用记这两条——
+**双击 `deploy.bat` 会按顺序跑完**（详见 `docs/deploy-github-pages.md`）。
+
+
+---
+
+## 发布上线
+
+线上托管在 GitHub Pages，仓库名必须是 `<你的GitHub用户名>.github.io`，这样 `base` 就是 `/`。
+完整步骤见 **[docs/deploy-github-pages.md](docs/deploy-github-pages.md)**，这里只列结论：
+
+| 场景 | 操作 | 耗时 |
+|---|---|---|
+| 首次上线 | 建仓库 → `git push` → Settings → Pages 选 GitHub Actions | 约 10 分钟 |
+| 日常更新 | 双击 `deploy.bat`（同步 → 压图 → 构建 → 推送） | 约 2 分钟 |
+| 只改文字 | 改 `src/i18n/*.ts` 或 `profile.ts` 后双击 `deploy.bat` | 同上 |
+| 回退 | `git reset --hard <提交号> && git push -f` | 30 秒 |
+
+`.github/workflows/deploy.yml` 会自动跑 `typecheck` + `build` 再部署，
+构建失败不会把坏版本推上线。
 
 ---
 
@@ -73,13 +96,20 @@ React Bits 不是 npm 包，组件以源码形式落入仓库（`src/components/
 ## 目录结构
 
 ```
-E:\design-portfolio
+E://design-portfolio
+├─ raw/
+│  └─ works/                  # 原图副本（约 277 MB，不入库，sync 每次重建）
 ├─ public/
-│  └─ works/                  # 由脚本从 E:\作品集 复制的作品（ASCII 路径）
+│  ├─ works-opt/              # 压缩后的 WebP（约 32 MB，入库，线上用这个）
+│  ├─ preview/                # 卡片小图（WebP）
+│  └─ profile/                # 头像与原图简历
 ├─ scripts/
 │  ├─ sync-assets.mjs         # 素材同步 + 生成清单（含真实像素宽高）
-│  ├─ optimize-images.mjs     # 可选：批量转 WebP
+│  ├─ optimize-images.mjs     # 转 WebP（--apply 切清单，--force 全量重压）
 │  └─ shot.mjs                # 视觉验收：分屏截图 + 控制台错误收集
+├─ .github/workflows/
+│  └─ deploy.yml              # 推 main 自动构建并发布到 GitHub Pages
+├─ deploy.bat                 # 双击发布：同步 → 压图 → 构建 → 推送
 ├─ src/
 │  ├─ components/
 │  │  ├─ reactbits/           # React Bits 组件源码
@@ -89,7 +119,7 @@ E:\design-portfolio
 │  ├─ data/
 │  │  ├─ profile.ts           # ★ 个人信息，全站只改这里
 │  │  └─ works.json           # 脚本生成的素材清单，勿手改
-│  ├─ hooks/                  # Lenis、视差、媒体查询
+│  ├─ hooks/                  # Lenis、视差、媒体查询、性能分档
 │  ├─ i18n/                   # zh.ts / en.ts（en 受 zh 的类型约束，缺键会报错）
 │  └─ index.css               # 设计 token 与基础样式
 └─ index.html
@@ -174,11 +204,13 @@ E:\design-portfolio
 
 ```bash
 npm run sync:assets
+npm run optimize:images -- --apply     # 生成线上用的 WebP 并切换清单
 ```
 
-脚本会：
+`sync:assets` 会：
 1. 按「平面设计 / 电商设计」两级分类遍历全部图片；
-2. 复制到 `public/works/` 并重命名为 ASCII 路径（避免中文 URL 编码问题）；
+2. 复制到 `raw/works/` 并重命名为 ASCII 路径（避免中文 URL 编码问题）；
+   —— 放在 `public` 之外，否则 vite 会把这 277 MB 原样拷进 `dist`；
 3. 读取每张图的真实像素宽高写入 `src/data/works.json`，页面据此预留 `aspect-ratio`，杜绝布局跳动；
    同时给海报 / 图标 / Banner 生成 `card` 轻量副本（webp，长边 1200–1600），供 GPU 纹理与大图位使用；
 4. 按语义重排 VI 图序（Logo → 释义 → 规范 → 应用落地）与商品套图顺序
@@ -188,7 +220,11 @@ npm run sync:assets
 
 ### 关于图片体积
 
-当前按你的要求**原图直引**（139 张 / 276.4 MB，最大单张 7.4 MB）。为此做了三层兜底：
+**线上走压缩版**：149 张原图（298.9 MB）转 WebP 后 32.0 MB（q88 / 最长边 1600），
+9.0× 压缩，`dist` 从 309 MB 降到 42 MB。拿 800×700 的 100% 裁切做肉眼对比，与原图无从分辨；
+原图副本保留在 `raw/works`（不入库），随时可以切回去。
+
+即便如此仍保留三层兜底：
 
 - `IntersectionObserver` 进入 300px 预取范围才挂 `src`；
 - 全局队列把并发解码压到 6 张（`src/lib/imageQueue.ts`）；
@@ -200,11 +236,10 @@ npm run sync:assets
 > 2. **不要在已由 IO 控制时机后再叠一层 `loading="lazy"`** —— 元素被滚出预取区时浏览器会取消请求，
 >    既不触发 `load` 也不触发 `error`，同样会把名额占死。这里统一用 `loading="eager"`。
 
-上线前若想进一步瘦身：
+想调压缩参数就改 `scripts/optimize-images.mjs` 顶部的 `MAX_EDGE` / `QUALITY`：
 
 ```bash
-npm i -D sharp
-npm run optimize:images     # 输出到 public/works-opt，另生成 works.optimized.json
+npm run optimize:images -- --force --apply   # 全量重压并切换清单
 ```
 
 ---
