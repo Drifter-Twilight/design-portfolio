@@ -22,7 +22,8 @@ else {
 
 Set-Location (Split-Path $PSScriptRoot -Parent)
 
-$commits = @('1168802', '5def5e5', 'fc20d44', '8480864', 'c9bb9f7', '193c8c8', 'd349f4a', '30c7c2c', '4f78516')
+# 从历史里动态取全部提交（从旧到新），不写死 hash：以后再加改动也不用改脚本
+$commits = @(& $git rev-list --reverse HEAD)
 $total = $commits.Count
 $n = 0
 
