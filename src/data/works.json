@@ -1,0 +1,2370 @@
+{
+  "generatedAt": "2026-11-03T18:21:17.419Z",
+  "source": "E:\\作品集",
+  "graphic": {
+    "vi": [
+      {
+        "id": "shanlan-tea",
+        "title": {
+          "zh": "山岚茶事",
+          "en": "Shanlan Tea"
+        },
+        "images": [
+          {
+            "src": "/works-opt/graphic/vi/shanlan-tea/shanlan-tea-01.webp",
+            "w": 2496,
+            "h": 1664,
+            "id": "shanlan-tea-01",
+            "label": {
+              "zh": "Logo",
+              "en": "Logo"
+            },
+            "alt": {
+              "zh": "山岚茶事 · Logo",
+              "en": "山岚茶事 · Logo"
+            }
+          },
+          {
+            "src": "/works-opt/graphic/vi/shanlan-tea/shanlan-tea-02.webp",
+            "w": 2496,
+            "h": 1664,
+            "id": "shanlan-tea-02",
+            "label": {
+              "zh": "Logo 释义",
+              "en": "Logo Rationale"
+            },
+            "alt": {
+              "zh": "山岚茶事 · Logo 释义",
+              "en": "山岚茶事 · Logo 释义"
+            }
+          },
+          {
+            "src": "/works-opt/graphic/vi/shanlan-tea/shanlan-tea-03.webp",
+            "w": 1920,
+            "h": 1280,
+            "id": "shanlan-tea-03",
+            "label": {
+              "zh": "色彩与字体规范",
+              "en": "Color & Type Spec"
+            },
+            "alt": {
+              "zh": "山岚茶事 · 色彩与字体规范",
+              "en": "山岚茶事 · 色彩与字体规范"
+            }
+          },
+          {
+            "src": "/works-opt/graphic/vi/shanlan-tea/shanlan-tea-04.webp",
+            "w": 1920,
+            "h": 1280,
+            "id": "shanlan-tea-04",
+            "label": {
+              "zh": "包装设计",
+              "en": "Packaging"
+            },
+            "alt": {
+              "zh": "山岚茶事 · 包装设计",
+              "en": "山岚茶事 · 包装设计"
+            }
+          },
+          {
+            "src": "/works-opt/graphic/vi/shanlan-tea/shanlan-tea-05.webp",
+            "w": 1920,
+            "h": 1280,
+            "id": "shanlan-tea-05",
+            "label": {
+              "zh": "袋装设计",
+              "en": "Pouch Design"
+            },
+            "alt": {
+              "zh": "山岚茶事 · 袋装设计",
+              "en": "山岚茶事 · 袋装设计"
+            }
+          },
+          {
+            "src": "/works-opt/graphic/vi/shanlan-tea/shanlan-tea-06.webp",
+            "w": 1920,
+            "h": 1280,
+            "id": "shanlan-tea-06",
+            "label": {
+              "zh": "名片设计",
+              "en": "Business Card"
+            },
+            "alt": {
+              "zh": "山岚茶事 · 名片设计",
+              "en": "山岚茶事 · 名片设计"
+            }
+          },
+          {
+            "src": "/works-opt/graphic/vi/shanlan-tea/shanlan-tea-07.webp",
+            "w": 1920,
+            "h": 1280,
+            "id": "shanlan-tea-07",
+            "label": {
+              "zh": "网页设计",
+              "en": "Web Design"
+            },
+            "alt": {
+              "zh": "山岚茶事 · 网页设计",
+              "en": "山岚茶事 · 网页设计"
+            }
+          }
+        ]
+      },
+      {
+        "id": "qiyu",
+        "title": {
+          "zh": "栖屿",
+          "en": "Qiyu"
+        },
+        "images": [
+          {
+            "src": "/works-opt/graphic/vi/qiyu/qiyu-01.webp",
+            "w": 1536,
+            "h": 1536,
+            "id": "qiyu-01",
+            "label": {
+              "zh": "Logo",
+              "en": "Logo"
+            },
+            "alt": {
+              "zh": "栖屿 · Logo",
+              "en": "栖屿 · Logo"
+            }
+          },
+          {
+            "src": "/works-opt/graphic/vi/qiyu/qiyu-02.webp",
+            "w": 2048,
+            "h": 1152,
+            "id": "qiyu-02",
+            "label": {
+              "zh": "色彩与辅助图形",
+              "en": "Color & Aux Graphics"
+            },
+            "alt": {
+              "zh": "栖屿 · 色彩与辅助图形",
+              "en": "栖屿 · 色彩与辅助图形"
+            }
+          },
+          {
+            "src": "/works-opt/graphic/vi/qiyu/qiyu-03.webp",
+            "w": 1792,
+            "h": 1344,
+            "id": "qiyu-03",
+            "label": {
+              "zh": "礼盒包装",
+              "en": "Gift Box"
+            },
+            "alt": {
+              "zh": "栖屿 · 礼盒包装",
+              "en": "栖屿 · 礼盒包装"
+            }
+          },
+          {
+            "src": "/works-opt/graphic/vi/qiyu/qiyu-04.webp",
+            "w": 1792,
+            "h": 1344,
+            "id": "qiyu-04",
+            "label": {
+              "zh": "产品全家福",
+              "en": "Product Family"
+            },
+            "alt": {
+              "zh": "栖屿 · 产品全家福",
+              "en": "栖屿 · 产品全家福"
+            }
+          },
+          {
+            "src": "/works-opt/graphic/vi/qiyu/qiyu-05.webp",
+            "w": 1536,
+            "h": 1536,
+            "id": "qiyu-05",
+            "label": {
+              "zh": "单品设计",
+              "en": "Single Product"
+            },
+            "alt": {
+              "zh": "栖屿 · 单品设计",
+              "en": "栖屿 · 单品设计"
+            }
+          },
+          {
+            "src": "/works-opt/graphic/vi/qiyu/qiyu-06.webp",
+            "w": 1344,
+            "h": 1792,
+            "id": "qiyu-06",
+            "label": {
+              "zh": "营销封面",
+              "en": "Campaign Cover"
+            },
+            "alt": {
+              "zh": "栖屿 · 营销封面",
+              "en": "栖屿 · 营销封面"
+            }
+          },
+          {
+            "src": "/works-opt/graphic/vi/qiyu/qiyu-07.webp",
+            "w": 1152,
+            "h": 2048,
+            "id": "qiyu-07",
+            "label": {
+              "zh": "营销海报",
+              "en": "Campaign Poster"
+            },
+            "alt": {
+              "zh": "栖屿 · 营销海报",
+              "en": "栖屿 · 营销海报"
+            }
+          }
+        ]
+      },
+      {
+        "id": "maiye-dawn",
+        "title": {
+          "zh": "麦野晨光",
+          "en": "Wheatfield Dawn"
+        },
+        "images": [
+          {
+            "src": "/works-opt/graphic/vi/maiye-dawn/maiye-dawn-01.webp",
+            "w": 1728,
+            "h": 2304,
+            "id": "maiye-dawn-01",
+            "label": {
+              "zh": "Logo",
+              "en": "Logo"
+            },
+            "alt": {
+              "zh": "麦野晨光 · Logo",
+              "en": "麦野晨光 · Logo"
+            }
+          },
+          {
+            "src": "/works-opt/graphic/vi/maiye-dawn/maiye-dawn-02.webp",
+            "w": 2048,
+            "h": 1152,
+            "id": "maiye-dawn-02",
+            "label": {
+              "zh": "色彩与字体总览",
+              "en": "Color & Type Overview"
+            },
+            "alt": {
+              "zh": "麦野晨光 · 色彩与字体总览",
+              "en": "麦野晨光 · 色彩与字体总览"
+            }
+          },
+          {
+            "src": "/works-opt/graphic/vi/maiye-dawn/maiye-dawn-03.webp",
+            "w": 2048,
+            "h": 1152,
+            "id": "maiye-dawn-03",
+            "label": {
+              "zh": "辅助图形纹样",
+              "en": "Aux Pattern"
+            },
+            "alt": {
+              "zh": "麦野晨光 · 辅助图形纹样",
+              "en": "麦野晨光 · 辅助图形纹样"
+            }
+          },
+          {
+            "src": "/works-opt/graphic/vi/maiye-dawn/maiye-dawn-04.webp",
+            "w": 2048,
+            "h": 1152,
+            "id": "maiye-dawn-04",
+            "label": {
+              "zh": "包装盒设计",
+              "en": "Box Packaging"
+            },
+            "alt": {
+              "zh": "麦野晨光 · 包装盒设计",
+              "en": "麦野晨光 · 包装盒设计"
+            }
+          },
+          {
+            "src": "/works-opt/graphic/vi/maiye-dawn/maiye-dawn-05.webp",
+            "w": 2048,
+            "h": 1152,
+            "id": "maiye-dawn-05",
+            "label": {
+              "zh": "礼盒包装",
+              "en": "Gift Box"
+            },
+            "alt": {
+              "zh": "麦野晨光 · 礼盒包装",
+              "en": "麦野晨光 · 礼盒包装"
+            }
+          },
+          {
+            "src": "/works-opt/graphic/vi/maiye-dawn/maiye-dawn-06.webp",
+            "w": 2048,
+            "h": 1152,
+            "id": "maiye-dawn-06",
+            "label": {
+              "zh": "名片与办公文具",
+              "en": "Stationery"
+            },
+            "alt": {
+              "zh": "麦野晨光 · 名片与办公文具",
+              "en": "麦野晨光 · 名片与办公文具"
+            }
+          },
+          {
+            "src": "/works-opt/graphic/vi/maiye-dawn/maiye-dawn-07.webp",
+            "w": 1152,
+            "h": 2048,
+            "id": "maiye-dawn-07",
+            "label": {
+              "zh": "营销海报",
+              "en": "Campaign Poster"
+            },
+            "alt": {
+              "zh": "麦野晨光 · 营销海报",
+              "en": "麦野晨光 · 营销海报"
+            }
+          }
+        ]
+      }
+    ],
+    "poster": [
+      {
+        "src": "/works-opt/graphic/poster/poster-01.webp",
+        "w": 2144,
+        "h": 3840,
+        "card": {
+          "src": "/preview/poster/poster-01.webp",
+          "w": 670,
+          "h": 1200
+        },
+        "id": "poster-01",
+        "label": {
+          "zh": "粗野主义·广州塔",
+          "en": "粗野主义·广州塔"
+        },
+        "alt": {
+          "zh": "艺术海报 · 粗野主义·广州塔",
+          "en": "艺术海报 · 粗野主义·广州塔"
+        }
+      },
+      {
+        "src": "/works-opt/graphic/poster/poster-02.webp",
+        "w": 1152,
+        "h": 2048,
+        "card": {
+          "src": "/preview/poster/poster-02.webp",
+          "w": 675,
+          "h": 1200
+        },
+        "id": "poster-02",
+        "label": {
+          "zh": "粗野主义·马赛公寓",
+          "en": "粗野主义·马赛公寓"
+        },
+        "alt": {
+          "zh": "艺术海报 · 粗野主义·马赛公寓",
+          "en": "艺术海报 · 粗野主义·马赛公寓"
+        }
+      },
+      {
+        "src": "/works-opt/graphic/poster/poster-03.webp",
+        "w": 1600,
+        "h": 2848,
+        "card": {
+          "src": "/preview/poster/poster-03.webp",
+          "w": 674,
+          "h": 1200
+        },
+        "id": "poster-03",
+        "label": {
+          "zh": "Y2K·金属梦境",
+          "en": "Y2K·金属梦境"
+        },
+        "alt": {
+          "zh": "艺术海报 · Y2K·金属梦境",
+          "en": "艺术海报 · Y2K·金属梦境"
+        }
+      },
+      {
+        "src": "/works-opt/graphic/poster/poster-04.webp",
+        "w": 1600,
+        "h": 2848,
+        "card": {
+          "src": "/preview/poster/poster-04.webp",
+          "w": 674,
+          "h": 1200
+        },
+        "id": "poster-04",
+        "label": {
+          "zh": "Y2K·数码花园",
+          "en": "Y2K·数码花园"
+        },
+        "alt": {
+          "zh": "艺术海报 · Y2K·数码花园",
+          "en": "艺术海报 · Y2K·数码花园"
+        }
+      },
+      {
+        "src": "/works-opt/graphic/poster/poster-05.webp",
+        "w": 1600,
+        "h": 2848,
+        "card": {
+          "src": "/preview/poster/poster-05.webp",
+          "w": 674,
+          "h": 1200
+        },
+        "id": "poster-05",
+        "label": {
+          "zh": "半色调·声音颗粒",
+          "en": "半色调·声音颗粒"
+        },
+        "alt": {
+          "zh": "艺术海报 · 半色调·声音颗粒",
+          "en": "艺术海报 · 半色调·声音颗粒"
+        }
+      },
+      {
+        "src": "/works-opt/graphic/poster/poster-06.webp",
+        "w": 1600,
+        "h": 2848,
+        "card": {
+          "src": "/preview/poster/poster-06.webp",
+          "w": 674,
+          "h": 1200
+        },
+        "id": "poster-06",
+        "label": {
+          "zh": "复古拼贴·未归档",
+          "en": "复古拼贴·未归档"
+        },
+        "alt": {
+          "zh": "艺术海报 · 复古拼贴·未归档",
+          "en": "艺术海报 · 复古拼贴·未归档"
+        }
+      },
+      {
+        "src": "/works-opt/graphic/poster/poster-07.webp",
+        "w": 1152,
+        "h": 2048,
+        "card": {
+          "src": "/preview/poster/poster-07.webp",
+          "w": 675,
+          "h": 1200
+        },
+        "id": "poster-07",
+        "label": {
+          "zh": "巴洛克·过剩光影",
+          "en": "巴洛克·过剩光影"
+        },
+        "alt": {
+          "zh": "艺术海报 · 巴洛克·过剩光影",
+          "en": "艺术海报 · 巴洛克·过剩光影"
+        }
+      },
+      {
+        "src": "/works-opt/graphic/poster/poster-08.webp",
+        "w": 1600,
+        "h": 2848,
+        "card": {
+          "src": "/preview/poster/poster-08.webp",
+          "w": 674,
+          "h": 1200
+        },
+        "id": "poster-08",
+        "label": {
+          "zh": "侘寂风·寂处有声",
+          "en": "侘寂风·寂处有声"
+        },
+        "alt": {
+          "zh": "艺术海报 · 侘寂风·寂处有声",
+          "en": "艺术海报 · 侘寂风·寂处有声"
+        }
+      },
+      {
+        "src": "/works-opt/graphic/poster/poster-09.webp",
+        "w": 1600,
+        "h": 2848,
+        "card": {
+          "src": "/preview/poster/poster-09.webp",
+          "w": 674,
+          "h": 1200
+        },
+        "id": "poster-09",
+        "label": {
+          "zh": "禅意风·听雨留白",
+          "en": "禅意风·听雨留白"
+        },
+        "alt": {
+          "zh": "艺术海报 · 禅意风·听雨留白",
+          "en": "艺术海报 · 禅意风·听雨留白"
+        }
+      },
+      {
+        "src": "/works-opt/graphic/poster/poster-10.webp",
+        "w": 1600,
+        "h": 2848,
+        "card": {
+          "src": "/preview/poster/poster-10.webp",
+          "w": 674,
+          "h": 1200
+        },
+        "id": "poster-10",
+        "label": {
+          "zh": "新中式·秋谷归航",
+          "en": "新中式·秋谷归航"
+        },
+        "alt": {
+          "zh": "艺术海报 · 新中式·秋谷归航",
+          "en": "艺术海报 · 新中式·秋谷归航"
+        }
+      },
+      {
+        "src": "/works-opt/graphic/poster/poster-11.webp",
+        "w": 1600,
+        "h": 2848,
+        "card": {
+          "src": "/preview/poster/poster-11.webp",
+          "w": 674,
+          "h": 1200
+        },
+        "id": "poster-11",
+        "label": {
+          "zh": "故障艺术·流动夜",
+          "en": "故障艺术·流动夜"
+        },
+        "alt": {
+          "zh": "艺术海报 · 故障艺术·流动夜",
+          "en": "艺术海报 · 故障艺术·流动夜"
+        }
+      },
+      {
+        "src": "/works-opt/graphic/poster/poster-12.webp",
+        "w": 1600,
+        "h": 2848,
+        "card": {
+          "src": "/preview/poster/poster-12.webp",
+          "w": 674,
+          "h": 1200
+        },
+        "id": "poster-12",
+        "label": {
+          "zh": "故障艺术·数据意识",
+          "en": "故障艺术·数据意识"
+        },
+        "alt": {
+          "zh": "艺术海报 · 故障艺术·数据意识",
+          "en": "艺术海报 · 故障艺术·数据意识"
+        }
+      },
+      {
+        "src": "/works-opt/graphic/poster/poster-13.webp",
+        "w": 1600,
+        "h": 2848,
+        "card": {
+          "src": "/preview/poster/poster-13.webp",
+          "w": 674,
+          "h": 1200
+        },
+        "id": "poster-13",
+        "label": {
+          "zh": "先锋主义·日破苍山",
+          "en": "先锋主义·日破苍山"
+        },
+        "alt": {
+          "zh": "艺术海报 · 先锋主义·日破苍山",
+          "en": "艺术海报 · 先锋主义·日破苍山"
+        }
+      },
+      {
+        "src": "/works-opt/graphic/poster/poster-14.webp",
+        "w": 1600,
+        "h": 2848,
+        "card": {
+          "src": "/preview/poster/poster-14.webp",
+          "w": 674,
+          "h": 1200
+        },
+        "id": "poster-14",
+        "label": {
+          "zh": "先锋主义+Halftone技法·中国结",
+          "en": "先锋主义+Halftone技法·中国结"
+        },
+        "alt": {
+          "zh": "艺术海报 · 先锋主义+Halftone技法·中国结",
+          "en": "艺术海报 · 先锋主义+Halftone技法·中国结"
+        }
+      },
+      {
+        "src": "/works-opt/graphic/poster/poster-15.webp",
+        "w": 1152,
+        "h": 2048,
+        "card": {
+          "src": "/preview/poster/poster-15.webp",
+          "w": 675,
+          "h": 1200
+        },
+        "id": "poster-15",
+        "label": {
+          "zh": "柔感Halftone·桃花",
+          "en": "柔感Halftone·桃花"
+        },
+        "alt": {
+          "zh": "艺术海报 · 柔感Halftone·桃花",
+          "en": "艺术海报 · 柔感Halftone·桃花"
+        }
+      },
+      {
+        "src": "/works-opt/graphic/poster/poster-16.webp",
+        "w": 1152,
+        "h": 2048,
+        "card": {
+          "src": "/preview/poster/poster-16.webp",
+          "w": 675,
+          "h": 1200
+        },
+        "id": "poster-16",
+        "label": {
+          "zh": "超现实拼贴·理性睡着",
+          "en": "超现实拼贴·理性睡着"
+        },
+        "alt": {
+          "zh": "艺术海报 · 超现实拼贴·理性睡着",
+          "en": "艺术海报 · 超现实拼贴·理性睡着"
+        }
+      },
+      {
+        "src": "/works-opt/graphic/poster/poster-17.webp",
+        "w": 1600,
+        "h": 2848,
+        "card": {
+          "src": "/preview/poster/poster-17.webp",
+          "w": 674,
+          "h": 1200
+        },
+        "id": "poster-17",
+        "label": {
+          "zh": "波普风·砰然炸裂",
+          "en": "波普风·砰然炸裂"
+        },
+        "alt": {
+          "zh": "艺术海报 · 波普风·砰然炸裂",
+          "en": "艺术海报 · 波普风·砰然炸裂"
+        }
+      },
+      {
+        "src": "/works-opt/graphic/poster/poster-18.webp",
+        "w": 1600,
+        "h": 2848,
+        "card": {
+          "src": "/preview/poster/poster-18.webp",
+          "w": 674,
+          "h": 1200
+        },
+        "id": "poster-18",
+        "label": {
+          "zh": "波普风·塑料花园",
+          "en": "波普风·塑料花园"
+        },
+        "alt": {
+          "zh": "艺术海报 · 波普风·塑料花园",
+          "en": "艺术海报 · 波普风·塑料花园"
+        }
+      },
+      {
+        "src": "/works-opt/graphic/poster/poster-19.webp",
+        "w": 1152,
+        "h": 2048,
+        "card": {
+          "src": "/preview/poster/poster-19.webp",
+          "w": 675,
+          "h": 1200
+        },
+        "id": "poster-19",
+        "label": {
+          "zh": "穆夏风·春之信使",
+          "en": "穆夏风·春之信使"
+        },
+        "alt": {
+          "zh": "艺术海报 · 穆夏风·春之信使",
+          "en": "艺术海报 · 穆夏风·春之信使"
+        }
+      },
+      {
+        "src": "/works-opt/graphic/poster/poster-20.webp",
+        "w": 1152,
+        "h": 2048,
+        "card": {
+          "src": "/preview/poster/poster-20.webp",
+          "w": 675,
+          "h": 1200
+        },
+        "id": "poster-20",
+        "label": {
+          "zh": "新艺术·星月湖",
+          "en": "新艺术·星月湖"
+        },
+        "alt": {
+          "zh": "艺术海报 · 新艺术·星月湖",
+          "en": "艺术海报 · 新艺术·星月湖"
+        }
+      }
+    ],
+    "icon": [
+      {
+        "src": "/works-opt/graphic/icon/icon-set-01.webp",
+        "w": 2048,
+        "h": 1152,
+        "card": {
+          "src": "/preview/icon/icon-set-01.webp",
+          "w": 1600,
+          "h": 900
+        },
+        "id": "icon-01",
+        "label": {
+          "zh": "3D果冻·马卡龙UI",
+          "en": "3D果冻·马卡龙UI"
+        },
+        "alt": {
+          "zh": "Icon 图标 · 3D果冻·马卡龙UI",
+          "en": "Icon 图标 · 3D果冻·马卡龙UI"
+        }
+      },
+      {
+        "src": "/works-opt/graphic/icon/icon-set-02.webp",
+        "w": 2848,
+        "h": 1600,
+        "card": {
+          "src": "/preview/icon/icon-set-02.webp",
+          "w": 1600,
+          "h": 899
+        },
+        "id": "icon-02",
+        "label": {
+          "zh": "现代3D·商务办公",
+          "en": "现代3D·商务办公"
+        },
+        "alt": {
+          "zh": "Icon 图标 · 现代3D·商务办公",
+          "en": "Icon 图标 · 现代3D·商务办公"
+        }
+      },
+      {
+        "src": "/works-opt/graphic/icon/icon-set-03.webp",
+        "w": 2048,
+        "h": 1152,
+        "card": {
+          "src": "/preview/icon/icon-set-03.webp",
+          "w": 1600,
+          "h": 900
+        },
+        "id": "icon-03",
+        "label": {
+          "zh": "奶油风·气球膨胀",
+          "en": "奶油风·气球膨胀"
+        },
+        "alt": {
+          "zh": "Icon 图标 · 奶油风·气球膨胀",
+          "en": "Icon 图标 · 奶油风·气球膨胀"
+        }
+      },
+      {
+        "src": "/works-opt/graphic/icon/icon-set-04.webp",
+        "w": 2048,
+        "h": 1152,
+        "card": {
+          "src": "/preview/icon/icon-set-04.webp",
+          "w": 1600,
+          "h": 900
+        },
+        "id": "icon-04",
+        "label": {
+          "zh": "体素风·像素游戏",
+          "en": "体素风·像素游戏"
+        },
+        "alt": {
+          "zh": "Icon 图标 · 体素风·像素游戏",
+          "en": "Icon 图标 · 体素风·像素游戏"
+        }
+      },
+      {
+        "src": "/works-opt/graphic/icon/icon-set-05.webp",
+        "w": 2848,
+        "h": 1600,
+        "card": {
+          "src": "/preview/icon/icon-set-05.webp",
+          "w": 1600,
+          "h": 899
+        },
+        "id": "icon-05",
+        "label": {
+          "zh": "3D国潮·新春贺岁",
+          "en": "3D国潮·新春贺岁"
+        },
+        "alt": {
+          "zh": "Icon 图标 · 3D国潮·新春贺岁",
+          "en": "Icon 图标 · 3D国潮·新春贺岁"
+        }
+      }
+    ]
+  },
+  "commerce": {
+    "product": [
+      {
+        "id": "musk-candle",
+        "title": {
+          "zh": "白麝香香氛蜡烛",
+          "en": "White Musk Candle"
+        },
+        "cover": {
+          "src": "/works-opt/commerce/product/musk-candle/shots/musk-candle-shot-01.webp",
+          "w": 1024,
+          "h": 1024,
+          "id": "musk-candle-shot-01",
+          "label": {
+            "zh": "首图",
+            "en": "Hero Shot"
+          },
+          "alt": {
+            "zh": "白麝香香氛蜡烛 · 首图",
+            "en": "白麝香香氛蜡烛 · 首图"
+          }
+        },
+        "shots": [
+          {
+            "src": "/works-opt/commerce/product/musk-candle/shots/musk-candle-shot-01.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "musk-candle-shot-01",
+            "label": {
+              "zh": "首图",
+              "en": "Hero Shot"
+            },
+            "alt": {
+              "zh": "白麝香香氛蜡烛 · 首图",
+              "en": "白麝香香氛蜡烛 · 首图"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/musk-candle/shots/musk-candle-shot-02.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "musk-candle-shot-02",
+            "label": {
+              "zh": "场景卖点",
+              "en": "Lifestyle"
+            },
+            "alt": {
+              "zh": "白麝香香氛蜡烛 · 场景卖点",
+              "en": "白麝香香氛蜡烛 · 场景卖点"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/musk-candle/shots/musk-candle-shot-03.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "musk-candle-shot-03",
+            "label": {
+              "zh": "细节材质",
+              "en": "Detail & Material"
+            },
+            "alt": {
+              "zh": "白麝香香氛蜡烛 · 细节材质",
+              "en": "白麝香香氛蜡烛 · 细节材质"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/musk-candle/shots/musk-candle-shot-04.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "musk-candle-shot-04",
+            "label": {
+              "zh": "香调规格",
+              "en": "Scent & Spec"
+            },
+            "alt": {
+              "zh": "白麝香香氛蜡烛 · 香调规格",
+              "en": "白麝香香氛蜡烛 · 香调规格"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/musk-candle/shots/musk-candle-shot-05.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "musk-candle-shot-05",
+            "label": {
+              "zh": "礼盒信任",
+              "en": "Gift & Trust"
+            },
+            "alt": {
+              "zh": "白麝香香氛蜡烛 · 礼盒信任",
+              "en": "白麝香香氛蜡烛 · 礼盒信任"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/musk-candle/shots/musk-candle-shot-06.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "musk-candle-shot-06",
+            "label": {
+              "zh": "白底图",
+              "en": "White Background"
+            },
+            "alt": {
+              "zh": "白麝香香氛蜡烛 · 白底图",
+              "en": "白麝香香氛蜡烛 · 白底图"
+            }
+          }
+        ],
+        "details": [
+          {
+            "src": "/works-opt/commerce/product/musk-candle/detail/musk-candle-detail-01.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "musk-candle-detail-01",
+            "label": {
+              "zh": "详情页 01",
+              "en": "Detail 01"
+            },
+            "alt": {
+              "zh": "白麝香香氛蜡烛 · 详情页 · 01",
+              "en": "白麝香香氛蜡烛 · 详情页 · 01"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/musk-candle/detail/musk-candle-detail-02.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "musk-candle-detail-02",
+            "label": {
+              "zh": "详情页 02",
+              "en": "Detail 02"
+            },
+            "alt": {
+              "zh": "白麝香香氛蜡烛 · 详情页 · 02",
+              "en": "白麝香香氛蜡烛 · 详情页 · 02"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/musk-candle/detail/musk-candle-detail-03.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "musk-candle-detail-03",
+            "label": {
+              "zh": "详情页 03",
+              "en": "Detail 03"
+            },
+            "alt": {
+              "zh": "白麝香香氛蜡烛 · 详情页 · 03",
+              "en": "白麝香香氛蜡烛 · 详情页 · 03"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/musk-candle/detail/musk-candle-detail-04.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "musk-candle-detail-04",
+            "label": {
+              "zh": "详情页 04",
+              "en": "Detail 04"
+            },
+            "alt": {
+              "zh": "白麝香香氛蜡烛 · 详情页 · 04",
+              "en": "白麝香香氛蜡烛 · 详情页 · 04"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/musk-candle/detail/musk-candle-detail-05.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "musk-candle-detail-05",
+            "label": {
+              "zh": "详情页 05",
+              "en": "Detail 05"
+            },
+            "alt": {
+              "zh": "白麝香香氛蜡烛 · 详情页 · 05",
+              "en": "白麝香香氛蜡烛 · 详情页 · 05"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/musk-candle/detail/musk-candle-detail-06.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "musk-candle-detail-06",
+            "label": {
+              "zh": "详情页 06",
+              "en": "Detail 06"
+            },
+            "alt": {
+              "zh": "白麝香香氛蜡烛 · 详情页 · 06",
+              "en": "白麝香香氛蜡烛 · 详情页 · 06"
+            }
+          }
+        ]
+      },
+      {
+        "id": "coffee-gift-set",
+        "title": {
+          "zh": "晨雾手冲咖啡礼盒",
+          "en": "Morning Mist Coffee Set"
+        },
+        "cover": {
+          "src": "/works-opt/commerce/product/coffee-gift-set/shots/coffee-gift-set-shot-01.webp",
+          "w": 1600,
+          "h": 1600,
+          "id": "coffee-gift-set-shot-01",
+          "label": {
+            "zh": "首图",
+            "en": "Hero Shot"
+          },
+          "alt": {
+            "zh": "晨雾手冲咖啡礼盒 · 首图",
+            "en": "晨雾手冲咖啡礼盒 · 首图"
+          }
+        },
+        "shots": [
+          {
+            "src": "/works-opt/commerce/product/coffee-gift-set/shots/coffee-gift-set-shot-01.webp",
+            "w": 1600,
+            "h": 1600,
+            "id": "coffee-gift-set-shot-01",
+            "label": {
+              "zh": "首图",
+              "en": "Hero Shot"
+            },
+            "alt": {
+              "zh": "晨雾手冲咖啡礼盒 · 首图",
+              "en": "晨雾手冲咖啡礼盒 · 首图"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/coffee-gift-set/shots/coffee-gift-set-shot-02.webp",
+            "w": 1600,
+            "h": 1600,
+            "id": "coffee-gift-set-shot-02",
+            "label": {
+              "zh": "场景卖点",
+              "en": "Lifestyle"
+            },
+            "alt": {
+              "zh": "晨雾手冲咖啡礼盒 · 场景卖点",
+              "en": "晨雾手冲咖啡礼盒 · 场景卖点"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/coffee-gift-set/shots/coffee-gift-set-shot-03.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "coffee-gift-set-shot-03",
+            "label": {
+              "zh": "细节材质",
+              "en": "Detail & Material"
+            },
+            "alt": {
+              "zh": "晨雾手冲咖啡礼盒 · 细节材质",
+              "en": "晨雾手冲咖啡礼盒 · 细节材质"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/coffee-gift-set/shots/coffee-gift-set-shot-04.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "coffee-gift-set-shot-04",
+            "label": {
+              "zh": "尺寸规格",
+              "en": "Spec & Size"
+            },
+            "alt": {
+              "zh": "晨雾手冲咖啡礼盒 · 尺寸规格",
+              "en": "晨雾手冲咖啡礼盒 · 尺寸规格"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/coffee-gift-set/shots/coffee-gift-set-shot-05.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "coffee-gift-set-shot-05",
+            "label": {
+              "zh": "礼盒信任",
+              "en": "Gift & Trust"
+            },
+            "alt": {
+              "zh": "晨雾手冲咖啡礼盒 · 礼盒信任",
+              "en": "晨雾手冲咖啡礼盒 · 礼盒信任"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/coffee-gift-set/shots/coffee-gift-set-shot-06.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "coffee-gift-set-shot-06",
+            "label": {
+              "zh": "白底图",
+              "en": "White Background"
+            },
+            "alt": {
+              "zh": "晨雾手冲咖啡礼盒 · 白底图",
+              "en": "晨雾手冲咖啡礼盒 · 白底图"
+            }
+          }
+        ],
+        "details": [
+          {
+            "src": "/works-opt/commerce/product/coffee-gift-set/detail/coffee-gift-set-detail-01.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "coffee-gift-set-detail-01",
+            "label": {
+              "zh": "详情页 01",
+              "en": "Detail 01"
+            },
+            "alt": {
+              "zh": "晨雾手冲咖啡礼盒 · 详情页 · 01",
+              "en": "晨雾手冲咖啡礼盒 · 详情页 · 01"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/coffee-gift-set/detail/coffee-gift-set-detail-02.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "coffee-gift-set-detail-02",
+            "label": {
+              "zh": "详情页 02",
+              "en": "Detail 02"
+            },
+            "alt": {
+              "zh": "晨雾手冲咖啡礼盒 · 详情页 · 02",
+              "en": "晨雾手冲咖啡礼盒 · 详情页 · 02"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/coffee-gift-set/detail/coffee-gift-set-detail-03.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "coffee-gift-set-detail-03",
+            "label": {
+              "zh": "详情页 03",
+              "en": "Detail 03"
+            },
+            "alt": {
+              "zh": "晨雾手冲咖啡礼盒 · 详情页 · 03",
+              "en": "晨雾手冲咖啡礼盒 · 详情页 · 03"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/coffee-gift-set/detail/coffee-gift-set-detail-04.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "coffee-gift-set-detail-04",
+            "label": {
+              "zh": "详情页 04",
+              "en": "Detail 04"
+            },
+            "alt": {
+              "zh": "晨雾手冲咖啡礼盒 · 详情页 · 04",
+              "en": "晨雾手冲咖啡礼盒 · 详情页 · 04"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/coffee-gift-set/detail/coffee-gift-set-detail-05.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "coffee-gift-set-detail-05",
+            "label": {
+              "zh": "详情页 05",
+              "en": "Detail 05"
+            },
+            "alt": {
+              "zh": "晨雾手冲咖啡礼盒 · 详情页 · 05",
+              "en": "晨雾手冲咖啡礼盒 · 详情页 · 05"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/coffee-gift-set/detail/coffee-gift-set-detail-06.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "coffee-gift-set-detail-06",
+            "label": {
+              "zh": "详情页 06",
+              "en": "Detail 06"
+            },
+            "alt": {
+              "zh": "晨雾手冲咖啡礼盒 · 详情页 · 06",
+              "en": "晨雾手冲咖啡礼盒 · 详情页 · 06"
+            }
+          }
+        ]
+      },
+      {
+        "id": "magsafe-charger",
+        "title": {
+          "zh": "磁吸三合一无线充电站",
+          "en": "3-in-1 Magnetic Charger"
+        },
+        "cover": {
+          "src": "/works-opt/commerce/product/magsafe-charger/shots/magsafe-charger-shot-01.webp",
+          "w": 1024,
+          "h": 1024,
+          "id": "magsafe-charger-shot-01",
+          "label": {
+            "zh": "首图",
+            "en": "Hero Shot"
+          },
+          "alt": {
+            "zh": "磁吸三合一无线充电站 · 首图",
+            "en": "磁吸三合一无线充电站 · 首图"
+          }
+        },
+        "shots": [
+          {
+            "src": "/works-opt/commerce/product/magsafe-charger/shots/magsafe-charger-shot-01.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "magsafe-charger-shot-01",
+            "label": {
+              "zh": "首图",
+              "en": "Hero Shot"
+            },
+            "alt": {
+              "zh": "磁吸三合一无线充电站 · 首图",
+              "en": "磁吸三合一无线充电站 · 首图"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/magsafe-charger/shots/magsafe-charger-shot-02.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "magsafe-charger-shot-02",
+            "label": {
+              "zh": "场景卖点",
+              "en": "Lifestyle"
+            },
+            "alt": {
+              "zh": "磁吸三合一无线充电站 · 场景卖点",
+              "en": "磁吸三合一无线充电站 · 场景卖点"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/magsafe-charger/shots/magsafe-charger-shot-03.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "magsafe-charger-shot-03",
+            "label": {
+              "zh": "细节材质",
+              "en": "Detail & Material"
+            },
+            "alt": {
+              "zh": "磁吸三合一无线充电站 · 细节材质",
+              "en": "磁吸三合一无线充电站 · 细节材质"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/magsafe-charger/shots/magsafe-charger-shot-04.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "magsafe-charger-shot-04",
+            "label": {
+              "zh": "尺寸规格",
+              "en": "Spec & Size"
+            },
+            "alt": {
+              "zh": "磁吸三合一无线充电站 · 尺寸规格",
+              "en": "磁吸三合一无线充电站 · 尺寸规格"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/magsafe-charger/shots/magsafe-charger-shot-05.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "magsafe-charger-shot-05",
+            "label": {
+              "zh": "白底图",
+              "en": "White Background"
+            },
+            "alt": {
+              "zh": "磁吸三合一无线充电站 · 白底图",
+              "en": "磁吸三合一无线充电站 · 白底图"
+            }
+          }
+        ],
+        "details": [
+          {
+            "src": "/works-opt/commerce/product/magsafe-charger/detail/magsafe-charger-detail-01.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "magsafe-charger-detail-01",
+            "label": {
+              "zh": "详情页 01",
+              "en": "Detail 01"
+            },
+            "alt": {
+              "zh": "磁吸三合一无线充电站 · 详情页 · 01",
+              "en": "磁吸三合一无线充电站 · 详情页 · 01"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/magsafe-charger/detail/magsafe-charger-detail-02.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "magsafe-charger-detail-02",
+            "label": {
+              "zh": "详情页 02",
+              "en": "Detail 02"
+            },
+            "alt": {
+              "zh": "磁吸三合一无线充电站 · 详情页 · 02",
+              "en": "磁吸三合一无线充电站 · 详情页 · 02"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/magsafe-charger/detail/magsafe-charger-detail-03.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "magsafe-charger-detail-03",
+            "label": {
+              "zh": "详情页 03",
+              "en": "Detail 03"
+            },
+            "alt": {
+              "zh": "磁吸三合一无线充电站 · 详情页 · 03",
+              "en": "磁吸三合一无线充电站 · 详情页 · 03"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/magsafe-charger/detail/magsafe-charger-detail-04.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "magsafe-charger-detail-04",
+            "label": {
+              "zh": "详情页 04",
+              "en": "Detail 04"
+            },
+            "alt": {
+              "zh": "磁吸三合一无线充电站 · 详情页 · 04",
+              "en": "磁吸三合一无线充电站 · 详情页 · 04"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/magsafe-charger/detail/magsafe-charger-detail-05.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "magsafe-charger-detail-05",
+            "label": {
+              "zh": "详情页 05",
+              "en": "Detail 05"
+            },
+            "alt": {
+              "zh": "磁吸三合一无线充电站 · 详情页 · 05",
+              "en": "磁吸三合一无线充电站 · 详情页 · 05"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/magsafe-charger/detail/magsafe-charger-detail-06.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "magsafe-charger-detail-06",
+            "label": {
+              "zh": "详情页 06",
+              "en": "Detail 06"
+            },
+            "alt": {
+              "zh": "磁吸三合一无线充电站 · 详情页 · 06",
+              "en": "磁吸三合一无线充电站 · 详情页 · 06"
+            }
+          }
+        ]
+      },
+      {
+        "id": "kiln-tea-set",
+        "title": {
+          "zh": "手作窑变陶瓷茶具",
+          "en": "Kiln-glazed Tea Set"
+        },
+        "cover": {
+          "src": "/works-opt/commerce/product/kiln-tea-set/shots/kiln-tea-set-shot-01.webp",
+          "w": 1024,
+          "h": 1024,
+          "id": "kiln-tea-set-shot-01",
+          "label": {
+            "zh": "首图",
+            "en": "Hero Shot"
+          },
+          "alt": {
+            "zh": "手作窑变陶瓷茶具 · 首图",
+            "en": "手作窑变陶瓷茶具 · 首图"
+          }
+        },
+        "shots": [
+          {
+            "src": "/works-opt/commerce/product/kiln-tea-set/shots/kiln-tea-set-shot-01.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "kiln-tea-set-shot-01",
+            "label": {
+              "zh": "首图",
+              "en": "Hero Shot"
+            },
+            "alt": {
+              "zh": "手作窑变陶瓷茶具 · 首图",
+              "en": "手作窑变陶瓷茶具 · 首图"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/kiln-tea-set/shots/kiln-tea-set-shot-02.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "kiln-tea-set-shot-02",
+            "label": {
+              "zh": "场景卖点",
+              "en": "Lifestyle"
+            },
+            "alt": {
+              "zh": "手作窑变陶瓷茶具 · 场景卖点",
+              "en": "手作窑变陶瓷茶具 · 场景卖点"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/kiln-tea-set/shots/kiln-tea-set-shot-03.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "kiln-tea-set-shot-03",
+            "label": {
+              "zh": "细节材质",
+              "en": "Detail & Material"
+            },
+            "alt": {
+              "zh": "手作窑变陶瓷茶具 · 细节材质",
+              "en": "手作窑变陶瓷茶具 · 细节材质"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/kiln-tea-set/shots/kiln-tea-set-shot-04.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "kiln-tea-set-shot-04",
+            "label": {
+              "zh": "尺寸规格",
+              "en": "Spec & Size"
+            },
+            "alt": {
+              "zh": "手作窑变陶瓷茶具 · 尺寸规格",
+              "en": "手作窑变陶瓷茶具 · 尺寸规格"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/kiln-tea-set/shots/kiln-tea-set-shot-05.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "kiln-tea-set-shot-05",
+            "label": {
+              "zh": "礼盒信任",
+              "en": "Gift & Trust"
+            },
+            "alt": {
+              "zh": "手作窑变陶瓷茶具 · 礼盒信任",
+              "en": "手作窑变陶瓷茶具 · 礼盒信任"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/kiln-tea-set/shots/kiln-tea-set-shot-06.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "kiln-tea-set-shot-06",
+            "label": {
+              "zh": "白底图",
+              "en": "White Background"
+            },
+            "alt": {
+              "zh": "手作窑变陶瓷茶具 · 白底图",
+              "en": "手作窑变陶瓷茶具 · 白底图"
+            }
+          }
+        ],
+        "details": [
+          {
+            "src": "/works-opt/commerce/product/kiln-tea-set/detail/kiln-tea-set-detail-01.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "kiln-tea-set-detail-01",
+            "label": {
+              "zh": "详情页 01",
+              "en": "Detail 01"
+            },
+            "alt": {
+              "zh": "手作窑变陶瓷茶具 · 详情页 · 01",
+              "en": "手作窑变陶瓷茶具 · 详情页 · 01"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/kiln-tea-set/detail/kiln-tea-set-detail-02.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "kiln-tea-set-detail-02",
+            "label": {
+              "zh": "详情页 02",
+              "en": "Detail 02"
+            },
+            "alt": {
+              "zh": "手作窑变陶瓷茶具 · 详情页 · 02",
+              "en": "手作窑变陶瓷茶具 · 详情页 · 02"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/kiln-tea-set/detail/kiln-tea-set-detail-03.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "kiln-tea-set-detail-03",
+            "label": {
+              "zh": "详情页 03",
+              "en": "Detail 03"
+            },
+            "alt": {
+              "zh": "手作窑变陶瓷茶具 · 详情页 · 03",
+              "en": "手作窑变陶瓷茶具 · 详情页 · 03"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/kiln-tea-set/detail/kiln-tea-set-detail-04.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "kiln-tea-set-detail-04",
+            "label": {
+              "zh": "详情页 04",
+              "en": "Detail 04"
+            },
+            "alt": {
+              "zh": "手作窑变陶瓷茶具 · 详情页 · 04",
+              "en": "手作窑变陶瓷茶具 · 详情页 · 04"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/kiln-tea-set/detail/kiln-tea-set-detail-05.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "kiln-tea-set-detail-05",
+            "label": {
+              "zh": "详情页 05",
+              "en": "Detail 05"
+            },
+            "alt": {
+              "zh": "手作窑变陶瓷茶具 · 详情页 · 05",
+              "en": "手作窑变陶瓷茶具 · 详情页 · 05"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/kiln-tea-set/detail/kiln-tea-set-detail-06.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "kiln-tea-set-detail-06",
+            "label": {
+              "zh": "详情页 06",
+              "en": "Detail 06"
+            },
+            "alt": {
+              "zh": "手作窑变陶瓷茶具 · 详情页 · 06",
+              "en": "手作窑变陶瓷茶具 · 详情页 · 06"
+            }
+          }
+        ]
+      },
+      {
+        "id": "cashmere-throw",
+        "title": {
+          "zh": "双面提花羊绒盖毯",
+          "en": "Jacquard Cashmere Throw"
+        },
+        "cover": {
+          "src": "/works-opt/commerce/product/cashmere-throw/shots/cashmere-throw-shot-01.webp",
+          "w": 1024,
+          "h": 1024,
+          "id": "cashmere-throw-shot-01",
+          "label": {
+            "zh": "首图",
+            "en": "Hero Shot"
+          },
+          "alt": {
+            "zh": "双面提花羊绒盖毯 · 首图",
+            "en": "双面提花羊绒盖毯 · 首图"
+          }
+        },
+        "shots": [
+          {
+            "src": "/works-opt/commerce/product/cashmere-throw/shots/cashmere-throw-shot-01.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "cashmere-throw-shot-01",
+            "label": {
+              "zh": "首图",
+              "en": "Hero Shot"
+            },
+            "alt": {
+              "zh": "双面提花羊绒盖毯 · 首图",
+              "en": "双面提花羊绒盖毯 · 首图"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/cashmere-throw/shots/cashmere-throw-shot-02.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "cashmere-throw-shot-02",
+            "label": {
+              "zh": "套图 02",
+              "en": "Shot 02"
+            },
+            "alt": {
+              "zh": "双面提花羊绒盖毯 · 套图 02",
+              "en": "双面提花羊绒盖毯 · 套图 02"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/cashmere-throw/shots/cashmere-throw-shot-03.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "cashmere-throw-shot-03",
+            "label": {
+              "zh": "套图 03",
+              "en": "Shot 03"
+            },
+            "alt": {
+              "zh": "双面提花羊绒盖毯 · 套图 03",
+              "en": "双面提花羊绒盖毯 · 套图 03"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/cashmere-throw/shots/cashmere-throw-shot-04.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "cashmere-throw-shot-04",
+            "label": {
+              "zh": "套图 04",
+              "en": "Shot 04"
+            },
+            "alt": {
+              "zh": "双面提花羊绒盖毯 · 套图 04",
+              "en": "双面提花羊绒盖毯 · 套图 04"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/cashmere-throw/shots/cashmere-throw-shot-05.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "cashmere-throw-shot-05",
+            "label": {
+              "zh": "套图 05",
+              "en": "Shot 05"
+            },
+            "alt": {
+              "zh": "双面提花羊绒盖毯 · 套图 05",
+              "en": "双面提花羊绒盖毯 · 套图 05"
+            }
+          }
+        ],
+        "details": [
+          {
+            "src": "/works-opt/commerce/product/cashmere-throw/detail/cashmere-throw-detail-01.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "cashmere-throw-detail-01",
+            "label": {
+              "zh": "详情页 01",
+              "en": "Detail 01"
+            },
+            "alt": {
+              "zh": "双面提花羊绒盖毯 · 详情页 · 01",
+              "en": "双面提花羊绒盖毯 · 详情页 · 01"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/cashmere-throw/detail/cashmere-throw-detail-02.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "cashmere-throw-detail-02",
+            "label": {
+              "zh": "详情页 02",
+              "en": "Detail 02"
+            },
+            "alt": {
+              "zh": "双面提花羊绒盖毯 · 详情页 · 02",
+              "en": "双面提花羊绒盖毯 · 详情页 · 02"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/cashmere-throw/detail/cashmere-throw-detail-03.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "cashmere-throw-detail-03",
+            "label": {
+              "zh": "详情页 03",
+              "en": "Detail 03"
+            },
+            "alt": {
+              "zh": "双面提花羊绒盖毯 · 详情页 · 03",
+              "en": "双面提花羊绒盖毯 · 详情页 · 03"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/cashmere-throw/detail/cashmere-throw-detail-04.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "cashmere-throw-detail-04",
+            "label": {
+              "zh": "详情页 04",
+              "en": "Detail 04"
+            },
+            "alt": {
+              "zh": "双面提花羊绒盖毯 · 详情页 · 04",
+              "en": "双面提花羊绒盖毯 · 详情页 · 04"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/cashmere-throw/detail/cashmere-throw-detail-05.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "cashmere-throw-detail-05",
+            "label": {
+              "zh": "详情页 05",
+              "en": "Detail 05"
+            },
+            "alt": {
+              "zh": "双面提花羊绒盖毯 · 详情页 · 05",
+              "en": "双面提花羊绒盖毯 · 详情页 · 05"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/cashmere-throw/detail/cashmere-throw-detail-06.webp",
+            "w": 1024,
+            "h": 1024,
+            "id": "cashmere-throw-detail-06",
+            "label": {
+              "zh": "详情页 06",
+              "en": "Detail 06"
+            },
+            "alt": {
+              "zh": "双面提花羊绒盖毯 · 详情页 · 06",
+              "en": "双面提花羊绒盖毯 · 详情页 · 06"
+            }
+          }
+        ]
+      }
+    ],
+    "campaign": [
+      {
+        "id": "apparel",
+        "title": {
+          "zh": "服饰",
+          "en": "Apparel"
+        },
+        "images": [
+          {
+            "src": "/works-opt/commerce/campaign/apparel/apparel-01.webp",
+            "w": 502,
+            "h": 889,
+            "id": "apparel-01",
+            "label": {
+              "zh": "冬日穿搭",
+              "en": "Apparel · 01"
+            },
+            "alt": {
+              "zh": "营销海报 · 服饰 · 冬日穿搭",
+              "en": "营销海报 · 服饰 · 冬日穿搭"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/campaign/apparel/apparel-02.webp",
+            "w": 653,
+            "h": 1146,
+            "id": "apparel-02",
+            "label": {
+              "zh": "汉服",
+              "en": "Apparel · 02"
+            },
+            "alt": {
+              "zh": "营销海报 · 服饰 · 汉服",
+              "en": "营销海报 · 服饰 · 汉服"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/campaign/apparel/apparel-03.webp",
+            "w": 502,
+            "h": 889,
+            "id": "apparel-03",
+            "label": {
+              "zh": "时尚入梦",
+              "en": "Apparel · 03"
+            },
+            "alt": {
+              "zh": "营销海报 · 服饰 · 时尚入梦",
+              "en": "营销海报 · 服饰 · 时尚入梦"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/campaign/apparel/apparel-04.webp",
+            "w": 653,
+            "h": 1146,
+            "id": "apparel-04",
+            "label": {
+              "zh": "夏日连衣裙",
+              "en": "Apparel · 04"
+            },
+            "alt": {
+              "zh": "营销海报 · 服饰 · 夏日连衣裙",
+              "en": "营销海报 · 服饰 · 夏日连衣裙"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/campaign/apparel/apparel-05.webp",
+            "w": 502,
+            "h": 889,
+            "id": "apparel-05",
+            "label": {
+              "zh": "休闲",
+              "en": "Apparel · 05"
+            },
+            "alt": {
+              "zh": "营销海报 · 服饰 · 休闲",
+              "en": "营销海报 · 服饰 · 休闲"
+            }
+          }
+        ]
+      },
+      {
+        "id": "beauty",
+        "title": {
+          "zh": "日化",
+          "en": "Skincare"
+        },
+        "images": [
+          {
+            "src": "/works-opt/commerce/campaign/beauty/beauty-01.webp",
+            "w": 502,
+            "h": 889,
+            "id": "beauty-01",
+            "label": {
+              "zh": "反孔净澈",
+              "en": "Skincare · 01"
+            },
+            "alt": {
+              "zh": "营销海报 · 日化 · 反孔净澈",
+              "en": "营销海报 · 日化 · 反孔净澈"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/campaign/beauty/beauty-02.webp",
+            "w": 502,
+            "h": 889,
+            "id": "beauty-02",
+            "label": {
+              "zh": "护肤疗愈",
+              "en": "Skincare · 02"
+            },
+            "alt": {
+              "zh": "营销海报 · 日化 · 护肤疗愈",
+              "en": "营销海报 · 日化 · 护肤疗愈"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/campaign/beauty/beauty-03.webp",
+            "w": 653,
+            "h": 1146,
+            "id": "beauty-03",
+            "label": {
+              "zh": "石榴护肤",
+              "en": "Skincare · 03"
+            },
+            "alt": {
+              "zh": "营销海报 · 日化 · 石榴护肤",
+              "en": "营销海报 · 日化 · 石榴护肤"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/campaign/beauty/beauty-04.webp",
+            "w": 653,
+            "h": 1146,
+            "id": "beauty-04",
+            "label": {
+              "zh": "水润肌肤",
+              "en": "Skincare · 04"
+            },
+            "alt": {
+              "zh": "营销海报 · 日化 · 水润肌肤",
+              "en": "营销海报 · 日化 · 水润肌肤"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/campaign/beauty/beauty-05.webp",
+            "w": 502,
+            "h": 889,
+            "id": "beauty-05",
+            "label": {
+              "zh": "香水",
+              "en": "Skincare · 05"
+            },
+            "alt": {
+              "zh": "营销海报 · 日化 · 香水",
+              "en": "营销海报 · 日化 · 香水"
+            }
+          }
+        ]
+      },
+      {
+        "id": "food",
+        "title": {
+          "zh": "食品",
+          "en": "Food"
+        },
+        "images": [
+          {
+            "src": "/works-opt/commerce/campaign/food/food-01.webp",
+            "w": 502,
+            "h": 889,
+            "id": "food-01",
+            "label": {
+              "zh": "冰淇淋",
+              "en": "Food · 01"
+            },
+            "alt": {
+              "zh": "营销海报 · 食品 · 冰淇淋",
+              "en": "营销海报 · 食品 · 冰淇淋"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/campaign/food/food-02.webp",
+            "w": 502,
+            "h": 889,
+            "id": "food-02",
+            "label": {
+              "zh": "茶饮",
+              "en": "Food · 02"
+            },
+            "alt": {
+              "zh": "营销海报 · 食品 · 茶饮",
+              "en": "营销海报 · 食品 · 茶饮"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/campaign/food/food-03.webp",
+            "w": 653,
+            "h": 1146,
+            "id": "food-03",
+            "label": {
+              "zh": "巧克力",
+              "en": "Food · 03"
+            },
+            "alt": {
+              "zh": "营销海报 · 食品 · 巧克力",
+              "en": "营销海报 · 食品 · 巧克力"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/campaign/food/food-04.webp",
+            "w": 518,
+            "h": 905,
+            "id": "food-04",
+            "label": {
+              "zh": "薯片",
+              "en": "Food · 04"
+            },
+            "alt": {
+              "zh": "营销海报 · 食品 · 薯片",
+              "en": "营销海报 · 食品 · 薯片"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/campaign/food/food-05.webp",
+            "w": 663,
+            "h": 1156,
+            "id": "food-05",
+            "label": {
+              "zh": "糖葫芦",
+              "en": "Food · 05"
+            },
+            "alt": {
+              "zh": "营销海报 · 食品 · 糖葫芦",
+              "en": "营销海报 · 食品 · 糖葫芦"
+            }
+          }
+        ]
+      }
+    ],
+    "composite": [
+      {
+        "id": "composite-1",
+        "title": {
+          "zh": "桂花精萃保湿面霜",
+          "en": "桂花精萃保湿面霜"
+        },
+        "scene": {
+          "src": "/works-opt/commerce/composite/composite-1/composite-1-scene.webp",
+          "w": 1344,
+          "h": 1792,
+          "id": "composite-1-scene",
+          "label": {
+            "zh": "场景图",
+            "en": "Scene"
+          },
+          "alt": {
+            "zh": "桂花精萃保湿面霜 · 场景图",
+            "en": "桂花精萃保湿面霜 · 场景图"
+          }
+        },
+        "blend": {
+          "src": "/works-opt/commerce/composite/composite-1/composite-1-blend.webp",
+          "w": 1344,
+          "h": 1792,
+          "id": "composite-1-blend",
+          "label": {
+            "zh": "融合图",
+            "en": "Composite"
+          },
+          "alt": {
+            "zh": "桂花精萃保湿面霜 · 融合图",
+            "en": "桂花精萃保湿面霜 · 融合图"
+          }
+        }
+      },
+      {
+        "id": "composite-2",
+        "title": {
+          "zh": "黑金降噪无线耳机",
+          "en": "黑金降噪无线耳机"
+        },
+        "scene": {
+          "src": "/works-opt/commerce/composite/composite-2/composite-2-scene.webp",
+          "w": 1344,
+          "h": 1792,
+          "id": "composite-2-scene",
+          "label": {
+            "zh": "场景图",
+            "en": "Scene"
+          },
+          "alt": {
+            "zh": "黑金降噪无线耳机 · 场景图",
+            "en": "黑金降噪无线耳机 · 场景图"
+          }
+        },
+        "blend": {
+          "src": "/works-opt/commerce/composite/composite-2/composite-2-blend.webp",
+          "w": 1728,
+          "h": 2304,
+          "id": "composite-2-blend",
+          "label": {
+            "zh": "融合图",
+            "en": "Composite"
+          },
+          "alt": {
+            "zh": "黑金降噪无线耳机 · 融合图",
+            "en": "黑金降噪无线耳机 · 融合图"
+          }
+        }
+      },
+      {
+        "id": "composite-3",
+        "title": {
+          "zh": "木质烛芯香薰蜡烛",
+          "en": "木质烛芯香薰蜡烛"
+        },
+        "scene": {
+          "src": "/works-opt/commerce/composite/composite-3/composite-3-scene.webp",
+          "w": 1344,
+          "h": 1792,
+          "id": "composite-3-scene",
+          "label": {
+            "zh": "场景图",
+            "en": "Scene"
+          },
+          "alt": {
+            "zh": "木质烛芯香薰蜡烛 · 场景图",
+            "en": "木质烛芯香薰蜡烛 · 场景图"
+          }
+        },
+        "blend": {
+          "src": "/works-opt/commerce/composite/composite-3/composite-3-blend.webp",
+          "w": 768,
+          "h": 1024,
+          "id": "composite-3-blend",
+          "label": {
+            "zh": "融合图",
+            "en": "Composite"
+          },
+          "alt": {
+            "zh": "木质烛芯香薰蜡烛 · 融合图",
+            "en": "木质烛芯香薰蜡烛 · 融合图"
+          }
+        }
+      },
+      {
+        "id": "composite-4",
+        "title": {
+          "zh": "咸蛋黄鲜肉粽子",
+          "en": "咸蛋黄鲜肉粽子"
+        },
+        "scene": {
+          "src": "/works-opt/commerce/composite/composite-4/composite-4-scene.webp",
+          "w": 1344,
+          "h": 1792,
+          "id": "composite-4-scene",
+          "label": {
+            "zh": "场景图",
+            "en": "Scene"
+          },
+          "alt": {
+            "zh": "咸蛋黄鲜肉粽子 · 场景图",
+            "en": "咸蛋黄鲜肉粽子 · 场景图"
+          }
+        },
+        "blend": {
+          "src": "/works-opt/commerce/composite/composite-4/composite-4-blend.webp",
+          "w": 1728,
+          "h": 2304,
+          "id": "composite-4-blend",
+          "label": {
+            "zh": "融合图",
+            "en": "Composite"
+          },
+          "alt": {
+            "zh": "咸蛋黄鲜肉粽子 · 融合图",
+            "en": "咸蛋黄鲜肉粽子 · 融合图"
+          }
+        }
+      },
+      {
+        "id": "composite-5",
+        "title": {
+          "zh": "樱花粉淡香水",
+          "en": "樱花粉淡香水"
+        },
+        "scene": {
+          "src": "/works-opt/commerce/composite/composite-5/composite-5-scene.webp",
+          "w": 1344,
+          "h": 1792,
+          "id": "composite-5-scene",
+          "label": {
+            "zh": "场景图",
+            "en": "Scene"
+          },
+          "alt": {
+            "zh": "樱花粉淡香水 · 场景图",
+            "en": "樱花粉淡香水 · 场景图"
+          }
+        },
+        "blend": {
+          "src": "/works-opt/commerce/composite/composite-5/composite-5-blend.webp",
+          "w": 1344,
+          "h": 1792,
+          "id": "composite-5-blend",
+          "label": {
+            "zh": "融合图",
+            "en": "Composite"
+          },
+          "alt": {
+            "zh": "樱花粉淡香水 · 融合图",
+            "en": "樱花粉淡香水 · 融合图"
+          }
+        }
+      }
+    ],
+    "banner": [
+      {
+        "src": "/works-opt/commerce/banner/banner-01.webp",
+        "w": 3584,
+        "h": 1120,
+        "card": {
+          "src": "/preview/commerce/banner/banner-01.webp",
+          "w": 1400,
+          "h": 438
+        },
+        "id": "banner-01",
+        "label": {
+          "zh": "Banner 01",
+          "en": "Banner 01"
+        },
+        "alt": {
+          "zh": "电商 Banner · Banner 01",
+          "en": "电商 Banner · Banner 01"
+        }
+      },
+      {
+        "src": "/works-opt/commerce/banner/banner-02.webp",
+        "w": 3584,
+        "h": 1120,
+        "card": {
+          "src": "/preview/commerce/banner/banner-02.webp",
+          "w": 1400,
+          "h": 438
+        },
+        "id": "banner-02",
+        "label": {
+          "zh": "Banner 02",
+          "en": "Banner 02"
+        },
+        "alt": {
+          "zh": "电商 Banner · Banner 02",
+          "en": "电商 Banner · Banner 02"
+        }
+      },
+      {
+        "src": "/works-opt/commerce/banner/banner-03.webp",
+        "w": 2656,
+        "h": 832,
+        "card": {
+          "src": "/preview/commerce/banner/banner-03.webp",
+          "w": 1400,
+          "h": 439
+        },
+        "id": "banner-03",
+        "label": {
+          "zh": "Banner 03",
+          "en": "Banner 03"
+        },
+        "alt": {
+          "zh": "电商 Banner · Banner 03",
+          "en": "电商 Banner · Banner 03"
+        }
+      },
+      {
+        "src": "/works-opt/commerce/banner/banner-04.webp",
+        "w": 3584,
+        "h": 1120,
+        "card": {
+          "src": "/preview/commerce/banner/banner-04.webp",
+          "w": 1400,
+          "h": 438
+        },
+        "id": "banner-04",
+        "label": {
+          "zh": "Banner 04",
+          "en": "Banner 04"
+        },
+        "alt": {
+          "zh": "电商 Banner · Banner 04",
+          "en": "电商 Banner · Banner 04"
+        }
+      },
+      {
+        "src": "/works-opt/commerce/banner/banner-05.webp",
+        "w": 3584,
+        "h": 1120,
+        "card": {
+          "src": "/preview/commerce/banner/banner-05.webp",
+          "w": 1400,
+          "h": 438
+        },
+        "id": "banner-05",
+        "label": {
+          "zh": "Banner 05",
+          "en": "Banner 05"
+        },
+        "alt": {
+          "zh": "电商 Banner · Banner 05",
+          "en": "电商 Banner · Banner 05"
+        }
+      },
+      {
+        "src": "/works-opt/commerce/banner/banner-06.webp",
+        "w": 3584,
+        "h": 1120,
+        "card": {
+          "src": "/preview/commerce/banner/banner-06.webp",
+          "w": 1400,
+          "h": 438
+        },
+        "id": "banner-06",
+        "label": {
+          "zh": "Banner 06",
+          "en": "Banner 06"
+        },
+        "alt": {
+          "zh": "电商 Banner · Banner 06",
+          "en": "电商 Banner · Banner 06"
+        }
+      },
+      {
+        "src": "/works-opt/commerce/banner/banner-07.webp",
+        "w": 3584,
+        "h": 1120,
+        "card": {
+          "src": "/preview/commerce/banner/banner-07.webp",
+          "w": 1400,
+          "h": 438
+        },
+        "id": "banner-07",
+        "label": {
+          "zh": "Banner 07",
+          "en": "Banner 07"
+        },
+        "alt": {
+          "zh": "电商 Banner · Banner 07",
+          "en": "电商 Banner · Banner 07"
+        }
+      },
+      {
+        "src": "/works-opt/commerce/banner/banner-08.webp",
+        "w": 3584,
+        "h": 1120,
+        "card": {
+          "src": "/preview/commerce/banner/banner-08.webp",
+          "w": 1400,
+          "h": 438
+        },
+        "id": "banner-08",
+        "label": {
+          "zh": "Banner 08",
+          "en": "Banner 08"
+        },
+        "alt": {
+          "zh": "电商 Banner · Banner 08",
+          "en": "电商 Banner · Banner 08"
+        }
+      },
+      {
+        "src": "/works-opt/commerce/banner/banner-09.webp",
+        "w": 3584,
+        "h": 1120,
+        "card": {
+          "src": "/preview/commerce/banner/banner-09.webp",
+          "w": 1400,
+          "h": 438
+        },
+        "id": "banner-09",
+        "label": {
+          "zh": "Banner 09",
+          "en": "Banner 09"
+        },
+        "alt": {
+          "zh": "电商 Banner · Banner 09",
+          "en": "电商 Banner · Banner 09"
+        }
+      },
+      {
+        "src": "/works-opt/commerce/banner/banner-10.webp",
+        "w": 3584,
+        "h": 1120,
+        "card": {
+          "src": "/preview/commerce/banner/banner-10.webp",
+          "w": 1400,
+          "h": 438
+        },
+        "id": "banner-10",
+        "label": {
+          "zh": "Banner 10",
+          "en": "Banner 10"
+        },
+        "alt": {
+          "zh": "电商 Banner · Banner 10",
+          "en": "电商 Banner · Banner 10"
+        }
+      }
+    ]
+  },
+  "counts": {
+    "viSets": 3,
+    "viImages": 21,
+    "poster": 20,
+    "icon": 5,
+    "productSets": 5,
+    "productShots": 28,
+    "productDetails": 30,
+    "campaign": 15,
+    "composite": 5,
+    "banner": 10,
+    "total": 139
+  }
+}

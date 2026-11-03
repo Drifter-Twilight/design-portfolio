@@ -1,0 +1,418 @@
+/* 字体：西文自托管，中文走系统黑体栈（避免中文 webfont 的数 MB 开销） */
+@import '@fontsource/anton/latin-400.css';
+@import '@fontsource/space-grotesk/latin-400.css';
+@import '@fontsource/space-grotesk/latin-500.css';
+@import '@fontsource/space-grotesk/latin-700.css';
+@import '@fontsource/instrument-serif/latin-400-italic.css';
+@import 'tailwindcss';
+
+@theme {
+  /* 暗色底：带一点冷紫调，让紫色高光更"贵"而不是发灰 */
+  --color-ink: #08060f;
+  --color-ink-2: #0c0916;
+  --color-ink-3: #130e1f;
+  --color-ink-4: #1b1429;
+
+  --color-fg: #f2f0f7;
+  --color-dim: #a09aae;
+  --color-mute: #6f6880;
+
+  /* 强调：亮紫罗兰为主，深紫作次级标记。避开饱和度过高的"廉价紫" */
+  --color-acid: #c4a7ff;
+  --color-signal: #7c5cff;
+
+  --color-line: rgba(255, 255, 255, 0.08);
+  --color-line-strong: rgba(255, 255, 255, 0.16);
+
+  --font-display: 'Anton', 'Arial Narrow', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-sans: 'Space Grotesk', 'PingFang SC', 'HarmonyOS Sans SC', 'Microsoft YaHei', sans-serif;
+  --font-serif: 'Instrument Serif', 'Songti SC', Georgia, serif;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-std: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@layer base {
+  :root {
+    --gutter: clamp(1.25rem, 4.2vw, 5.5rem);
+    --header-h: 64px;
+    color-scheme: dark;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  /* Lenis 接管滚动后由它处理平滑，避免双重缓动 */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-ink);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    font-size: clamp(0.9375rem, 0.35vw + 0.875rem, 1.0625rem);
+    line-height: 1.65;
+    font-synthesis-weight: none;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    /* clip 而不是 hidden：hidden 会让 body 变成滚动容器，position: sticky 全部失效 */
+    overflow-x: clip;
+  }
+
+  /* 语言切换时中文正文的字距要放松，西文要紧收 */
+  :lang(zh) body,
+  body[data-lang='zh'] {
+    letter-spacing: 0.01em;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  figure,
+  blockquote {
+    margin: 0;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  /* 焦点必须清晰可见：酸性色描边 + 偏移，暗底上足够醒目 */
+  :focus-visible {
+    outline: 2px solid var(--color-acid);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background: var(--color-acid);
+    color: #08060f;
+  }
+
+  /* 滚动条与整体调性一致 */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-ink);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2a2340;
+    border: 3px solid var(--color-ink);
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3d3357;
+  }
+
+  /* 动效降级：用户声明减少动态时，一切回落到静态 */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* ---------- 版式 ---------- */
+  .shell {
+    width: 100%;
+    padding-inline: var(--gutter);
+  }
+
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-mute);
+  }
+
+  :lang(zh) .eyebrow {
+    letter-spacing: 0.18em;
+  }
+
+  /**
+   * 动效背景层的上下柔化遮罩。
+   * 每个区块的背景都是一张独立画布，硬切会在边界留一条明显的分界线；
+   * 用遮罩把两侧各淡出一段，衔接处只剩底色，过渡才自然。
+   */
+  .fx-veil {
+    --fx-fade-top: clamp(80px, 13vh, 180px);
+    --fx-fade-bottom: clamp(80px, 13vh, 180px);
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0,
+      #000 var(--fx-fade-top),
+      #000 calc(100% - var(--fx-fade-bottom)),
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0,
+      #000 var(--fx-fade-top),
+      #000 calc(100% - var(--fx-fade-bottom)),
+      transparent 100%
+    );
+  }
+
+  /* 只在底部淡出（首屏用：顶部紧贴导航，不需要再淡） */
+  .fx-veil-bottom {
+    --fx-fade-top: 0px;
+  }
+
+  /* 超大标题：Anton 极窄压缩 + 负字距，Editorial 的骨 */
+  .display {
+    font-family: var(--font-display);
+    font-weight: 400;
+    /* Anton 的字形高度接近 1.0，行高低于 0.9 会被裁切 */
+    line-height: 0.92;
+    letter-spacing: -0.045em;
+    text-transform: uppercase;
+    font-feature-settings: 'kern' 1;
+  }
+
+  /* 中文大标题不能用 Anton，改用系统黑体并回到正字距 */
+  .display-zh {
+    font-family: 'PingFang SC', 'HarmonyOS Sans SC', 'Source Han Sans SC', 'Microsoft YaHei', sans-serif;
+    font-weight: 900;
+    line-height: 0.94;
+    letter-spacing: 0.01em;
+    font-feature-settings: 'palt' 1;
+  }
+
+  .outline-text {
+    -webkit-text-stroke: 1px rgba(242, 242, 240, 0.34);
+    color: transparent;
+  }
+
+  /* 描边姓名：填充透明，仅保留主色描边 */
+  .name-outline {
+    /* 相对字号取描边宽度，大字下才不会细成一根线 */
+    -webkit-text-stroke: 0.032em var(--color-acid);
+    paint-order: stroke fill;
+  }
+
+  .serif-accent {
+    font-family: var(--font-serif);
+    font-style: italic;
+    letter-spacing: -0.01em;
+  }
+
+  .rule {
+    height: 1px;
+    width: 100%;
+    background: var(--color-line);
+  }
+
+  /* ---------- 氛围：暗色科技底 ---------- */
+  .tech-grid {
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+    background-size: 88px 88px;
+  }
+
+  .noise-layer {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    opacity: 0.14;
+    mix-blend-mode: overlay;
+  }
+
+  .glow-cold {
+    background: radial-gradient(
+      ellipse 62% 48% at 68% 12%,
+      rgba(124, 92, 255, 0.16) 0%,
+      rgba(80, 56, 160, 0.06) 38%,
+      transparent 72%
+    );
+  }
+
+  .glow-acid {
+    background: radial-gradient(ellipse 42% 32% at 12% 82%, rgba(196, 167, 255, 0.1) 0%, transparent 70%);
+  }
+
+  /* ---------- 交互 ---------- */
+  .link-underline {
+    position: relative;
+    display: inline-block;
+  }
+  .link-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 280ms var(--ease-out);
+  }
+  .link-underline:hover::after,
+  .link-underline:focus-visible::after {
+    transform: scaleX(1);
+  }
+
+  .skip-link {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    z-index: 200;
+    transform: translate(-50%, -120%);
+    padding: 12px 22px;
+    background: var(--color-acid);
+    color: #08060f;
+    font-weight: 700;
+    font-size: 0.8125rem;
+    letter-spacing: 0.06em;
+    transition: transform 180ms var(--ease-out);
+  }
+  .skip-link:focus {
+    transform: translate(-50%, 0);
+  }
+
+  /* 作品图统一比例占位，避免加载过程中的布局跳动 */
+  .frame {
+    position: relative;
+    overflow: hidden;
+    background: #0c0916;
+    border: 1px solid var(--color-line);
+  }
+  .frame img {
+    width: 100%;
+    height: 100%;
+    /* 作品必须完整呈现，不裁切内容 */
+    object-fit: contain;
+    transition: transform 620ms var(--ease-out), filter 620ms var(--ease-out);
+  }
+  .frame:hover img {
+    transform: scale(1.035);
+  }
+
+  /* Before/After 对比：两层叠放，悬停放大会让上下层错位 */
+  .ba-frame:hover img {
+    transform: none;
+  }
+
+  /* 视觉隐藏但可被读屏访问 */
+  .sr-only-focusable:not(:focus):not(:focus-within) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
+/* 移动端：降低装饰层开销，保证滚动帧率 */
+@media (max-width: 768px) {
+  .tech-grid {
+    background-size: 56px 56px;
+    opacity: 0.7;
+  }
+  .frame:hover img {
+    transform: none;
+  }
+}
+
+/* 首屏内容区暗化：压住文字所在的中段，让画布字和碎片互不干扰 */
+.hero-scrim {
+  background: radial-gradient(
+    ellipse 66% 54% at 50% 50%,
+    rgba(8, 6, 15, 0.54) 0%,
+    rgba(8, 6, 15, 0.3) 44%,
+    rgba(8, 6, 15, 0.08) 70%,
+    transparent 88%
+  );
+}
+
+/* 窄屏下碎片更贴文字，需要更宽更强的遮罩 */
+@media (max-width: 640px) {
+  .hero-scrim {
+    background: radial-gradient(
+      ellipse 124% 56% at 50% 44%,
+      rgba(8, 6, 15, 0.92) 0%,
+      rgba(8, 6, 15, 0.78) 44%,
+      rgba(8, 6, 15, 0.42) 70%,
+      transparent 92%
+    );
+  }
+}
+
+@keyframes scrollHint {
+  0% {
+    transform: translateY(-100%);
+  }
+  60%,
+  100% {
+    transform: translateY(320%);
+  }
+}
+
+/* 首屏滚动提示的箭头上下浮动 */
+@keyframes scrollArrow {
+  0%,
+  100% {
+    transform: translateY(-2px);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+}
+
+@keyframes marqueeLine {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
