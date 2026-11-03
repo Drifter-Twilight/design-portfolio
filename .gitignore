@@ -1,0 +1,30 @@
+# 依赖与构建产物
+node_modules/
+dist/
+dist-ssr/
+*.tsbuildinfo
+
+# 原图副本（约 300MB）—— 不入库
+# E:\作品集 才是素材源；raw/works 是 sync:assets 生成的中间副本（放在 public 之外，
+# 所以不会被 vite 拷进 dist）。线上用的是 public/works-opt（约 32MB，入库）。
+raw/
+public/works/
+
+# 本地调试产物
+_shot/
+docs/preview/
+
+# 编辑器 / 系统
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# 日志与环境变量
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.env
+.env.*
+!.env.example
