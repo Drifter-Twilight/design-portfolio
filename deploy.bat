@@ -2,6 +2,8 @@
 chcp 65001 >nul
 setlocal enabledelayedexpansion
 cd /d "%~dp0"
+rem 把本机 git 放到 PATH 最前：系统 PATH 改过之后，已经打开的窗口不会立即生效
+if exist "D:\Tools\Git\cmd\git.exe" set "PATH=D:\Tools\Git\cmd;%PATH%"
 
 echo.
 echo ============================================
