@@ -1,3 +1,5 @@
+import { asset } from '@/lib/asset';
+
 /**
  * 个人信息 —— 全站唯一需要你手改的地方。
  */
@@ -10,7 +12,7 @@ export const profile = {
   /** 英文名 */
   nameEn: 'Witt He',
   /** 个人照片：放在 public/profile 下 */
-  photo: '/profile/portrait.jpg',
+  photo: asset('/profile/portrait.jpg'),
   /** 微信 */
   wechat: 'w13420506578',
   /** 职业抬头 */

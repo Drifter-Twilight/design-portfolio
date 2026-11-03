@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import { useTranslation } from 'react-i18next';
 import { ContactIcon } from './ContactIcon';
 import { ZoomableImage } from '@/components/work/ZoomableImage';
+import { asset } from '@/lib/asset';
 import { getLenis } from '@/hooks/useSmoothScroll';
 
 interface ResumeDialogProps {
@@ -126,7 +127,7 @@ export function ResumeDialog({ open, onClose }: ResumeDialogProps) {
           {/* 绝对定位给百分比高度一个确定基准：flex 项的 auto 高度不会让 h-full 生效 */}
           <div className="absolute inset-2 border border-line/60 sm:inset-3">
             <ZoomableImage
-              src="/profile/resume.jpg"
+              src={asset('/profile/resume.jpg')}
               width={1280}
               height={1810}
               alt={t('resume.imageAlt')}
