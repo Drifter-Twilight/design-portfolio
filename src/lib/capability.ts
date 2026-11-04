@@ -95,10 +95,12 @@ export function detectCapability(): Capability {
   // 不拿 hardwareConcurrency 当主判据 —— Android WebView 普遍低报（实测 vivo 只报 2 核，
   // 实际是 8 核 + Mali-G1-Ultra），按它判会把整批中端机误杀成 lite，动效全没。
   // cores / memory 只在极端值（1 核、1GB）时兜底。
+  //
+  // 也不拿网络状态判降级：动效是本地 GPU 计算，不吃流量。按 3G 关动效只会让页面
+  // 看起来「坏了」。网络差应该由图片懒加载去省，不该牵连动效。
   let reason = 'ok';
   if (reducedMotion) reason = 'reduced-motion';
   else if (saveData) reason = 'save-data';
-  else if (slowNetwork) reason = 'slow-network';
   else if (!g2.ok) reason = 'no-webgl2';
   else if (isSoftwareRenderer(renderer)) reason = 'software-renderer';
   else if (memory !== null && memory > 0 && memory <= 1) reason = 'memory<=1';
