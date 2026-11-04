@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T17:45:20.274Z",
+  "generatedAt": "2026-11-04T18:10:48.310Z",
   "source": "E:\\作品集",
   "graphic": {
     "vi": [
@@ -552,6 +552,25 @@
         "alt": {
           "zh": "艺术海报 · 故障艺术·数据意识",
           "en": "艺术海报 · 故障艺术·数据意识"
+        }
+      },
+      {
+        "src": "/works-opt/graphic/poster/poster-13.webp",
+        "w": 1600,
+        "h": 2848,
+        "card": {
+          "src": "/preview/poster/poster-13.webp",
+          "w": 674,
+          "h": 1200
+        },
+        "id": "poster-13",
+        "label": {
+          "zh": "先锋主义·日破苍山",
+          "en": "先锋主义·日破苍山"
+        },
+        "alt": {
+          "zh": "艺术海报 · 先锋主义·日破苍山",
+          "en": "艺术海报 · 先锋主义·日破苍山"
         }
       },
       {
@@ -2653,7 +2672,7 @@
   "counts": {
     "viSets": 3,
     "viImages": 21,
-    "poster": 19,
+    "poster": 20,
     "icon": 5,
     "productSets": 5,
     "productShots": 28,
@@ -2661,6 +2680,6 @@
     "campaign": 15,
     "composite": 5,
     "banner": 10,
-    "total": 138
+    "total": 139
   }
 }
