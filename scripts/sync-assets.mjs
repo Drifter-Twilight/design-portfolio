@@ -28,6 +28,14 @@ const IMG_EXT = new Set(['.png', '.jpg', '.jpeg', '.webp', '.avif']);
 
 const isImage = (f) => IMG_EXT.has(path.extname(f).toLowerCase());
 
+/**
+ * 读不出来的文件（0 字节、损坏、伪装成图片的其它格式）。
+ * 由 preflight() 填充；emit / emitCard 见到它们就返回 skipped 占位，
+ * 最后统一从清单里摘掉——这样编号不会平移，其余作品顺序不变。
+ */
+const BAD = new Set();
+const SKIP_BAD = process.argv.includes('--skip-bad');
+
 /** 自然排序：海报2 < 海报10 */
 const naturalCompare = (a, b) =>
   a.localeCompare(b, 'zh-CN', { numeric: true, sensitivity: 'base' });
@@ -98,6 +106,7 @@ function readImageSize(file) {
 let copied = 0;
 let bytes = 0;
 function emit(srcFile, relPath) {
+  if (BAD.has(srcFile)) return { src: '', w: 0, h: 0, skipped: true };
   const dest = path.join(OUT_ROOT, relPath);
   fs.mkdirSync(path.dirname(dest), { recursive: true });
   fs.copyFileSync(srcFile, dest);
@@ -116,9 +125,12 @@ function emit(srcFile, relPath) {
  * 海报 20 张要同时进 GPU 当纹理，图标 5 张要铺在整块卡片上，原图直传会吃光显存。
  */
 async function emitCard(srcFile, relPath, maxEdge = 1200) {
+  if (BAD.has(srcFile)) return { src: '', w: 0, h: 0, skipped: true };
   const dest = path.join(PREVIEW_ROOT, relPath);
   fs.mkdirSync(path.dirname(dest), { recursive: true });
   const meta = await sharp(srcFile).metadata();
+  // 长边约束：只写 width 的话竖图会原样保留高度（实测 1600×2866），
+  // 解码后的位图内存是横图的 1.8 倍，20 张海报同时进 GPU 就是几百 MB。
   const scale = Math.min(1, maxEdge / Math.max(meta.width || 1, meta.height || 1));
   const w = Math.max(1, Math.round((meta.width || 1) * scale));
   const h = Math.max(1, Math.round((meta.height || 1) * scale));
@@ -245,6 +257,78 @@ if (!fs.existsSync(SRC_ROOT)) {
   console.error(`✗ 找不到素材目录：${SRC_ROOT}`);
   process.exit(1);
 }
+
+/**
+ * 预检：在动手复制**之前**，把所有读不出来的图找出来。
+ *
+ * 旧写法是边复制边用 sharp 读尺寸，第一张坏图就把整条流水线打断，
+ * 而那时 raw/works 已经被清空、只写进了前 36 个文件——留下一个半破坏状态，
+ * 后面的 optimize:images 又会拿着这份残缺输入继续跑。
+ */
+async function preflight() {
+  const all = [];
+  const walk = (dir) => {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) walk(full);
+      else if (entry.isFile() && isImage(entry.name)) all.push(full);
+    }
+  };
+  walk(SRC_ROOT);
+
+  for (const file of all) {
+    let size = 0;
+    try {
+      size = fs.statSync(file).size;
+    } catch {
+      BAD.add(file);
+      continue;
+    }
+    if (size === 0) {
+      BAD.add(file);
+      continue;
+    }
+    try {
+      const meta = await sharp(file).metadata();
+      if (!meta.width || !meta.height) BAD.add(file);
+    } catch {
+      BAD.add(file);
+    }
+  }
+
+  if (BAD.size === 0) {
+    console.log(`✓ 预检通过：${all.length} 张图全部可读`);
+    return;
+  }
+
+  console.error('');
+  console.error(`✗ 有 ${BAD.size} 个文件读不出来（共扫描 ${all.length} 个）：`);
+  for (const file of BAD) {
+    let size = -1;
+    try {
+      size = fs.statSync(file).size;
+    } catch {
+      /* 连 stat 都失败就报 -1 */
+    }
+    console.error(`  · ${path.relative(SRC_ROOT, file)}   ${size} 字节`);
+  }
+  console.error('');
+  console.error('常见原因：导出或复制中断留下 0 字节文件、文件其实是别的格式、网盘还没同步完。');
+  console.error('处理办法：重新导出这几张（或从备份恢复），再运行一次。');
+
+  if (!SKIP_BAD) {
+    console.error('');
+    console.error('本次没有改动任何文件。确实要带着缺图先发一版，就加 --skip-bad：');
+    console.error('  npm run sync:assets -- --skip-bad');
+    process.exit(1);
+  }
+
+  console.warn('');
+  console.warn('! 按 --skip-bad 继续：这些作品会被跳过，其余作品的编号保持不变。');
+}
+
+await preflight();
+
 // 先清空输出目录，避免旧文件残留（例如海报从 .png 换成 .jpg）。
 // 某些受管环境会拦截批量删除，删除失败时继续执行：copyFile 会覆盖同名文件。
 if (fs.existsSync(OUT_ROOT)) {
@@ -321,10 +405,20 @@ const POSTER_SEQUENCE = [
   '新艺术·星月湖.png',
 ];
 
+const stemOf = (file) => path.basename(file, path.extname(file));
+
+/**
+ * 排序表里写的是交付时的原始文件名（带 .jpg / .png）。
+ * 素材统一换成 .webp 之后，如果还按完整文件名去 indexOf 会全部落空，
+ * 顺序直接退化成按名字自然排序——实测第一张从「广州塔」变成了「过剩光影」。
+ * 所以统一按主名匹配，换格式不影响人工排定的顺序。
+ */
+const POSTER_ORDER = POSTER_SEQUENCE.map(stemOf);
+
 const posterRoot = path.join(SRC_ROOT, '平面设计', '艺术设计海报');
 const posterFiles = listImages(posterRoot).sort((a, b) => {
-  const ia = POSTER_SEQUENCE.indexOf(path.basename(a));
-  const ib = POSTER_SEQUENCE.indexOf(path.basename(b));
+  const ia = POSTER_ORDER.indexOf(stemOf(a));
+  const ib = POSTER_ORDER.indexOf(stemOf(b));
   if (ia !== -1 || ib !== -1) return (ia === -1 ? 999 : ia) - (ib === -1 ? 999 : ib);
   return naturalCompare(path.basename(a), path.basename(b));
 });
@@ -352,10 +446,12 @@ const ICON_SEQUENCE = [
   '3D国潮·新春贺岁.png',
 ];
 
+const ICON_ORDER = ICON_SEQUENCE.map(stemOf);
+
 const iconRoot = path.join(SRC_ROOT, '平面设计', 'Icon图标');
 const iconFiles = listImages(iconRoot).sort((a, b) => {
-  const ia = ICON_SEQUENCE.indexOf(path.basename(a));
-  const ib = ICON_SEQUENCE.indexOf(path.basename(b));
+  const ia = ICON_ORDER.indexOf(stemOf(a));
+  const ib = ICON_ORDER.indexOf(stemOf(b));
   if (ia !== -1 || ib !== -1) return (ia === -1 ? 999 : ia) - (ib === -1 ? 999 : ib);
   return naturalCompare(path.basename(a), path.basename(b));
 });
@@ -486,33 +582,46 @@ for (const [i, file] of listImages(path.join(SRC_ROOT, '电商设计', 'Banner')
 /* 汇总                                                               */
 /* ------------------------------------------------------------------ */
 
-const sum = (arr, key) => arr.reduce((acc, s) => acc + (key ? s[key].length : 1), 0);
-data.counts = {
-  viSets: data.graphic.vi.length,
-  viImages: sum(data.graphic.vi, 'images'),
-  poster: data.graphic.poster.length,
-  icon: data.graphic.icon.length,
-  productSets: data.commerce.product.length,
-  productShots: sum(data.commerce.product, 'shots'),
-  productDetails: sum(data.commerce.product, 'details'),
-  campaign: data.commerce.campaign.reduce((a, g) => a + g.images.length, 0),
-  composite: data.commerce.composite.length,
-  banner: data.commerce.banner.length,
-};
-data.counts.total =
-  data.counts.viImages +
-  data.counts.poster +
-  data.counts.icon +
-  data.counts.productShots +
-  data.counts.productDetails +
-  data.counts.campaign +
-  data.counts.composite * 2 +
-  data.counts.banner;
+/** 摘掉 skipped 占位。编号按源文件下标生成，跳过一张不会让后面的前移。 */
+function prune(node) {
+  if (Array.isArray(node)) return node.map(prune).filter((item) => !(item && item.skipped));
+  if (node && typeof node === 'object') {
+    const out = {};
+    for (const [key, value] of Object.entries(node)) out[key] = prune(value);
+    return out;
+  }
+  return node;
+}
 
-fs.writeFileSync(MANIFEST, `${JSON.stringify(data, null, 2)}\n`, 'utf8');
+const cleaned = prune(data);
+const sum = (arr, key) => arr.reduce((acc, s) => acc + (key ? s[key].length : 1), 0);
+cleaned.counts = {
+  viSets: cleaned.graphic.vi.length,
+  viImages: sum(cleaned.graphic.vi, 'images'),
+  poster: cleaned.graphic.poster.length,
+  icon: cleaned.graphic.icon.length,
+  productSets: cleaned.commerce.product.length,
+  productShots: sum(cleaned.commerce.product, 'shots'),
+  productDetails: sum(cleaned.commerce.product, 'details'),
+  campaign: cleaned.commerce.campaign.reduce((a, g) => a + g.images.length, 0),
+  composite: cleaned.commerce.composite.length,
+  banner: cleaned.commerce.banner.length,
+};
+cleaned.counts.total =
+  cleaned.counts.viImages +
+  cleaned.counts.poster +
+  cleaned.counts.icon +
+  cleaned.counts.productShots +
+  cleaned.counts.productDetails +
+  cleaned.counts.campaign +
+  cleaned.counts.composite * 2 +
+  cleaned.counts.banner;
+
+fs.writeFileSync(MANIFEST, `${JSON.stringify(cleaned, null, 2)}\n`, 'utf8');
 
 console.log('✓ 素材同步完成');
 console.log(`  源目录  ${SRC_ROOT}`);
 console.log(`  复制    ${copied} 个文件 / ${(bytes / 1048576).toFixed(1)} MB`);
 console.log(`  清单    src/data/works.json`);
-console.table(data.counts);
+if (BAD.size) console.warn(`  跳过    ${BAD.size} 个无法读取的文件（见上方清单）`);
+console.table(cleaned.counts);

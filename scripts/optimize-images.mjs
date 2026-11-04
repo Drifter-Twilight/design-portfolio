@@ -14,6 +14,7 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -56,6 +57,39 @@ let after = 0;
 let skipped = 0;
 let done = 0;
 
+/**
+ * 内容指纹缓存。
+ *
+ * 为什么不能只看「产物存在」：换图时通常保持同名（`海报A.jpg` → `海报A.webp`），
+ * 产物 `works-opt/海报A.webp` 早就在，于是新图永远被跳过，线上仍是旧图。
+ * 为什么不能看 mtime：sync:assets 每次都重建 raw/works，mtime 全部变成当前时间，
+ * 会导致每次发布都全量重压（139 张，两分钟起步）。
+ * 折中：取 size + 头尾各 128 KB 做散列，换过内容才重压。
+ */
+const CACHE_FILE = path.join(ROOT, 'raw', '.optimize-cache.json');
+let cache = {};
+try {
+  cache = JSON.parse(fs.readFileSync(CACHE_FILE, 'utf8'));
+} catch {
+  cache = {};
+}
+
+function fingerprint(file) {
+  const size = fs.statSync(file).size;
+  const span = 131072;
+  const fd = fs.openSync(file, 'r');
+  const head = Buffer.alloc(Math.min(span, size));
+  fs.readSync(fd, head, 0, head.length, 0);
+  let tail = Buffer.alloc(0);
+  if (size > head.length) {
+    const tailLen = Math.min(span, size - head.length);
+    tail = Buffer.alloc(tailLen);
+    fs.readSync(fd, tail, 0, tailLen, size - tailLen);
+  }
+  fs.closeSync(fd);
+  return crypto.createHash('md5').update(String(size)).update(head).update(tail).digest('hex');
+}
+
 console.log(`→ ${files.length} 张待处理（最长边 ${MAX_EDGE}px / WebP q${QUALITY}）`);
 
 for (const file of files) {
@@ -63,9 +97,9 @@ for (const file of files) {
   const dest = path.join(OUT, rel.replace(/\.(png|jpe?g|webp)$/i, '.webp'));
   before += fs.statSync(file).size;
 
-  // sync:assets 每次都会重写 raw/works（mtime 全变），所以不看时间戳：
-  // 产物存在即视为已压过。换了某张图的内容时用 --force 全量重压。
-  const fresh = !FORCE && fs.existsSync(dest) && fs.statSync(dest).size > 0;
+  const stamp = fingerprint(file);
+  const fresh =
+    !FORCE && cache[rel] === stamp && fs.existsSync(dest) && fs.statSync(dest).size > 0;
 
   if (fresh) {
     after += fs.statSync(dest).size;
@@ -75,14 +109,24 @@ for (const file of files) {
 
   fs.mkdirSync(path.dirname(dest), { recursive: true });
   const meta = await sharp(file).metadata();
+  // 长边约束。旧写法只给 width，竖图的高度不受限：实测海报被压成 1600×2866，
+  // 单张解码后 ~18 MB 位图，20 张一起进 GPU 纹理就是几百 MB，移动端直接丢层。
   await sharp(file)
-    .resize({ width: Math.min(meta.width ?? MAX_EDGE, MAX_EDGE), withoutEnlargement: true })
+    .resize({ width: MAX_EDGE, height: MAX_EDGE, fit: 'inside', withoutEnlargement: true })
     .webp({ quality: QUALITY, effort: 5 })
     .toFile(dest);
 
+  cache[rel] = stamp;
   after += fs.statSync(dest).size;
   done += 1;
   if (done % 20 === 0) console.log(`  ${done} 张已转换…`);
+}
+
+try {
+  fs.mkdirSync(path.dirname(CACHE_FILE), { recursive: true });
+  fs.writeFileSync(CACHE_FILE, JSON.stringify(cache, null, 2), 'utf8');
+} catch {
+  console.warn('! 指纹缓存写入失败，下次会全量重压');
 }
 
 const mb = (n) => (n / 1048576).toFixed(1);
