@@ -1,0 +1,35 @@
+{
+  "hidden": [
+    "poster-02"
+  ],
+  "titles": {
+    "poster-01": {
+      "zh": "粗野主义·广州塔（改）",
+      "en": "粗野主义·广州塔"
+    }
+  },
+  "order": {
+    "poster": [
+      "poster-02",
+      "poster-01",
+      "poster-03",
+      "poster-04",
+      "poster-05",
+      "poster-06",
+      "poster-07",
+      "poster-08",
+      "poster-09",
+      "poster-10",
+      "poster-11",
+      "poster-12",
+      "poster-13",
+      "poster-14",
+      "poster-15",
+      "poster-16",
+      "poster-17",
+      "poster-18",
+      "poster-19",
+      "poster-20"
+    ]
+  }
+}

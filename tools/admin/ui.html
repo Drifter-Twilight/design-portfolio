@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>作品集录入工具</title>
+<style>
+  :root {
+    --ink: #08060f;
+    --panel: #0c0916;
+    --line: rgba(196, 167, 255, 0.14);
+    --fg: #f2f0f7;
+    --dim: #a09aae;
+    --mute: #6f6880;
+    --accent: #c4a7ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--ink);
+    color: var(--fg);
+    font: 13px/1.6 "Space Grotesk", -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  header {
+    position: sticky; top: 0; z-index: 20;
+    display: flex; align-items: center; gap: 20px;
+    padding: 14px 22px;
+    background: rgba(8, 6, 15, 0.92);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(12px);
+  }
+  header h1 { margin: 0; font-size: 15px; font-weight: 500; letter-spacing: 0.02em; }
+  header .meta { color: var(--mute); font-size: 11px; }
+  header .spacer { flex: 1; }
+  #saveState { font-size: 11px; color: var(--mute); min-width: 62px; text-align: right; }
+  #publish {
+    padding: 8px 18px; border-radius: 999px; border: 1px solid var(--accent);
+    background: transparent; color: var(--accent); font-size: 12px; letter-spacing: 0.08em;
+    cursor: pointer; transition: background 0.18s, color 0.18s;
+  }
+  #publish:hover:not(:disabled) { background: var(--accent); color: var(--ink); }
+  #publish:disabled { opacity: 0.45; cursor: progress; }
+
+  nav {
+    position: fixed; top: 57px; bottom: 0; left: 0; width: 190px;
+    padding: 16px 10px; border-right: 1px solid var(--line);
+    overflow-y: auto; background: var(--panel);
+  }
+  nav button {
+    display: flex; width: 100%; justify-content: space-between; align-items: center;
+    padding: 8px 12px; margin-bottom: 2px; border: 0; border-radius: 8px;
+    background: transparent; color: var(--dim); font: inherit; text-align: left; cursor: pointer;
+  }
+  nav button:hover { background: rgba(196, 167, 255, 0.07); color: var(--fg); }
+  nav button.on { background: rgba(196, 167, 255, 0.13); color: var(--accent); }
+  nav button span { font-size: 11px; color: var(--mute); }
+  nav .hint {
+    margin: 18px 12px 0; padding-top: 14px; border-top: 1px solid var(--line);
+    font-size: 11px; line-height: 1.7; color: var(--mute);
+  }
+
+  main { margin-left: 190px; padding: 22px; }
+
+  .group { display: none; }
+  .group.on { display: block; }
+
+  .grid {
+    display: grid; gap: 14px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+  .card {
+    border: 1px solid var(--line); border-radius: 12px; overflow: hidden;
+    background: var(--panel); transition: border-color 0.18s, opacity 0.18s;
+  }
+  .card:hover { border-color: rgba(196, 167, 255, 0.35); }
+  .card.off { opacity: 0.38; }
+  .card .thumb {
+    position: relative; aspect-ratio: 4 / 3; background: #07060c; overflow: hidden;
+  }
+  .card .thumb img { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .card .badge {
+    position: absolute; top: 6px; left: 8px;
+    font: 10px/1 ui-monospace, monospace; letter-spacing: 0.12em;
+    color: var(--accent); background: rgba(8, 6, 15, 0.72);
+    padding: 3px 6px; border-radius: 4px;
+  }
+  .card .num {
+    position: absolute; top: 6px; right: 8px;
+    font: 10px/1 ui-monospace, monospace; color: var(--dim);
+    background: rgba(8, 6, 15, 0.72); padding: 3px 6px; border-radius: 4px;
+  }
+  .card .fields { padding: 10px 12px 12px; display: grid; gap: 6px; }
+  .card input {
+    width: 100%; padding: 5px 8px; border: 1px solid var(--line); border-radius: 6px;
+    background: #07060c; color: var(--fg); font: inherit; font-size: 12px;
+  }
+  .card input:focus { outline: none; border-color: var(--accent); }
+  .card input[data-k="en"] { color: var(--dim); }
+  .card .acts { display: flex; gap: 6px; margin-top: 2px; }
+  .card .acts button {
+    flex: 1; padding: 5px; border: 1px solid var(--line); border-radius: 6px;
+    background: transparent; color: var(--dim); font: inherit; font-size: 11px; cursor: pointer;
+  }
+  .card .acts button:hover { border-color: var(--accent); color: var(--accent); }
+  .card .acts button.hide-on { color: #e08585; border-color: rgba(224, 133, 133, 0.4); }
+
+  #log {
+    position: fixed; inset: auto 22px 22px auto; width: min(560px, calc(100vw - 44px));
+    max-height: 56vh; display: none; flex-direction: column;
+    border: 1px solid var(--line); border-radius: 12px; background: #0b0812;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6); z-index: 40;
+  }
+  #log.on { display: flex; }
+  #log .head {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    padding: 10px 14px; border-bottom: 1px solid var(--line);
+    font-size: 12px; color: var(--accent);
+  }
+  #log .head button {
+    border: 1px solid var(--line); border-radius: 6px; background: transparent;
+    color: var(--dim); font: inherit; font-size: 11px; padding: 3px 10px; cursor: pointer;
+  }
+  #log pre {
+    margin: 0; padding: 12px 14px; overflow: auto; font: 11px/1.65 ui-monospace, monospace;
+    color: var(--dim); white-space: pre-wrap; word-break: break-all;
+  }
+  #log .ok { color: #7ddb9a; }
+  #log .err { color: #e08585; }
+</style>
+</head>
+<body>
+<header>
+  <h1>作品集录入工具</h1>
+  <span class="meta" id="stat">加载中…</span>
+  <span class="spacer"></span>
+  <span id="saveState"></span>
+  <button id="publish" type="button">发布</button>
+</header>
+
+<nav id="nav"></nav>
+<main id="main"></main>
+
+<div id="log">
+  <div class="head"><span>发布日志</span><button id="logClose" type="button">关闭</button></div>
+  <pre id="logBody"></pre>
+</div>
+
+<script>
+const state = { groups: [], overrides: { hidden: [], titles: {}, order: {} }, active: 'all' };
+let saveTimer = null;
+
+const $ = (s) => document.querySelector(s);
+const api = async (url, opt) => (await fetch(url, opt)).json();
+
+function setSaveState(text) {
+  $('#saveState').textContent = text;
+}
+
+function scheduleSave() {
+  setSaveState('保存中…');
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(async () => {
+    try {
+      const res = await fetch('/api/overrides', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(state.overrides),
+      });
+      if (!res.ok) throw new Error('save failed');
+      setSaveState('已保存');
+      setTimeout(() => setSaveState(''), 1400);
+    } catch {
+      setSaveState('保存失败');
+    }
+  }, 420);
+}
+
+function groupItems() {
+  return state.active === 'all'
+    ? state.groups.flatMap((g) => g.items.map((x) => ({ ...x })))
+    : (state.groups.find((g) => g.key === state.active)?.items ?? []).map((x) => ({ ...x }));
+}
+
+function persistTitles() {
+  // 只记录与素材原名不同的项：否则 51 条全部落盘，以后改了素材标题也压不住
+  const map = {};
+  for (const g of state.groups) {
+    for (const it of g.items) {
+      const o = it.original || { zh: '', en: '' };
+      if (it.title.zh !== o.zh || it.title.en !== o.en) map[it.id] = { ...it.title };
+    }
+  }
+  state.overrides.titles = map;
+}
+
+function persistOrder(group, ids) {
+  state.overrides.order = state.overrides.order || {};
+  state.overrides.order[group] = ids;
+}
+
+function persistHidden() {
+  state.overrides.hidden = state.groups.flatMap((g) => g.items.filter((x) => x.hidden).map((x) => x.id));
+}
+
+function render() {
+  const items = groupItems();
+  const total = state.groups.reduce((n, g) => n + g.items.length, 0);
+  const hiddenN = state.groups.reduce((n, g) => n + g.items.filter((x) => x.hidden).length, 0);
+  $('#stat').textContent = `共 ${total} 项${hiddenN ? ` · 已隐藏 ${hiddenN}` : ''} · 生成于 ${(state.generatedAt || '').slice(0, 16).replace('T', ' ')}`;
+
+  const grid = document.createElement('div');
+  grid.className = 'grid';
+
+  items.forEach((item, index) => {
+    const card = document.createElement('div');
+    card.className = 'card' + (item.hidden ? ' off' : '');
+    card.dataset.id = item.id;
+    card.dataset.group = item.group;
+
+    const thumb = item.thumb ? `/asset/${item.thumb.replace(/^\/+/, '')}` : '';
+    card.innerHTML = `
+      <div class="thumb">
+        <span class="badge">${item.group}</span>
+        <span class="num">${String(index + 1).padStart(2, '0')} · ${item.count} 张</span>
+        ${thumb ? `<img loading="lazy" src="${thumb}" alt="" />` : ''}
+      </div>
+      <div class="fields">
+        <input data-k="zh" value="${escapeAttr(item.title.zh)}" placeholder="中文标题" />
+        <input data-k="en" value="${escapeAttr(item.title.en)}" placeholder="English title" />
+        <div class="acts">
+          <button data-a="up" type="button">↑</button>
+          <button data-a="down" type="button">↓</button>
+          <button data-a="hide" type="button" class="${item.hidden ? 'hide-on' : ''}">${item.hidden ? '显示' : '隐藏'}</button>
+        </div>
+      </div>`;
+
+    card.querySelectorAll('input').forEach((input) => {
+      input.addEventListener('input', () => {
+        item.title[input.dataset.k] = input.value;
+        persistTitles();
+        scheduleSave();
+      });
+    });
+
+    card.querySelectorAll('button[data-a]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const act = btn.dataset.a;
+        if (act === 'hide') {
+          // item 是从 state.groups 浅拷贝出来的，改它不会回写，必须找到源对象
+          const src = state.groups.find((g) => g.key === item.group)?.items.find((x) => x.id === item.id);
+          if (src) src.hidden = !src.hidden;
+          persistHidden();
+          scheduleSave();
+          render();
+          return;
+        }
+        const same = state.groups.find((g) => g.key === item.group);
+        if (!same || same.items.length < 2) return;
+        const list = same.items;
+        const i = list.findIndex((x) => x.id === item.id);
+        const j = act === 'up' ? i - 1 : i + 1;
+        if (j < 0 || j >= list.length) return;
+        [list[i], list[j]] = [list[j], list[i]];
+        persistOrder(item.group, list.map((x) => x.id));
+        scheduleSave();
+        render();
+      });
+    });
+
+    grid.appendChild(card);
+  });
+
+  const main = $('#main');
+  main.replaceChildren(grid);
+  if (!items.length) main.innerHTML = '<p style="color:var(--mute)">这个分类下还没有作品。</p>';
+}
+
+function escapeAttr(v) {
+  return String(v ?? '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+}
+
+function renderNav() {
+  const nav = $('#nav');
+  const total = state.groups.reduce((n, g) => n + g.items.length, 0);
+  const rows = [{ key: 'all', name: '全部作品', n: total }, ...state.groups.map((g) => ({ key: g.key, name: g.name, n: g.items.length }))];
+  nav.innerHTML =
+    rows.map((r) => `<button type="button" data-k="${r.key}" class="${r.key === state.active ? 'on' : ''}">${r.name}<span>${r.n}</span></button>`).join('') +
+    `<div class="hint">改标题、隐藏、上下移动顺序都会自动保存到 <code>src/data/overrides.json</code>。<br/><br/>改完点右上角「发布」，工具会依次跑同步、压图、构建、推送。</div>`;
+
+  nav.querySelectorAll('button').forEach((b) => {
+    b.addEventListener('click', () => {
+      state.active = b.dataset.k;
+      renderNav();
+      render();
+    });
+  });
+}
+
+async function load() {
+  const data = await api('/api/state');
+  state.groups = data.groups || [];
+  state.overrides = data.overrides || { hidden: [], titles: {}, order: {} };
+  state.generatedAt = data.generatedAt;
+  if (data.error) {
+    $('#main').innerHTML = `<p style="color:#e08585">${data.error}</p>`;
+    return;
+  }
+  renderNav();
+  render();
+}
+
+$('#publish').addEventListener('click', async () => {
+  const btn = $('#publish');
+  btn.disabled = true;
+  $('#log').classList.add('on');
+  $('#logBody').textContent = '';
+
+  try {
+    const res = await fetch('/api/publish', { method: 'POST' });
+    const reader = res.body.getReader();
+    const decoder = new TextDecoder();
+    let buffer = '';
+
+    for (;;) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      buffer += decoder.decode(value, { stream: true });
+      const chunks = buffer.split('\n\n');
+      buffer = chunks.pop() || '';
+      for (const chunk of chunks) {
+        const line = chunk.replace(/^data: /, '').trim();
+        if (!line) continue;
+        let msg;
+        try { msg = JSON.parse(line); } catch { continue; }
+        if (msg.text) {
+          const span = document.createElement('span');
+          span.textContent = msg.text + '\n';
+          if (/^✓/.test(msg.text)) span.className = 'ok';
+          if (/^✗/.test(msg.text)) span.className = 'err';
+          $('#logBody').appendChild(span);
+          $('#logBody').scrollTop = $('#logBody').scrollHeight;
+        }
+        if (msg.done) {
+          const span = document.createElement('span');
+          span.className = msg.ok ? 'ok' : 'err';
+          span.textContent = msg.ok ? '\n完成：线上约 1-2 分钟后刷新即可。' : `\n失败于：${msg.stage}\n`;
+          $('#logBody').appendChild(span);
+        }
+      }
+    }
+    await load();
+  } catch (err) {
+    $('#logBody').textContent += `\n请求失败：${err}`;
+  } finally {
+    btn.disabled = false;
+  }
+});
+
+$('#logClose').addEventListener('click', () => $('#log').classList.remove('on'));
+
+load();
+</script>
+</body>
+</html>

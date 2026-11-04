@@ -10,7 +10,8 @@
     "preview": "vite preview --port 4173",
     "typecheck": "tsc --noEmit",
     "sync:assets": "node scripts/sync-assets.mjs",
-    "optimize:images": "node scripts/optimize-images.mjs"
+    "optimize:images": "node scripts/optimize-images.mjs",
+    "admin": "node tools/admin/server.mjs"
   },
   "dependencies": {
     "@fontsource/anton": "^5.3.0",
