@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T08:49:17.375Z",
+  "generatedAt": "2026-11-04T15:39:45.373Z",
   "source": "E:\\作品集",
   "graphic": {
     "vi": [
@@ -863,12 +863,12 @@
             },
             "id": "musk-candle-shot-02",
             "label": {
-              "zh": "场景卖点",
-              "en": "Lifestyle"
+              "zh": "白底图",
+              "en": "White Background"
             },
             "alt": {
-              "zh": "白麝香香氛蜡烛 · 场景卖点",
-              "en": "白麝香香氛蜡烛 · 场景卖点"
+              "zh": "白麝香香氛蜡烛 · 白底图",
+              "en": "白麝香香氛蜡烛 · 白底图"
             }
           },
           {
@@ -882,12 +882,12 @@
             },
             "id": "musk-candle-shot-03",
             "label": {
-              "zh": "细节材质",
-              "en": "Detail & Material"
+              "zh": "套图 03",
+              "en": "Shot 03"
             },
             "alt": {
-              "zh": "白麝香香氛蜡烛 · 细节材质",
-              "en": "白麝香香氛蜡烛 · 细节材质"
+              "zh": "白麝香香氛蜡烛 · 套图 03",
+              "en": "白麝香香氛蜡烛 · 套图 03"
             }
           },
           {
@@ -901,12 +901,12 @@
             },
             "id": "musk-candle-shot-04",
             "label": {
-              "zh": "香调规格",
-              "en": "Scent & Spec"
+              "zh": "套图 04",
+              "en": "Shot 04"
             },
             "alt": {
-              "zh": "白麝香香氛蜡烛 · 香调规格",
-              "en": "白麝香香氛蜡烛 · 香调规格"
+              "zh": "白麝香香氛蜡烛 · 套图 04",
+              "en": "白麝香香氛蜡烛 · 套图 04"
             }
           },
           {
@@ -920,12 +920,12 @@
             },
             "id": "musk-candle-shot-05",
             "label": {
-              "zh": "礼盒信任",
-              "en": "Gift & Trust"
+              "zh": "套图 05",
+              "en": "Shot 05"
             },
             "alt": {
-              "zh": "白麝香香氛蜡烛 · 礼盒信任",
-              "en": "白麝香香氛蜡烛 · 礼盒信任"
+              "zh": "白麝香香氛蜡烛 · 套图 05",
+              "en": "白麝香香氛蜡烛 · 套图 05"
             }
           },
           {
@@ -939,20 +939,20 @@
             },
             "id": "musk-candle-shot-06",
             "label": {
-              "zh": "白底图",
-              "en": "White Background"
+              "zh": "套图 06",
+              "en": "Shot 06"
             },
             "alt": {
-              "zh": "白麝香香氛蜡烛 · 白底图",
-              "en": "白麝香香氛蜡烛 · 白底图"
+              "zh": "白麝香香氛蜡烛 · 套图 06",
+              "en": "白麝香香氛蜡烛 · 套图 06"
             }
           }
         ],
         "details": [
           {
             "src": "/works-opt/commerce/product/musk-candle/detail/musk-candle-detail-01.webp",
-            "w": 1024,
-            "h": 1024,
+            "w": 1536,
+            "h": 1536,
             "card": {
               "src": "/preview/commerce/product/musk-candle/detail/musk-candle-detail-01.webp",
               "w": 900,
@@ -970,8 +970,8 @@
           },
           {
             "src": "/works-opt/commerce/product/musk-candle/detail/musk-candle-detail-02.webp",
-            "w": 1024,
-            "h": 1024,
+            "w": 1536,
+            "h": 1536,
             "card": {
               "src": "/preview/commerce/product/musk-candle/detail/musk-candle-detail-02.webp",
               "w": 900,
@@ -989,8 +989,8 @@
           },
           {
             "src": "/works-opt/commerce/product/musk-candle/detail/musk-candle-detail-03.webp",
-            "w": 1024,
-            "h": 1024,
+            "w": 1536,
+            "h": 1536,
             "card": {
               "src": "/preview/commerce/product/musk-candle/detail/musk-candle-detail-03.webp",
               "w": 900,
@@ -1008,8 +1008,8 @@
           },
           {
             "src": "/works-opt/commerce/product/musk-candle/detail/musk-candle-detail-04.webp",
-            "w": 1024,
-            "h": 1024,
+            "w": 1536,
+            "h": 1536,
             "card": {
               "src": "/preview/commerce/product/musk-candle/detail/musk-candle-detail-04.webp",
               "w": 900,
@@ -1027,8 +1027,8 @@
           },
           {
             "src": "/works-opt/commerce/product/musk-candle/detail/musk-candle-detail-05.webp",
-            "w": 1024,
-            "h": 1024,
+            "w": 1536,
+            "h": 1536,
             "card": {
               "src": "/preview/commerce/product/musk-candle/detail/musk-candle-detail-05.webp",
               "w": 900,
@@ -1046,8 +1046,8 @@
           },
           {
             "src": "/works-opt/commerce/product/musk-candle/detail/musk-candle-detail-06.webp",
-            "w": 1024,
-            "h": 1024,
+            "w": 1536,
+            "h": 1536,
             "card": {
               "src": "/preview/commerce/product/musk-candle/detail/musk-candle-detail-06.webp",
               "w": 900,
@@ -1112,8 +1112,8 @@
           },
           {
             "src": "/works-opt/commerce/product/coffee-gift-set/shots/coffee-gift-set-shot-02.webp",
-            "w": 1600,
-            "h": 1600,
+            "w": 1024,
+            "h": 1024,
             "card": {
               "src": "/preview/commerce/product/coffee-gift-set/shots/coffee-gift-set-shot-02.webp",
               "w": 900,
@@ -1121,18 +1121,18 @@
             },
             "id": "coffee-gift-set-shot-02",
             "label": {
-              "zh": "场景卖点",
-              "en": "Lifestyle"
+              "zh": "白底图",
+              "en": "White Background"
             },
             "alt": {
-              "zh": "晨雾手冲咖啡礼盒 · 场景卖点",
-              "en": "晨雾手冲咖啡礼盒 · 场景卖点"
+              "zh": "晨雾手冲咖啡礼盒 · 白底图",
+              "en": "晨雾手冲咖啡礼盒 · 白底图"
             }
           },
           {
             "src": "/works-opt/commerce/product/coffee-gift-set/shots/coffee-gift-set-shot-03.webp",
-            "w": 1024,
-            "h": 1024,
+            "w": 1600,
+            "h": 1600,
             "card": {
               "src": "/preview/commerce/product/coffee-gift-set/shots/coffee-gift-set-shot-03.webp",
               "w": 900,
@@ -1140,12 +1140,12 @@
             },
             "id": "coffee-gift-set-shot-03",
             "label": {
-              "zh": "细节材质",
-              "en": "Detail & Material"
+              "zh": "套图 03",
+              "en": "Shot 03"
             },
             "alt": {
-              "zh": "晨雾手冲咖啡礼盒 · 细节材质",
-              "en": "晨雾手冲咖啡礼盒 · 细节材质"
+              "zh": "晨雾手冲咖啡礼盒 · 套图 03",
+              "en": "晨雾手冲咖啡礼盒 · 套图 03"
             }
           },
           {
@@ -1159,12 +1159,12 @@
             },
             "id": "coffee-gift-set-shot-04",
             "label": {
-              "zh": "尺寸规格",
-              "en": "Spec & Size"
+              "zh": "套图 04",
+              "en": "Shot 04"
             },
             "alt": {
-              "zh": "晨雾手冲咖啡礼盒 · 尺寸规格",
-              "en": "晨雾手冲咖啡礼盒 · 尺寸规格"
+              "zh": "晨雾手冲咖啡礼盒 · 套图 04",
+              "en": "晨雾手冲咖啡礼盒 · 套图 04"
             }
           },
           {
@@ -1178,12 +1178,12 @@
             },
             "id": "coffee-gift-set-shot-05",
             "label": {
-              "zh": "礼盒信任",
-              "en": "Gift & Trust"
+              "zh": "套图 05",
+              "en": "Shot 05"
             },
             "alt": {
-              "zh": "晨雾手冲咖啡礼盒 · 礼盒信任",
-              "en": "晨雾手冲咖啡礼盒 · 礼盒信任"
+              "zh": "晨雾手冲咖啡礼盒 · 套图 05",
+              "en": "晨雾手冲咖啡礼盒 · 套图 05"
             }
           },
           {
@@ -1197,12 +1197,12 @@
             },
             "id": "coffee-gift-set-shot-06",
             "label": {
-              "zh": "白底图",
-              "en": "White Background"
+              "zh": "套图 06",
+              "en": "Shot 06"
             },
             "alt": {
-              "zh": "晨雾手冲咖啡礼盒 · 白底图",
-              "en": "晨雾手冲咖啡礼盒 · 白底图"
+              "zh": "晨雾手冲咖啡礼盒 · 套图 06",
+              "en": "晨雾手冲咖啡礼盒 · 套图 06"
             }
           }
         ],
@@ -1331,8 +1331,8 @@
         },
         "cover": {
           "src": "/works-opt/commerce/product/magsafe-charger/shots/magsafe-charger-shot-01.webp",
-          "w": 1024,
-          "h": 1024,
+          "w": 1536,
+          "h": 1536,
           "card": {
             "src": "/preview/commerce/product/magsafe-charger/shots/magsafe-charger-shot-01.webp",
             "w": 900,
@@ -1351,8 +1351,8 @@
         "shots": [
           {
             "src": "/works-opt/commerce/product/magsafe-charger/shots/magsafe-charger-shot-01.webp",
-            "w": 1024,
-            "h": 1024,
+            "w": 1536,
+            "h": 1536,
             "card": {
               "src": "/preview/commerce/product/magsafe-charger/shots/magsafe-charger-shot-01.webp",
               "w": 900,
@@ -1370,71 +1370,14 @@
           },
           {
             "src": "/works-opt/commerce/product/magsafe-charger/shots/magsafe-charger-shot-02.webp",
-            "w": 1024,
-            "h": 1024,
+            "w": 1536,
+            "h": 1536,
             "card": {
               "src": "/preview/commerce/product/magsafe-charger/shots/magsafe-charger-shot-02.webp",
               "w": 900,
               "h": 900
             },
             "id": "magsafe-charger-shot-02",
-            "label": {
-              "zh": "场景卖点",
-              "en": "Lifestyle"
-            },
-            "alt": {
-              "zh": "磁吸三合一无线充电站 · 场景卖点",
-              "en": "磁吸三合一无线充电站 · 场景卖点"
-            }
-          },
-          {
-            "src": "/works-opt/commerce/product/magsafe-charger/shots/magsafe-charger-shot-03.webp",
-            "w": 1024,
-            "h": 1024,
-            "card": {
-              "src": "/preview/commerce/product/magsafe-charger/shots/magsafe-charger-shot-03.webp",
-              "w": 900,
-              "h": 900
-            },
-            "id": "magsafe-charger-shot-03",
-            "label": {
-              "zh": "细节材质",
-              "en": "Detail & Material"
-            },
-            "alt": {
-              "zh": "磁吸三合一无线充电站 · 细节材质",
-              "en": "磁吸三合一无线充电站 · 细节材质"
-            }
-          },
-          {
-            "src": "/works-opt/commerce/product/magsafe-charger/shots/magsafe-charger-shot-04.webp",
-            "w": 1024,
-            "h": 1024,
-            "card": {
-              "src": "/preview/commerce/product/magsafe-charger/shots/magsafe-charger-shot-04.webp",
-              "w": 900,
-              "h": 900
-            },
-            "id": "magsafe-charger-shot-04",
-            "label": {
-              "zh": "尺寸规格",
-              "en": "Spec & Size"
-            },
-            "alt": {
-              "zh": "磁吸三合一无线充电站 · 尺寸规格",
-              "en": "磁吸三合一无线充电站 · 尺寸规格"
-            }
-          },
-          {
-            "src": "/works-opt/commerce/product/magsafe-charger/shots/magsafe-charger-shot-05.webp",
-            "w": 1024,
-            "h": 1024,
-            "card": {
-              "src": "/preview/commerce/product/magsafe-charger/shots/magsafe-charger-shot-05.webp",
-              "w": 900,
-              "h": 900
-            },
-            "id": "magsafe-charger-shot-05",
             "label": {
               "zh": "白底图",
               "en": "White Background"
@@ -1443,13 +1386,70 @@
               "zh": "磁吸三合一无线充电站 · 白底图",
               "en": "磁吸三合一无线充电站 · 白底图"
             }
+          },
+          {
+            "src": "/works-opt/commerce/product/magsafe-charger/shots/magsafe-charger-shot-03.webp",
+            "w": 1536,
+            "h": 1536,
+            "card": {
+              "src": "/preview/commerce/product/magsafe-charger/shots/magsafe-charger-shot-03.webp",
+              "w": 900,
+              "h": 900
+            },
+            "id": "magsafe-charger-shot-03",
+            "label": {
+              "zh": "套图 03",
+              "en": "Shot 03"
+            },
+            "alt": {
+              "zh": "磁吸三合一无线充电站 · 套图 03",
+              "en": "磁吸三合一无线充电站 · 套图 03"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/magsafe-charger/shots/magsafe-charger-shot-04.webp",
+            "w": 1536,
+            "h": 1536,
+            "card": {
+              "src": "/preview/commerce/product/magsafe-charger/shots/magsafe-charger-shot-04.webp",
+              "w": 900,
+              "h": 900
+            },
+            "id": "magsafe-charger-shot-04",
+            "label": {
+              "zh": "套图 04",
+              "en": "Shot 04"
+            },
+            "alt": {
+              "zh": "磁吸三合一无线充电站 · 套图 04",
+              "en": "磁吸三合一无线充电站 · 套图 04"
+            }
+          },
+          {
+            "src": "/works-opt/commerce/product/magsafe-charger/shots/magsafe-charger-shot-05.webp",
+            "w": 1536,
+            "h": 1536,
+            "card": {
+              "src": "/preview/commerce/product/magsafe-charger/shots/magsafe-charger-shot-05.webp",
+              "w": 900,
+              "h": 900
+            },
+            "id": "magsafe-charger-shot-05",
+            "label": {
+              "zh": "套图 05",
+              "en": "Shot 05"
+            },
+            "alt": {
+              "zh": "磁吸三合一无线充电站 · 套图 05",
+              "en": "磁吸三合一无线充电站 · 套图 05"
+            }
           }
         ],
         "details": [
           {
             "src": "/works-opt/commerce/product/magsafe-charger/detail/magsafe-charger-detail-01.webp",
-            "w": 1024,
-            "h": 1024,
+            "w": 1536,
+            "h": 1536,
             "card": {
               "src": "/preview/commerce/product/magsafe-charger/detail/magsafe-charger-detail-01.webp",
               "w": 900,
@@ -1467,8 +1467,8 @@
           },
           {
             "src": "/works-opt/commerce/product/magsafe-charger/detail/magsafe-charger-detail-02.webp",
-            "w": 1024,
-            "h": 1024,
+            "w": 1536,
+            "h": 1536,
             "card": {
               "src": "/preview/commerce/product/magsafe-charger/detail/magsafe-charger-detail-02.webp",
               "w": 900,
@@ -1486,8 +1486,8 @@
           },
           {
             "src": "/works-opt/commerce/product/magsafe-charger/detail/magsafe-charger-detail-03.webp",
-            "w": 1024,
-            "h": 1024,
+            "w": 1536,
+            "h": 1536,
             "card": {
               "src": "/preview/commerce/product/magsafe-charger/detail/magsafe-charger-detail-03.webp",
               "w": 900,
@@ -1505,8 +1505,8 @@
           },
           {
             "src": "/works-opt/commerce/product/magsafe-charger/detail/magsafe-charger-detail-04.webp",
-            "w": 1024,
-            "h": 1024,
+            "w": 1536,
+            "h": 1536,
             "card": {
               "src": "/preview/commerce/product/magsafe-charger/detail/magsafe-charger-detail-04.webp",
               "w": 900,
@@ -1524,8 +1524,8 @@
           },
           {
             "src": "/works-opt/commerce/product/magsafe-charger/detail/magsafe-charger-detail-05.webp",
-            "w": 1024,
-            "h": 1024,
+            "w": 1536,
+            "h": 1536,
             "card": {
               "src": "/preview/commerce/product/magsafe-charger/detail/magsafe-charger-detail-05.webp",
               "w": 900,
@@ -1543,8 +1543,8 @@
           },
           {
             "src": "/works-opt/commerce/product/magsafe-charger/detail/magsafe-charger-detail-06.webp",
-            "w": 1024,
-            "h": 1024,
+            "w": 1536,
+            "h": 1536,
             "card": {
               "src": "/preview/commerce/product/magsafe-charger/detail/magsafe-charger-detail-06.webp",
               "w": 900,
@@ -1618,12 +1618,12 @@
             },
             "id": "kiln-tea-set-shot-02",
             "label": {
-              "zh": "场景卖点",
-              "en": "Lifestyle"
+              "zh": "白底图",
+              "en": "White Background"
             },
             "alt": {
-              "zh": "手作窑变陶瓷茶具 · 场景卖点",
-              "en": "手作窑变陶瓷茶具 · 场景卖点"
+              "zh": "手作窑变陶瓷茶具 · 白底图",
+              "en": "手作窑变陶瓷茶具 · 白底图"
             }
           },
           {
@@ -1637,12 +1637,12 @@
             },
             "id": "kiln-tea-set-shot-03",
             "label": {
-              "zh": "细节材质",
-              "en": "Detail & Material"
+              "zh": "套图 03",
+              "en": "Shot 03"
             },
             "alt": {
-              "zh": "手作窑变陶瓷茶具 · 细节材质",
-              "en": "手作窑变陶瓷茶具 · 细节材质"
+              "zh": "手作窑变陶瓷茶具 · 套图 03",
+              "en": "手作窑变陶瓷茶具 · 套图 03"
             }
           },
           {
@@ -1656,12 +1656,12 @@
             },
             "id": "kiln-tea-set-shot-04",
             "label": {
-              "zh": "尺寸规格",
-              "en": "Spec & Size"
+              "zh": "套图 04",
+              "en": "Shot 04"
             },
             "alt": {
-              "zh": "手作窑变陶瓷茶具 · 尺寸规格",
-              "en": "手作窑变陶瓷茶具 · 尺寸规格"
+              "zh": "手作窑变陶瓷茶具 · 套图 04",
+              "en": "手作窑变陶瓷茶具 · 套图 04"
             }
           },
           {
@@ -1675,12 +1675,12 @@
             },
             "id": "kiln-tea-set-shot-05",
             "label": {
-              "zh": "礼盒信任",
-              "en": "Gift & Trust"
+              "zh": "套图 05",
+              "en": "Shot 05"
             },
             "alt": {
-              "zh": "手作窑变陶瓷茶具 · 礼盒信任",
-              "en": "手作窑变陶瓷茶具 · 礼盒信任"
+              "zh": "手作窑变陶瓷茶具 · 套图 05",
+              "en": "手作窑变陶瓷茶具 · 套图 05"
             }
           },
           {
@@ -1694,20 +1694,20 @@
             },
             "id": "kiln-tea-set-shot-06",
             "label": {
-              "zh": "白底图",
-              "en": "White Background"
+              "zh": "套图 06",
+              "en": "Shot 06"
             },
             "alt": {
-              "zh": "手作窑变陶瓷茶具 · 白底图",
-              "en": "手作窑变陶瓷茶具 · 白底图"
+              "zh": "手作窑变陶瓷茶具 · 套图 06",
+              "en": "手作窑变陶瓷茶具 · 套图 06"
             }
           }
         ],
         "details": [
           {
             "src": "/works-opt/commerce/product/kiln-tea-set/detail/kiln-tea-set-detail-01.webp",
-            "w": 1024,
-            "h": 1024,
+            "w": 1536,
+            "h": 1536,
             "card": {
               "src": "/preview/commerce/product/kiln-tea-set/detail/kiln-tea-set-detail-01.webp",
               "w": 900,
@@ -1725,8 +1725,8 @@
           },
           {
             "src": "/works-opt/commerce/product/kiln-tea-set/detail/kiln-tea-set-detail-02.webp",
-            "w": 1024,
-            "h": 1024,
+            "w": 1536,
+            "h": 1536,
             "card": {
               "src": "/preview/commerce/product/kiln-tea-set/detail/kiln-tea-set-detail-02.webp",
               "w": 900,
@@ -1744,8 +1744,8 @@
           },
           {
             "src": "/works-opt/commerce/product/kiln-tea-set/detail/kiln-tea-set-detail-03.webp",
-            "w": 1024,
-            "h": 1024,
+            "w": 1536,
+            "h": 1536,
             "card": {
               "src": "/preview/commerce/product/kiln-tea-set/detail/kiln-tea-set-detail-03.webp",
               "w": 900,
@@ -1763,8 +1763,8 @@
           },
           {
             "src": "/works-opt/commerce/product/kiln-tea-set/detail/kiln-tea-set-detail-04.webp",
-            "w": 1024,
-            "h": 1024,
+            "w": 1536,
+            "h": 1536,
             "card": {
               "src": "/preview/commerce/product/kiln-tea-set/detail/kiln-tea-set-detail-04.webp",
               "w": 900,
@@ -1782,8 +1782,8 @@
           },
           {
             "src": "/works-opt/commerce/product/kiln-tea-set/detail/kiln-tea-set-detail-05.webp",
-            "w": 1024,
-            "h": 1024,
+            "w": 1536,
+            "h": 1536,
             "card": {
               "src": "/preview/commerce/product/kiln-tea-set/detail/kiln-tea-set-detail-05.webp",
               "w": 900,
@@ -1801,8 +1801,8 @@
           },
           {
             "src": "/works-opt/commerce/product/kiln-tea-set/detail/kiln-tea-set-detail-06.webp",
-            "w": 1024,
-            "h": 1024,
+            "w": 1536,
+            "h": 1536,
             "card": {
               "src": "/preview/commerce/product/kiln-tea-set/detail/kiln-tea-set-detail-06.webp",
               "w": 900,
@@ -1828,8 +1828,8 @@
         },
         "cover": {
           "src": "/works-opt/commerce/product/cashmere-throw/shots/cashmere-throw-shot-01.webp",
-          "w": 1024,
-          "h": 1024,
+          "w": 1536,
+          "h": 1536,
           "card": {
             "src": "/preview/commerce/product/cashmere-throw/shots/cashmere-throw-shot-01.webp",
             "w": 900,
@@ -1848,8 +1848,8 @@
         "shots": [
           {
             "src": "/works-opt/commerce/product/cashmere-throw/shots/cashmere-throw-shot-01.webp",
-            "w": 1024,
-            "h": 1024,
+            "w": 1536,
+            "h": 1536,
             "card": {
               "src": "/preview/commerce/product/cashmere-throw/shots/cashmere-throw-shot-01.webp",
               "w": 900,
@@ -1867,8 +1867,8 @@
           },
           {
             "src": "/works-opt/commerce/product/cashmere-throw/shots/cashmere-throw-shot-02.webp",
-            "w": 1024,
-            "h": 1024,
+            "w": 1536,
+            "h": 1536,
             "card": {
               "src": "/preview/commerce/product/cashmere-throw/shots/cashmere-throw-shot-02.webp",
               "w": 900,
@@ -1886,8 +1886,8 @@
           },
           {
             "src": "/works-opt/commerce/product/cashmere-throw/shots/cashmere-throw-shot-03.webp",
-            "w": 1024,
-            "h": 1024,
+            "w": 1536,
+            "h": 1536,
             "card": {
               "src": "/preview/commerce/product/cashmere-throw/shots/cashmere-throw-shot-03.webp",
               "w": 900,
@@ -1905,8 +1905,8 @@
           },
           {
             "src": "/works-opt/commerce/product/cashmere-throw/shots/cashmere-throw-shot-04.webp",
-            "w": 1024,
-            "h": 1024,
+            "w": 1536,
+            "h": 1536,
             "card": {
               "src": "/preview/commerce/product/cashmere-throw/shots/cashmere-throw-shot-04.webp",
               "w": 900,
@@ -1924,8 +1924,8 @@
           },
           {
             "src": "/works-opt/commerce/product/cashmere-throw/shots/cashmere-throw-shot-05.webp",
-            "w": 1024,
-            "h": 1024,
+            "w": 1536,
+            "h": 1536,
             "card": {
               "src": "/preview/commerce/product/cashmere-throw/shots/cashmere-throw-shot-05.webp",
               "w": 900,
@@ -1945,8 +1945,8 @@
         "details": [
           {
             "src": "/works-opt/commerce/product/cashmere-throw/detail/cashmere-throw-detail-01.webp",
-            "w": 1024,
-            "h": 1024,
+            "w": 1536,
+            "h": 1536,
             "card": {
               "src": "/preview/commerce/product/cashmere-throw/detail/cashmere-throw-detail-01.webp",
               "w": 900,
@@ -1964,8 +1964,8 @@
           },
           {
             "src": "/works-opt/commerce/product/cashmere-throw/detail/cashmere-throw-detail-02.webp",
-            "w": 1024,
-            "h": 1024,
+            "w": 1536,
+            "h": 1536,
             "card": {
               "src": "/preview/commerce/product/cashmere-throw/detail/cashmere-throw-detail-02.webp",
               "w": 900,
@@ -1983,8 +1983,8 @@
           },
           {
             "src": "/works-opt/commerce/product/cashmere-throw/detail/cashmere-throw-detail-03.webp",
-            "w": 1024,
-            "h": 1024,
+            "w": 1536,
+            "h": 1536,
             "card": {
               "src": "/preview/commerce/product/cashmere-throw/detail/cashmere-throw-detail-03.webp",
               "w": 900,
@@ -2002,8 +2002,8 @@
           },
           {
             "src": "/works-opt/commerce/product/cashmere-throw/detail/cashmere-throw-detail-04.webp",
-            "w": 1024,
-            "h": 1024,
+            "w": 1536,
+            "h": 1536,
             "card": {
               "src": "/preview/commerce/product/cashmere-throw/detail/cashmere-throw-detail-04.webp",
               "w": 900,
@@ -2021,8 +2021,8 @@
           },
           {
             "src": "/works-opt/commerce/product/cashmere-throw/detail/cashmere-throw-detail-05.webp",
-            "w": 1024,
-            "h": 1024,
+            "w": 1536,
+            "h": 1536,
             "card": {
               "src": "/preview/commerce/product/cashmere-throw/detail/cashmere-throw-detail-05.webp",
               "w": 900,
@@ -2040,8 +2040,8 @@
           },
           {
             "src": "/works-opt/commerce/product/cashmere-throw/detail/cashmere-throw-detail-06.webp",
-            "w": 1024,
-            "h": 1024,
+            "w": 1536,
+            "h": 1536,
             "card": {
               "src": "/preview/commerce/product/cashmere-throw/detail/cashmere-throw-detail-06.webp",
               "w": 900,
