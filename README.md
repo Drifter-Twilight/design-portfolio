@@ -328,8 +328,14 @@ npm run optimize:images -- --force --apply   # 全量重压并切换清单
 |---|---|
 | `?perf=lite` / `?perf=full` | 强制分档（便于验收与分享低配链接） |
 | `prefers-reduced-motion: reduce` | lite |
-| `connection.saveData` / 2G | lite |
-| `deviceMemory <= 4` 或 `hardwareConcurrency <= 4` | lite |
+| `connection.saveData` | lite |
+| 拿不到 WebGL2 / 跑在软件渲染（SwiftShader、llvmpipe）| lite |
+| `deviceMemory <= 1` 或 `hardwareConcurrency <= 1` | lite |
+
+> 判定收口在 `src/lib/capability.ts`，主判据是「这台设备到底能不能画」。
+> **刻意不按核心数判**：Android WebView 常低报（实测 vivo 报 2 核，实际 8 核 + Mali-G1-Ultra），
+> 按核心数判会把整批中端机误杀，动效全没。
+> 也不按网络状态判：动效是本地 GPU 计算，不吃流量。`?diag=1` 可看当前判定与理由。
 
 `lite` 下的降级清单：
 
@@ -348,6 +354,21 @@ npm run optimize:images -- --force --apply   # 全量重压并切换清单
 - 懒加载图片不断改写文档高度，`useScrollTriggerRefresh()` 在 load / 字体就绪 / 若干延迟点重算触发点；
 - 构建产物按 gsap / motion / i18n / lenis / 各 WebGL 组件分包，首屏 JS（gzip）约 132 KB 主包 + 按需块；
 - 字体只取 latin 子集，中文走系统黑体栈，避免数 MB 的 webfont。
+
+### 合成层约束（闪屏三次复发后定下的红线）
+
+页面以前在手机上有过三轮「整片闪烁」，成因都是**合成层被反复重建**，不是帧率问题。
+新增动效前先对照这几条：
+
+1. 滚动循环里**只写 `transform` / `opacity`**。`filter`（哪怕只是 `brightness`）、`zIndex`、
+   `clip-path`、`mask`、`background` 逐帧写都会重建合成层。
+2. `[data-depth-bg]` **不能同时是 sticky 元素**——transform 会改 sticky 的包含块，
+   粘性位置每帧重算。结构固定为「sticky 外壳 + 内部 `absolute inset-0` 视差层」。
+3. `preserve-3d` 舞台里不放 `backdrop-filter`（会把父级强行 flatten 并每帧重采样背景）。
+4. 全屏层不用 `mix-blend-mode`（整层与下方绑成合成组，滚动时每帧重新混合）。
+5. 移动端（≤900px）关掉整屏 `mask-image`、噪点层、顶栏毛玻璃，`will-change` 交还浏览器；
+   区块级视差只在非移动端跑。
+6. 3D 卡组把视野外的卡片 `visibility: hidden`，减少同时存活的图层数。
 
 ---
 
