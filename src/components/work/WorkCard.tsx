@@ -70,9 +70,10 @@ export function WorkCard({
 
       <div className="relative">
         <LazyImage
-          src={image.src}
-          width={image.w}
-          height={image.h}
+          /* 网格卡片很小，优先用 900px 的卡片副本；大图留给 Lightbox */
+          src={image.card?.src ?? image.src}
+          width={image.card?.w ?? image.w}
+          height={image.card?.h ?? image.h}
           alt={alt}
           ratio={ratio}
           priority={priority}

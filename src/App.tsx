@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { Suspense, lazy, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Header } from '@/components/layout/Header';
 import { BackToTop } from '@/components/layout/BackToTop';
@@ -14,12 +14,19 @@ import { usePerfTier } from '@/hooks/usePerfTier';
 import { useScrollTriggerRefresh } from '@/hooks/useScrollSync';
 import { useIsMobile, usePrefersReducedMotion } from '@/hooks/useMediaQuery';
 
+/** 只在 ?diag=1 时加载，正常访问不为它付任何体积 */
+const Diagnostics = lazy(() => import('@/components/dev/Diagnostics').then((m) => ({ default: m.Diagnostics })));
+
 export default function App() {
   const { t } = useTranslation();
   const reduce = usePrefersReducedMotion();
   const isMobile = useIsMobile();
   const tier = usePerfTier();
   const motionOk = !reduce && tier === 'full';
+  const showDiag = useMemo(
+    () => typeof window !== 'undefined' && new URLSearchParams(window.location.search).has('diag'),
+    [],
+  );
 
   // 减少动态 / 低配设备：关掉平滑滚动，交给原生滚动（更省，也更跟手）
   useSmoothScroll(motionOk);
@@ -57,6 +64,12 @@ export default function App() {
 
       <SiteFooter />
       <BackToTop />
+
+      {showDiag && (
+        <Suspense fallback={null}>
+          <Diagnostics />
+        </Suspense>
+      )}
     </LightboxProvider>
   );
 }

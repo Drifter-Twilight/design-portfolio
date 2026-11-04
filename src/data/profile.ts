@@ -11,8 +11,8 @@ export const profile = {
   nameZh: '何宥纬',
   /** 英文名 */
   nameEn: 'Witt He',
-  /** 个人照片：放在 public/profile 下 */
-  photo: asset('/profile/portrait.jpg'),
+  /** 个人照片：放在 public/profile 下（webp 版 151KB，原 jpg 3.3MB 留作备份） */
+  photo: asset('/profile/portrait.webp'),
   /** 微信 */
   wechat: 'w13420506578',
   /** 职业抬头 */

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T18:21:17.419Z",
+  "generatedAt": "2026-11-04T07:08:00.317Z",
   "source": "E:\\作品集",
   "graphic": {
     "vi": [
@@ -817,6 +817,11 @@
           "src": "/works-opt/commerce/product/musk-candle/shots/musk-candle-shot-01.webp",
           "w": 1024,
           "h": 1024,
+          "card": {
+            "src": "/preview/commerce/product/musk-candle/shots/musk-candle-shot-01.webp",
+            "w": 900,
+            "h": 900
+          },
           "id": "musk-candle-shot-01",
           "label": {
             "zh": "首图",
@@ -832,6 +837,11 @@
             "src": "/works-opt/commerce/product/musk-candle/shots/musk-candle-shot-01.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/musk-candle/shots/musk-candle-shot-01.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "musk-candle-shot-01",
             "label": {
               "zh": "首图",
@@ -846,6 +856,11 @@
             "src": "/works-opt/commerce/product/musk-candle/shots/musk-candle-shot-02.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/musk-candle/shots/musk-candle-shot-02.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "musk-candle-shot-02",
             "label": {
               "zh": "场景卖点",
@@ -860,6 +875,11 @@
             "src": "/works-opt/commerce/product/musk-candle/shots/musk-candle-shot-03.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/musk-candle/shots/musk-candle-shot-03.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "musk-candle-shot-03",
             "label": {
               "zh": "细节材质",
@@ -874,6 +894,11 @@
             "src": "/works-opt/commerce/product/musk-candle/shots/musk-candle-shot-04.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/musk-candle/shots/musk-candle-shot-04.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "musk-candle-shot-04",
             "label": {
               "zh": "香调规格",
@@ -888,6 +913,11 @@
             "src": "/works-opt/commerce/product/musk-candle/shots/musk-candle-shot-05.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/musk-candle/shots/musk-candle-shot-05.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "musk-candle-shot-05",
             "label": {
               "zh": "礼盒信任",
@@ -902,6 +932,11 @@
             "src": "/works-opt/commerce/product/musk-candle/shots/musk-candle-shot-06.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/musk-candle/shots/musk-candle-shot-06.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "musk-candle-shot-06",
             "label": {
               "zh": "白底图",
@@ -918,6 +953,11 @@
             "src": "/works-opt/commerce/product/musk-candle/detail/musk-candle-detail-01.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/musk-candle/detail/musk-candle-detail-01.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "musk-candle-detail-01",
             "label": {
               "zh": "详情页 01",
@@ -932,6 +972,11 @@
             "src": "/works-opt/commerce/product/musk-candle/detail/musk-candle-detail-02.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/musk-candle/detail/musk-candle-detail-02.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "musk-candle-detail-02",
             "label": {
               "zh": "详情页 02",
@@ -946,6 +991,11 @@
             "src": "/works-opt/commerce/product/musk-candle/detail/musk-candle-detail-03.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/musk-candle/detail/musk-candle-detail-03.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "musk-candle-detail-03",
             "label": {
               "zh": "详情页 03",
@@ -960,6 +1010,11 @@
             "src": "/works-opt/commerce/product/musk-candle/detail/musk-candle-detail-04.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/musk-candle/detail/musk-candle-detail-04.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "musk-candle-detail-04",
             "label": {
               "zh": "详情页 04",
@@ -974,6 +1029,11 @@
             "src": "/works-opt/commerce/product/musk-candle/detail/musk-candle-detail-05.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/musk-candle/detail/musk-candle-detail-05.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "musk-candle-detail-05",
             "label": {
               "zh": "详情页 05",
@@ -988,6 +1048,11 @@
             "src": "/works-opt/commerce/product/musk-candle/detail/musk-candle-detail-06.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/musk-candle/detail/musk-candle-detail-06.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "musk-candle-detail-06",
             "label": {
               "zh": "详情页 06",
@@ -1010,6 +1075,11 @@
           "src": "/works-opt/commerce/product/coffee-gift-set/shots/coffee-gift-set-shot-01.webp",
           "w": 1600,
           "h": 1600,
+          "card": {
+            "src": "/preview/commerce/product/coffee-gift-set/shots/coffee-gift-set-shot-01.webp",
+            "w": 900,
+            "h": 900
+          },
           "id": "coffee-gift-set-shot-01",
           "label": {
             "zh": "首图",
@@ -1025,6 +1095,11 @@
             "src": "/works-opt/commerce/product/coffee-gift-set/shots/coffee-gift-set-shot-01.webp",
             "w": 1600,
             "h": 1600,
+            "card": {
+              "src": "/preview/commerce/product/coffee-gift-set/shots/coffee-gift-set-shot-01.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "coffee-gift-set-shot-01",
             "label": {
               "zh": "首图",
@@ -1039,6 +1114,11 @@
             "src": "/works-opt/commerce/product/coffee-gift-set/shots/coffee-gift-set-shot-02.webp",
             "w": 1600,
             "h": 1600,
+            "card": {
+              "src": "/preview/commerce/product/coffee-gift-set/shots/coffee-gift-set-shot-02.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "coffee-gift-set-shot-02",
             "label": {
               "zh": "场景卖点",
@@ -1053,6 +1133,11 @@
             "src": "/works-opt/commerce/product/coffee-gift-set/shots/coffee-gift-set-shot-03.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/coffee-gift-set/shots/coffee-gift-set-shot-03.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "coffee-gift-set-shot-03",
             "label": {
               "zh": "细节材质",
@@ -1067,6 +1152,11 @@
             "src": "/works-opt/commerce/product/coffee-gift-set/shots/coffee-gift-set-shot-04.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/coffee-gift-set/shots/coffee-gift-set-shot-04.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "coffee-gift-set-shot-04",
             "label": {
               "zh": "尺寸规格",
@@ -1081,6 +1171,11 @@
             "src": "/works-opt/commerce/product/coffee-gift-set/shots/coffee-gift-set-shot-05.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/coffee-gift-set/shots/coffee-gift-set-shot-05.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "coffee-gift-set-shot-05",
             "label": {
               "zh": "礼盒信任",
@@ -1095,6 +1190,11 @@
             "src": "/works-opt/commerce/product/coffee-gift-set/shots/coffee-gift-set-shot-06.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/coffee-gift-set/shots/coffee-gift-set-shot-06.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "coffee-gift-set-shot-06",
             "label": {
               "zh": "白底图",
@@ -1111,6 +1211,11 @@
             "src": "/works-opt/commerce/product/coffee-gift-set/detail/coffee-gift-set-detail-01.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/coffee-gift-set/detail/coffee-gift-set-detail-01.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "coffee-gift-set-detail-01",
             "label": {
               "zh": "详情页 01",
@@ -1125,6 +1230,11 @@
             "src": "/works-opt/commerce/product/coffee-gift-set/detail/coffee-gift-set-detail-02.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/coffee-gift-set/detail/coffee-gift-set-detail-02.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "coffee-gift-set-detail-02",
             "label": {
               "zh": "详情页 02",
@@ -1139,6 +1249,11 @@
             "src": "/works-opt/commerce/product/coffee-gift-set/detail/coffee-gift-set-detail-03.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/coffee-gift-set/detail/coffee-gift-set-detail-03.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "coffee-gift-set-detail-03",
             "label": {
               "zh": "详情页 03",
@@ -1153,6 +1268,11 @@
             "src": "/works-opt/commerce/product/coffee-gift-set/detail/coffee-gift-set-detail-04.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/coffee-gift-set/detail/coffee-gift-set-detail-04.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "coffee-gift-set-detail-04",
             "label": {
               "zh": "详情页 04",
@@ -1167,6 +1287,11 @@
             "src": "/works-opt/commerce/product/coffee-gift-set/detail/coffee-gift-set-detail-05.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/coffee-gift-set/detail/coffee-gift-set-detail-05.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "coffee-gift-set-detail-05",
             "label": {
               "zh": "详情页 05",
@@ -1181,6 +1306,11 @@
             "src": "/works-opt/commerce/product/coffee-gift-set/detail/coffee-gift-set-detail-06.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/coffee-gift-set/detail/coffee-gift-set-detail-06.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "coffee-gift-set-detail-06",
             "label": {
               "zh": "详情页 06",
@@ -1203,6 +1333,11 @@
           "src": "/works-opt/commerce/product/magsafe-charger/shots/magsafe-charger-shot-01.webp",
           "w": 1024,
           "h": 1024,
+          "card": {
+            "src": "/preview/commerce/product/magsafe-charger/shots/magsafe-charger-shot-01.webp",
+            "w": 900,
+            "h": 900
+          },
           "id": "magsafe-charger-shot-01",
           "label": {
             "zh": "首图",
@@ -1218,6 +1353,11 @@
             "src": "/works-opt/commerce/product/magsafe-charger/shots/magsafe-charger-shot-01.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/magsafe-charger/shots/magsafe-charger-shot-01.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "magsafe-charger-shot-01",
             "label": {
               "zh": "首图",
@@ -1232,6 +1372,11 @@
             "src": "/works-opt/commerce/product/magsafe-charger/shots/magsafe-charger-shot-02.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/magsafe-charger/shots/magsafe-charger-shot-02.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "magsafe-charger-shot-02",
             "label": {
               "zh": "场景卖点",
@@ -1246,6 +1391,11 @@
             "src": "/works-opt/commerce/product/magsafe-charger/shots/magsafe-charger-shot-03.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/magsafe-charger/shots/magsafe-charger-shot-03.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "magsafe-charger-shot-03",
             "label": {
               "zh": "细节材质",
@@ -1260,6 +1410,11 @@
             "src": "/works-opt/commerce/product/magsafe-charger/shots/magsafe-charger-shot-04.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/magsafe-charger/shots/magsafe-charger-shot-04.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "magsafe-charger-shot-04",
             "label": {
               "zh": "尺寸规格",
@@ -1274,6 +1429,11 @@
             "src": "/works-opt/commerce/product/magsafe-charger/shots/magsafe-charger-shot-05.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/magsafe-charger/shots/magsafe-charger-shot-05.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "magsafe-charger-shot-05",
             "label": {
               "zh": "白底图",
@@ -1290,6 +1450,11 @@
             "src": "/works-opt/commerce/product/magsafe-charger/detail/magsafe-charger-detail-01.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/magsafe-charger/detail/magsafe-charger-detail-01.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "magsafe-charger-detail-01",
             "label": {
               "zh": "详情页 01",
@@ -1304,6 +1469,11 @@
             "src": "/works-opt/commerce/product/magsafe-charger/detail/magsafe-charger-detail-02.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/magsafe-charger/detail/magsafe-charger-detail-02.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "magsafe-charger-detail-02",
             "label": {
               "zh": "详情页 02",
@@ -1318,6 +1488,11 @@
             "src": "/works-opt/commerce/product/magsafe-charger/detail/magsafe-charger-detail-03.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/magsafe-charger/detail/magsafe-charger-detail-03.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "magsafe-charger-detail-03",
             "label": {
               "zh": "详情页 03",
@@ -1332,6 +1507,11 @@
             "src": "/works-opt/commerce/product/magsafe-charger/detail/magsafe-charger-detail-04.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/magsafe-charger/detail/magsafe-charger-detail-04.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "magsafe-charger-detail-04",
             "label": {
               "zh": "详情页 04",
@@ -1346,6 +1526,11 @@
             "src": "/works-opt/commerce/product/magsafe-charger/detail/magsafe-charger-detail-05.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/magsafe-charger/detail/magsafe-charger-detail-05.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "magsafe-charger-detail-05",
             "label": {
               "zh": "详情页 05",
@@ -1360,6 +1545,11 @@
             "src": "/works-opt/commerce/product/magsafe-charger/detail/magsafe-charger-detail-06.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/magsafe-charger/detail/magsafe-charger-detail-06.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "magsafe-charger-detail-06",
             "label": {
               "zh": "详情页 06",
@@ -1382,6 +1572,11 @@
           "src": "/works-opt/commerce/product/kiln-tea-set/shots/kiln-tea-set-shot-01.webp",
           "w": 1024,
           "h": 1024,
+          "card": {
+            "src": "/preview/commerce/product/kiln-tea-set/shots/kiln-tea-set-shot-01.webp",
+            "w": 900,
+            "h": 900
+          },
           "id": "kiln-tea-set-shot-01",
           "label": {
             "zh": "首图",
@@ -1397,6 +1592,11 @@
             "src": "/works-opt/commerce/product/kiln-tea-set/shots/kiln-tea-set-shot-01.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/kiln-tea-set/shots/kiln-tea-set-shot-01.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "kiln-tea-set-shot-01",
             "label": {
               "zh": "首图",
@@ -1411,6 +1611,11 @@
             "src": "/works-opt/commerce/product/kiln-tea-set/shots/kiln-tea-set-shot-02.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/kiln-tea-set/shots/kiln-tea-set-shot-02.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "kiln-tea-set-shot-02",
             "label": {
               "zh": "场景卖点",
@@ -1425,6 +1630,11 @@
             "src": "/works-opt/commerce/product/kiln-tea-set/shots/kiln-tea-set-shot-03.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/kiln-tea-set/shots/kiln-tea-set-shot-03.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "kiln-tea-set-shot-03",
             "label": {
               "zh": "细节材质",
@@ -1439,6 +1649,11 @@
             "src": "/works-opt/commerce/product/kiln-tea-set/shots/kiln-tea-set-shot-04.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/kiln-tea-set/shots/kiln-tea-set-shot-04.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "kiln-tea-set-shot-04",
             "label": {
               "zh": "尺寸规格",
@@ -1453,6 +1668,11 @@
             "src": "/works-opt/commerce/product/kiln-tea-set/shots/kiln-tea-set-shot-05.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/kiln-tea-set/shots/kiln-tea-set-shot-05.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "kiln-tea-set-shot-05",
             "label": {
               "zh": "礼盒信任",
@@ -1467,6 +1687,11 @@
             "src": "/works-opt/commerce/product/kiln-tea-set/shots/kiln-tea-set-shot-06.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/kiln-tea-set/shots/kiln-tea-set-shot-06.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "kiln-tea-set-shot-06",
             "label": {
               "zh": "白底图",
@@ -1483,6 +1708,11 @@
             "src": "/works-opt/commerce/product/kiln-tea-set/detail/kiln-tea-set-detail-01.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/kiln-tea-set/detail/kiln-tea-set-detail-01.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "kiln-tea-set-detail-01",
             "label": {
               "zh": "详情页 01",
@@ -1497,6 +1727,11 @@
             "src": "/works-opt/commerce/product/kiln-tea-set/detail/kiln-tea-set-detail-02.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/kiln-tea-set/detail/kiln-tea-set-detail-02.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "kiln-tea-set-detail-02",
             "label": {
               "zh": "详情页 02",
@@ -1511,6 +1746,11 @@
             "src": "/works-opt/commerce/product/kiln-tea-set/detail/kiln-tea-set-detail-03.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/kiln-tea-set/detail/kiln-tea-set-detail-03.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "kiln-tea-set-detail-03",
             "label": {
               "zh": "详情页 03",
@@ -1525,6 +1765,11 @@
             "src": "/works-opt/commerce/product/kiln-tea-set/detail/kiln-tea-set-detail-04.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/kiln-tea-set/detail/kiln-tea-set-detail-04.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "kiln-tea-set-detail-04",
             "label": {
               "zh": "详情页 04",
@@ -1539,6 +1784,11 @@
             "src": "/works-opt/commerce/product/kiln-tea-set/detail/kiln-tea-set-detail-05.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/kiln-tea-set/detail/kiln-tea-set-detail-05.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "kiln-tea-set-detail-05",
             "label": {
               "zh": "详情页 05",
@@ -1553,6 +1803,11 @@
             "src": "/works-opt/commerce/product/kiln-tea-set/detail/kiln-tea-set-detail-06.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/kiln-tea-set/detail/kiln-tea-set-detail-06.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "kiln-tea-set-detail-06",
             "label": {
               "zh": "详情页 06",
@@ -1575,6 +1830,11 @@
           "src": "/works-opt/commerce/product/cashmere-throw/shots/cashmere-throw-shot-01.webp",
           "w": 1024,
           "h": 1024,
+          "card": {
+            "src": "/preview/commerce/product/cashmere-throw/shots/cashmere-throw-shot-01.webp",
+            "w": 900,
+            "h": 900
+          },
           "id": "cashmere-throw-shot-01",
           "label": {
             "zh": "首图",
@@ -1590,6 +1850,11 @@
             "src": "/works-opt/commerce/product/cashmere-throw/shots/cashmere-throw-shot-01.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/cashmere-throw/shots/cashmere-throw-shot-01.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "cashmere-throw-shot-01",
             "label": {
               "zh": "首图",
@@ -1604,6 +1869,11 @@
             "src": "/works-opt/commerce/product/cashmere-throw/shots/cashmere-throw-shot-02.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/cashmere-throw/shots/cashmere-throw-shot-02.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "cashmere-throw-shot-02",
             "label": {
               "zh": "套图 02",
@@ -1618,6 +1888,11 @@
             "src": "/works-opt/commerce/product/cashmere-throw/shots/cashmere-throw-shot-03.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/cashmere-throw/shots/cashmere-throw-shot-03.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "cashmere-throw-shot-03",
             "label": {
               "zh": "套图 03",
@@ -1632,6 +1907,11 @@
             "src": "/works-opt/commerce/product/cashmere-throw/shots/cashmere-throw-shot-04.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/cashmere-throw/shots/cashmere-throw-shot-04.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "cashmere-throw-shot-04",
             "label": {
               "zh": "套图 04",
@@ -1646,6 +1926,11 @@
             "src": "/works-opt/commerce/product/cashmere-throw/shots/cashmere-throw-shot-05.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/cashmere-throw/shots/cashmere-throw-shot-05.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "cashmere-throw-shot-05",
             "label": {
               "zh": "套图 05",
@@ -1662,6 +1947,11 @@
             "src": "/works-opt/commerce/product/cashmere-throw/detail/cashmere-throw-detail-01.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/cashmere-throw/detail/cashmere-throw-detail-01.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "cashmere-throw-detail-01",
             "label": {
               "zh": "详情页 01",
@@ -1676,6 +1966,11 @@
             "src": "/works-opt/commerce/product/cashmere-throw/detail/cashmere-throw-detail-02.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/cashmere-throw/detail/cashmere-throw-detail-02.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "cashmere-throw-detail-02",
             "label": {
               "zh": "详情页 02",
@@ -1690,6 +1985,11 @@
             "src": "/works-opt/commerce/product/cashmere-throw/detail/cashmere-throw-detail-03.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/cashmere-throw/detail/cashmere-throw-detail-03.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "cashmere-throw-detail-03",
             "label": {
               "zh": "详情页 03",
@@ -1704,6 +2004,11 @@
             "src": "/works-opt/commerce/product/cashmere-throw/detail/cashmere-throw-detail-04.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/cashmere-throw/detail/cashmere-throw-detail-04.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "cashmere-throw-detail-04",
             "label": {
               "zh": "详情页 04",
@@ -1718,6 +2023,11 @@
             "src": "/works-opt/commerce/product/cashmere-throw/detail/cashmere-throw-detail-05.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/cashmere-throw/detail/cashmere-throw-detail-05.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "cashmere-throw-detail-05",
             "label": {
               "zh": "详情页 05",
@@ -1732,6 +2042,11 @@
             "src": "/works-opt/commerce/product/cashmere-throw/detail/cashmere-throw-detail-06.webp",
             "w": 1024,
             "h": 1024,
+            "card": {
+              "src": "/preview/commerce/product/cashmere-throw/detail/cashmere-throw-detail-06.webp",
+              "w": 900,
+              "h": 900
+            },
             "id": "cashmere-throw-detail-06",
             "label": {
               "zh": "详情页 06",

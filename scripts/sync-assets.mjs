@@ -399,21 +399,31 @@ for (const setName of fs.readdirSync(productRoot).sort(naturalCompare)) {
     return ra - rb;
   });
 
-  const shots = shotEntries.map(({ file, label: matched }, i) => {
-    const n = pad(i + 1);
-    const label = matched ?? { zh: `套图 ${n}`, en: `Shot ${n}` };
-    const out = emit(file, path.join('commerce', 'product', meta.slug, 'shots', `${meta.slug}-shot-${n}${path.extname(file).toLowerCase()}`));
-    return { ...out, id: `${meta.slug}-shot-${n}`, label, alt: alt([meta.zh, label.zh]) };
-  });
+  const shots = await Promise.all(
+    shotEntries.map(async ({ file, label: matched }, i) => {
+      const n = pad(i + 1);
+      const label = matched ?? { zh: `套图 ${n}`, en: `Shot ${n}` };
+      const rel = path.join('commerce', 'product', meta.slug, 'shots', `${meta.slug}-shot-${n}${path.extname(file).toLowerCase()}`);
+      const out = emit(file, rel);
+      // 网格里卡片只有 150-200px 宽，不该直接吃 1600px 原图：给一份 900px 的卡片副本，
+      // 大图只在 Lightbox 里用。这条把网格流量降到约 1/3。
+      const card = await emitCard(file, rel.replace(/\.(png|jpe?g|webp)$/i, '.webp'), 900);
+      return { ...out, card, id: `${meta.slug}-shot-${n}`, label, alt: alt([meta.zh, label.zh]) };
+    }),
+  );
 
   const detailDir = path.join(dir, '详情页');
   const detailFiles = listImages(detailDir).sort((a, b) => orderOf(path.basename(a)) - orderOf(path.basename(b)));
-  const details = detailFiles.map((file, i) => {
-    const n = pad(i + 1);
-    const out = emit(file, path.join('commerce', 'product', meta.slug, 'detail', `${meta.slug}-detail-${n}${path.extname(file).toLowerCase()}`));
-    const label = { zh: `详情页 ${n}`, en: `Detail ${n}` };
-    return { ...out, id: `${meta.slug}-detail-${n}`, label, alt: alt([meta.zh, '详情页', n]) };
-  });
+  const details = await Promise.all(
+    detailFiles.map(async (file, i) => {
+      const n = pad(i + 1);
+      const rel = path.join('commerce', 'product', meta.slug, 'detail', `${meta.slug}-detail-${n}${path.extname(file).toLowerCase()}`);
+      const out = emit(file, rel);
+      const card = await emitCard(file, rel.replace(/\.(png|jpe?g|webp)$/i, '.webp'), 900);
+      const label = { zh: `详情页 ${n}`, en: `Detail ${n}` };
+      return { ...out, card, id: `${meta.slug}-detail-${n}`, label, alt: alt([meta.zh, '详情页', n]) };
+    }),
+  );
 
   data.commerce.product.push({
     id: meta.slug,
