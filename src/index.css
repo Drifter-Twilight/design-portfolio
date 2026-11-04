@@ -258,8 +258,26 @@
 
   .noise-layer {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
-    opacity: 0.14;
-    mix-blend-mode: overlay;
+    /* 不用 mix-blend-mode: overlay。
+       噪点铺在「整屏 sticky / 被视差缩放的背景层」里，混合模式会把这层
+       与下方内容绑成一个合成组，滚动时整组每帧重新混合，移动端就是整片闪屏。
+       深底上 overlay 本来就几乎看不出差别，改成普通半透明叠加即可。 */
+    opacity: 0.08;
+  }
+
+  /**
+   * 移动端降负：整屏 mask 与噪点都是「每帧重新合成」的成本。
+   * 背景层里装着 WebGL 画布（每帧都在变），遮罩就得跟着每帧重采样，
+   * 低端 GPU 上表现为整片闪烁；噪点在小屏上也几乎看不见。
+   */
+  @media (max-width: 900px) {
+    .fx-veil {
+      -webkit-mask-image: none;
+      mask-image: none;
+    }
+    .noise-layer {
+      display: none;
+    }
   }
 
   .glow-cold {

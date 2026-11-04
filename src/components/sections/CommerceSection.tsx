@@ -125,52 +125,59 @@ export function CommerceSection() {
     >
       {/* ---------- 背景：LineWaves 线波，铺满整个电商设计区 ---------- */}
       <div aria-hidden="true" className="fx-veil pointer-events-none absolute inset-0 -z-10 overflow-clip">
-        <div data-depth-bg className="sticky top-0 h-[100svh] w-full overflow-hidden">
-          {/* 常驻氛围层：WebGL2 不可用 / 关闭动效时的唯一背景 */}
-          <div className="tech-grid absolute inset-0 opacity-35" />
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                'radial-gradient(ellipse 62% 48% at 22% 26%, rgba(124,92,255,0.10) 0%, transparent 70%)',
-            }}
-          />
-          {gpu && waveReady && (
-            <div className="absolute inset-0 opacity-90">
-              <Suspense fallback={null}>
-                <LineWaves
-                  color1="#e6dbff"
-                  color2="#bda4f0"
-                  color3="#7f68c0"
-                  speed={0.24}
-                  lineCount={130}
-                  lineWidth={0.9}
-                  glow={0.5}
-                  brightness={1.25}
-                  highlight={0.72}
-                  highlightWidth={1.5}
-                  warpIntensity={1}
-                  warpScale={1.1}
-                  rotation={-33}
-                  edgeFade={0.42}
-                  enableMouseInteraction
-                  mouseInfluence={1.6}
-                  clickRipple={false}
-                  opacity={0.62}
-                  maxDevicePixelRatio={1.75}
-                />
-              </Suspense>
-            </div>
-          )}
-          {/* 上下压暗，保证长文与卡片标签的对比度 */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                'linear-gradient(to bottom, rgba(8,6,15,0.88) 0%, rgba(8,6,15,0.44) 14%, rgba(8,6,15,0.36) 68%, rgba(8,6,15,0.9) 100%)',
-            }}
-          />
-          <div className="noise-layer absolute inset-0" />
+        {/* sticky 只负责「粘住整屏」，视差缩放放在它内部的层上。
+
+            `[data-depth-bg]` 会被 GSAP 逐帧 scale，如果它本身是 sticky 元素，
+            transform 会改变 sticky 的包含块，粘性位置每帧重算 —— 表现就是从这一段
+            开始整片上下抖动 / 闪烁。分开两层后 sticky 的吸附完全静态。 */}
+        <div className="sticky top-0 h-[100svh] w-full overflow-hidden">
+          <div data-depth-bg className="absolute inset-0">
+            {/* 常驻氛围层：WebGL2 不可用 / 关闭动效时的唯一背景 */}
+            <div className="tech-grid absolute inset-0 opacity-35" />
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  'radial-gradient(ellipse 62% 48% at 22% 26%, rgba(124,92,255,0.10) 0%, transparent 70%)',
+              }}
+            />
+            {gpu && waveReady && (
+              <div className="absolute inset-0 opacity-90">
+                <Suspense fallback={null}>
+                  <LineWaves
+                    color1="#e6dbff"
+                    color2="#bda4f0"
+                    color3="#7f68c0"
+                    speed={0.24}
+                    lineCount={130}
+                    lineWidth={0.9}
+                    glow={0.5}
+                    brightness={1.25}
+                    highlight={0.72}
+                    highlightWidth={1.5}
+                    warpIntensity={1}
+                    warpScale={1.1}
+                    rotation={-33}
+                    edgeFade={0.42}
+                    enableMouseInteraction
+                    mouseInfluence={1.6}
+                    clickRipple={false}
+                    opacity={0.62}
+                    maxDevicePixelRatio={1.75}
+                  />
+                </Suspense>
+              </div>
+            )}
+            {/* 上下压暗，保证长文与卡片标签的对比度 */}
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  'linear-gradient(to bottom, rgba(8,6,15,0.88) 0%, rgba(8,6,15,0.44) 14%, rgba(8,6,15,0.36) 68%, rgba(8,6,15,0.9) 100%)',
+              }}
+            />
+            <div className="noise-layer absolute inset-0" />
+          </div>
         </div>
       </div>
 

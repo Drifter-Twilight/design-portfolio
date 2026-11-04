@@ -231,44 +231,49 @@ export function GraphicSection() {
     >
       {/* ---------- 背景：Dither 抖动场（视口大小，随页面粘住） ---------- */}
       <div aria-hidden="true" className="fx-veil pointer-events-none absolute inset-0 -z-10 overflow-clip">
-        <div data-depth-bg className="sticky top-0 h-[100svh] w-full overflow-hidden">
-          {/* 常驻的紫色渐变：Dither 不可用时它就是唯一氛围层 */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                'radial-gradient(ellipse 60% 50% at 70% 22%, rgba(196,167,255,0.10) 0%, transparent 70%)',
-            }}
-          />
-          {showDither && (
-            <div className="absolute inset-0 opacity-[0.3]">
-              <Suspense fallback={null}>
-                <Dither
-                  waveColor="#c4a7ff"
-                  backgroundColor="transparent"
-                  ditherMode="bayer"
-                  colorNum={4}
-                  pixelSize={3}
-                  waveSpeed={0.03}
-                  waveFrequency={3}
-                  waveAmplitude={0.3}
-                  mouseEffect="erase"
-                  mouseRadius={0.3}
-                  dpr={1.5}
-                  onError={() => setDitherFailed(true)}
-                />
-              </Suspense>
-            </div>
-          )}
-          {/* 上下压暗，保证长文与卡片标签的对比度 */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                'linear-gradient(to bottom, rgba(8,6,15,0.86) 0%, rgba(8,6,15,0.58) 22%, rgba(8,6,15,0.5) 62%, rgba(8,6,15,0.9) 100%)',
-            }}
-          />
-          <div className="noise-layer absolute inset-0" />
+        {/* sticky 与视差解耦：`[data-depth-bg]` 会被逐帧 scale，
+            若它本身就是 sticky 元素，包含块每帧变化会让粘性位置反复重算，
+            滚动时整段背景上下抖动。 */}
+        <div className="sticky top-0 h-[100svh] w-full overflow-hidden">
+          <div data-depth-bg className="absolute inset-0">
+            {/* 常驻的紫色渐变：Dither 不可用时它就是唯一氛围层 */}
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  'radial-gradient(ellipse 60% 50% at 70% 22%, rgba(196,167,255,0.10) 0%, transparent 70%)',
+              }}
+            />
+            {showDither && (
+              <div className="absolute inset-0 opacity-[0.3]">
+                <Suspense fallback={null}>
+                  <Dither
+                    waveColor="#c4a7ff"
+                    backgroundColor="transparent"
+                    ditherMode="bayer"
+                    colorNum={4}
+                    pixelSize={3}
+                    waveSpeed={0.03}
+                    waveFrequency={3}
+                    waveAmplitude={0.3}
+                    mouseEffect="erase"
+                    mouseRadius={0.3}
+                    dpr={1.5}
+                    onError={() => setDitherFailed(true)}
+                  />
+                </Suspense>
+              </div>
+            )}
+            {/* 上下压暗，保证长文与卡片标签的对比度 */}
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  'linear-gradient(to bottom, rgba(8,6,15,0.86) 0%, rgba(8,6,15,0.58) 22%, rgba(8,6,15,0.5) 62%, rgba(8,6,15,0.9) 100%)',
+              }}
+            />
+            <div className="noise-layer absolute inset-0" />
+          </div>
         </div>
       </div>
 

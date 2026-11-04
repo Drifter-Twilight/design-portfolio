@@ -191,19 +191,29 @@ const DepthCarousel = ({
       let opacity = d < 0 ? Math.max(0, 1 + d) : 1;
       if (!shown) opacity = 0;
 
-      const brightness = Math.max(0.15, 1 - back * cfg.falloff);
-      const zi = Math.round(2000 - d * 20);
+      // 景深只剩两条「合成友好」的属性：transform + opacity。
+      // 这里刻意不写 filter / zIndex：
+      //   - 逐帧改 filter（即便是 brightness）会让浏览器重新栅格化卡片位图，
+      //     在 preserve-3d 里还必须每帧重排合成层，移动端表现为整块闪屏；
+      //   - 逐帧改 zIndex 会打断 3D 排序缓存，同样触发层树重建。
+      // 变暗交给卡片内的 tint 遮罩（普通 opacity 叠加，等价于 brightness 的乘法变暗），
+      // 前后遮挡交给 translateZ 的 3D 排序。
+      const zi = 2000 - Math.round(d) * 20;
 
       el.style.transform = `translate(-50%, -50%) scale(${sc}) translateX(${tx.toFixed(2)}px) translateZ(${tz.toFixed(2)}px) rotateY(${ry.toFixed(3)}deg)`;
       el.style.opacity = opacity.toFixed(3);
-      // 不写 blur：逐帧变化的自定义滤镜会让 WebView 反复重建合成层，
-      // 微信 X5 内核上表现为整块闪屏。景深交给 brightness + 下面的 tint 遮罩。
-      el.style.filter = `brightness(${brightness.toFixed(3)})`;
-      el.style.zIndex = String(zi);
+      // zIndex 只在跨过整数层时写一次，不再每帧写
+      const nextZ = String(zi);
+      if (el.style.zIndex !== nextZ) el.style.zIndex = nextZ;
       el.style.pointerEvents = shown && opacity > 0.05 ? 'auto' : 'none';
+      // 视野外的卡片整张退出绘制：10 张卡各占一个合成层，
+      // 移动端显存紧张时会丢层重建，那一下就是闪屏。省下的层数直接降低风险。
+      const vis = shown ? 'visible' : 'hidden';
+      if (el.style.visibility !== vis) el.style.visibility = vis;
 
       const ov = overlayRefs.current[i];
-      if (ov) ov.style.opacity = clamp(back * cfg.falloff * 1.25, 0, 0.86).toFixed(3);
+      // 与原先 brightness 的换算一致：brightness(b) ≈ 叠 (1-b) 的黑
+      if (ov) ov.style.opacity = clamp(back * cfg.falloff, 0, 0.85).toFixed(3);
     }
   }, []);
 

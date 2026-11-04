@@ -42,10 +42,17 @@
     0 30px 60px -20px rgba(0, 0, 0, 0.65),
     0 8px 20px -10px rgba(0, 0, 0, 0.5);
   /* 只声明 transform：opacity / filter 也写进来会让浏览器过度预分配图层，
-     移动端 WebView 上反而更容易掉帧与闪烁 */
+     移动端 WebView 上反而更容易掉帧与闪烁。窄屏再交还给浏览器自己决定。 */
   will-change: transform;
   cursor: pointer;
   transform: translate(-50%, -50%);
+}
+
+@media (max-width: 900px) {
+  /* 10 张卡片各占一个合成层会让低端 GPU 显存吃紧，图层被丢弃重建时就是闪屏 */
+  .depth-carousel__card {
+    will-change: auto;
+  }
 }
 
 .depth-carousel__img {
@@ -78,8 +85,10 @@
   place-items: center;
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 999px;
-  background: rgba(18, 20, 26, 0.55);
-  backdrop-filter: blur(8px);
+  /* 不用 backdrop-filter：它会把 3D 舞台所在的父级强行 flatten，
+     并且卡片每帧位移都要重新采样一次背景模糊，是 banner 区闪屏的固定来源。
+     直接给接近不透明的底色，暗色背景上观感几乎一致。 */
+  background: rgba(16, 18, 24, 0.88);
   color: #fff;
   cursor: pointer;
   transition:
@@ -89,7 +98,7 @@
 }
 
 .depth-carousel__arrow:hover {
-  background: rgba(28, 31, 40, 0.85);
+  background: rgba(32, 35, 45, 0.95);
   border-color: rgba(255, 255, 255, 0.4);
 }
 
@@ -115,8 +124,7 @@
   gap: 8px;
   padding: 8px 12px;
   border-radius: 999px;
-  background: rgba(14, 16, 22, 0.4);
-  backdrop-filter: blur(6px);
+  background: rgba(14, 16, 22, 0.88);
 }
 
 .depth-carousel__dot {

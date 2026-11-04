@@ -32,8 +32,10 @@ export default function App() {
   useSmoothScroll(motionOk);
   // 移动端不跑装饰性视差，避免滚动帧率与耗电问题
   useParallax(motionOk && !isMobile);
-  // 区块级视差：背景与内容分层，量值按视口高度换算，任何屏幕尺寸下一致
-  useSectionDepth(motionOk);
+  // 区块级视差：背景与内容分层，量值按视口高度换算，任何屏幕尺寸下一致。
+  // 移动端同样不跑 —— 手机上一屏只有几百像素的位移差，观感收益极小，
+  // 但背景层（含 WebGL 画布）要被逐帧缩放重采样，低端 GPU 上就是整片闪屏。
+  useSectionDepth(motionOk && !isMobile);
   // 懒加载图片改变文档高度后，重新计算 ScrollTrigger 的触发点
   useScrollTriggerRefresh();
 

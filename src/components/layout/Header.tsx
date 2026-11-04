@@ -80,9 +80,12 @@ export function Header() {
     <>
       <header
         className={clsx(
-          'fixed inset-x-0 top-0 z-[100] transition-[background-color,border-color,backdrop-filter] duration-500',
+          'fixed inset-x-0 top-0 z-[100] transition-[background-color,border-color] duration-500',
+          // 移动端不做毛玻璃：这条 fixed 条会一直压在滚动内容上，
+          // backdrop-filter 每帧都要重新采样下面的视频/WebGL/大图，
+          // 低端 GPU 上就是「整页滚动时不定期闪一下」。窄屏改用接近不透明的底色。
           scrolled
-            ? 'border-b border-line bg-ink/82 backdrop-blur-md'
+            ? 'border-b border-line bg-ink/95 md:bg-ink/82 md:backdrop-blur-md'
             : 'border-b border-transparent bg-transparent',
         )}
       >
