@@ -31,10 +31,13 @@ function detectTier(): PerfTier {
     connection?: { saveData?: boolean; effectiveType?: string };
   };
 
+  // 阈值收到 2：4 核 / 4GB 是移动端 WebView 的常见上报值，
+  // 按 <=4 判定会把大量跑得动动效的中端机误判成 lite，整站动效直接消失。
+  // 真正需要降级的是 2 核 / 2GB 这一档，以及用户手动加的 ?perf=lite。
   if (nav.connection?.saveData) return 'lite';
   if (nav.connection?.effectiveType && /(^|-)2g$/.test(nav.connection.effectiveType)) return 'lite';
-  if (typeof nav.deviceMemory === 'number' && nav.deviceMemory > 0 && nav.deviceMemory <= 4) return 'lite';
-  if (typeof nav.hardwareConcurrency === 'number' && nav.hardwareConcurrency > 0 && nav.hardwareConcurrency <= 4) {
+  if (typeof nav.deviceMemory === 'number' && nav.deviceMemory > 0 && nav.deviceMemory <= 2) return 'lite';
+  if (typeof nav.hardwareConcurrency === 'number' && nav.hardwareConcurrency > 0 && nav.hardwareConcurrency <= 2) {
     return 'lite';
   }
 

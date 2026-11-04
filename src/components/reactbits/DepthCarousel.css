@@ -41,7 +41,9 @@
   box-shadow:
     0 30px 60px -20px rgba(0, 0, 0, 0.65),
     0 8px 20px -10px rgba(0, 0, 0, 0.5);
-  will-change: transform, opacity, filter;
+  /* 只声明 transform：opacity / filter 也写进来会让浏览器过度预分配图层，
+     移动端 WebView 上反而更容易掉帧与闪烁 */
+  will-change: transform;
   cursor: pointer;
   transform: translate(-50%, -50%);
 }
@@ -60,7 +62,9 @@
   inset: 0;
   opacity: 0;
   pointer-events: none;
-  mix-blend-mode: multiply;
+  background: #05060a;
+  /* 不用 mix-blend-mode: multiply —— 微信 X5 内核对混合模式支持不稳定，
+     与 3D 变换叠加时会触发整层重绘，是闪屏的另一个来源 */
 }
 
 .depth-carousel__arrow {
