@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { detectCapability } from '@/lib/capability';
 
 export type PerfTier = 'full' | 'lite';
 
@@ -8,13 +9,15 @@ export type PerfTier = 'full' | 'lite';
  * 设备能力分档。
  *
  * 只看首帧就能同步拿到的信号，不做运行时帧率采样 —— 采样本身要在低端机上跑动画，
- * 反而更容易误判，还会造成「先炫后崩」的闪烁。判定顺序：
+ * 反而更容易误判，还会造成「先炫后崩」的闪烁。
  *
+ * 判定顺序（见 src/lib/capability.ts）：
  * 1. URL `?perf=lite|full` 强制覆盖（便于验收与分享低配版本）；
- * 2. `prefers-reduced-motion: reduce`；
- * 3. `navigator.connection.saveData` / 2G 网络；
- * 4. `deviceMemory <= 4`（Chrome 系）或 `hardwareConcurrency <= 4`。
+ * 2. `prefers-reduced-motion: reduce` / `saveData` / 2G-3G；
+ * 3. **拿不到 WebGL2，或跑在 SwiftShader 软件渲染上**；
+ * 4. 极端硬件（内存 ≤1GB 或 1 核）兜底。
  *
+ * 刻意不按 `hardwareConcurrency` 判：Android WebView 常低报核心数。
  * `lite` 下的降级清单见 README「性能与降级」。
  */
 function detectTier(): PerfTier {
@@ -24,24 +27,9 @@ function detectTier(): PerfTier {
   if (forced === 'lite' || forced === 'low') return 'lite';
   if (forced === 'full' || forced === 'high') return 'full';
 
-  if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return 'lite';
-
-  const nav = navigator as Navigator & {
-    deviceMemory?: number;
-    connection?: { saveData?: boolean; effectiveType?: string };
-  };
-
-  // 阈值收到 2：4 核 / 4GB 是移动端 WebView 的常见上报值，
-  // 按 <=4 判定会把大量跑得动动效的中端机误判成 lite，整站动效直接消失。
-  // 真正需要降级的是 2 核 / 2GB 这一档，以及用户手动加的 ?perf=lite。
-  if (nav.connection?.saveData) return 'lite';
-  if (nav.connection?.effectiveType && /(^|-)2g$/.test(nav.connection.effectiveType)) return 'lite';
-  if (typeof nav.deviceMemory === 'number' && nav.deviceMemory > 0 && nav.deviceMemory <= 2) return 'lite';
-  if (typeof nav.hardwareConcurrency === 'number' && nav.hardwareConcurrency > 0 && nav.hardwareConcurrency <= 2) {
-    return 'lite';
-  }
-
-  return 'full';
+  // 判定收口到 capability：以「能不能真的拿到 WebGL2、是不是软件渲染」为主判据。
+  // 之前按 hardwareConcurrency <= 4 判，Android WebView 低报核心数会把中端机整批误杀。
+  return detectCapability().tier;
 }
 
 export function usePerfTier(): PerfTier {
