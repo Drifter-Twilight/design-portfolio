@@ -12,6 +12,7 @@ import { spawn } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { SLOTS, listSlots, storeImage } from './profile-assets.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const PORT = Number(process.env.ADMIN_PORT) || 5180;
@@ -170,7 +171,42 @@ const server = createServer(async (req, res) => {
     return send(res, 200, fs.readFileSync(path.join(ROOT, 'tools/admin/ui.html'), 'utf8'), MIME['.html']);
   }
 
-  if (pathname === '/api/state') return send(res, 200, buildState());
+  if (pathname === '/api/state') return send(res, 200, { ...buildState(), profile: listSlots() });
+
+  // 替换头像 / 简历：body 直接是图片二进制，服务端负责压缩与记账
+  if (pathname === '/api/profile/upload' && req.method === 'POST') {
+    const slot = url.searchParams.get('slot') ?? '';
+    if (!SLOTS[slot]) return send(res, 400, { ok: false, error: '未知的槽位' });
+
+    const chunks = [];
+    let size = 0;
+    let tooLarge = false;
+
+    req.on('data', (chunk) => {
+      size += chunk.length;
+      if (size > 24 * 1024 * 1024) {
+        tooLarge = true;
+        req.destroy();
+        return;
+      }
+      chunks.push(chunk);
+    });
+
+    req.on('end', async () => {
+      if (tooLarge) return;
+      try {
+        const record = await storeImage(slot, Buffer.concat(chunks));
+        send(res, 200, { ok: true, record, profile: listSlots() });
+      } catch (err) {
+        send(res, 400, { ok: false, error: String(err?.message ?? err) });
+      }
+    });
+
+    req.on('error', () => {
+      /* 客户端中断，忽略 */
+    });
+    return undefined;
+  }
 
   if (pathname === '/api/overrides' && req.method === 'POST') {
     let body = '';

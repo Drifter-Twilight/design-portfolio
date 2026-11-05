@@ -1,0 +1,18 @@
+{
+  "photo": {
+    "src": "/profile/portrait.webp",
+    "w": 1199,
+    "h": 1600,
+    "v": "bc9fd93c",
+    "bytes": 128492,
+    "updatedAt": "2026-11-05T09:06:16.305Z"
+  },
+  "resume": {
+    "src": "/profile/resume.webp",
+    "w": 1131,
+    "h": 1600,
+    "v": "40339e3e",
+    "bytes": 217764,
+    "updatedAt": "2026-11-05T09:09:31.652Z"
+  }
+}

@@ -1,4 +1,4 @@
-import { asset } from '@/lib/asset';
+import { media } from '@/data/media';
 
 /**
  * 个人信息 —— 全站唯一需要你手改的地方。
@@ -11,8 +11,11 @@ export const profile = {
   nameZh: '何宥纬',
   /** 英文名 */
   nameEn: 'Witt He',
-  /** 个人照片：放在 public/profile 下（webp 版 151KB，原 jpg 3.3MB 留作备份） */
-  photo: asset('/profile/portrait.webp'),
+  /**
+   * 个人照片：地址与尺寸来自 `src/data/profile-media.json`，
+   * 在录入工具（admin.bat）的「个人资料」里替换，不要手改这里。
+   */
+  photo: media.photo.src,
   /** 微信 */
   wechat: 'w13420506578',
   /** 职业抬头 */

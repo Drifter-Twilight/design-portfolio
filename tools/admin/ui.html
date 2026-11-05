@@ -127,6 +127,38 @@
   }
   #log .ok { color: #7ddb9a; }
   #log .err { color: #e08585; }
+
+  /* ---------- 个人资料 ---------- */
+  .profile-grid {
+    display: grid; gap: 18px; max-width: 1040px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  .profile-card { display: flex; flex-direction: column; }
+  .profile-card.drag { border-color: var(--accent); }
+  .profile-card .preview {
+    display: flex; align-items: center; justify-content: center;
+    padding: 10px; overflow: hidden;
+    height: 360px; /* 定高：flex 容器高度确定，img 的 100% 才有解析基准 */
+    background: #07060c; border-bottom: 1px solid var(--line);
+  }
+  .profile-card .preview img {
+    width: 100%; height: 100%; object-fit: contain; display: block;
+  }
+  .profile-card .info { padding: 14px 16px 16px; }
+  .profile-card .info h3 { margin: 0 0 10px; font-size: 13px; font-weight: 500; }
+  .profile-card dl {
+    margin: 0 0 14px; display: grid; grid-template-columns: auto 1fr;
+    gap: 4px 14px; font-size: 11px;
+  }
+  .profile-card dt { color: var(--mute); }
+  .profile-card dd { margin: 0; color: var(--dim); font-family: ui-monospace, monospace; word-break: break-all; }
+  .upload-btn {
+    display: inline-block; padding: 7px 16px; border: 1px solid var(--accent);
+    border-radius: 999px; color: var(--accent); font-size: 12px; cursor: pointer;
+    transition: background 0.18s, color 0.18s;
+  }
+  .upload-btn:hover { background: var(--accent); color: var(--ink); }
+  .profile-card .tip { margin: 10px 0 0; font-size: 11px; line-height: 1.6; color: var(--mute); }
 </style>
 </head>
 <body>
@@ -147,7 +179,7 @@
 </div>
 
 <script>
-const state = { groups: [], overrides: { hidden: [], titles: {}, order: {} }, active: 'all' };
+const state = { groups: [], overrides: { hidden: [], titles: {}, order: {} }, profile: [], active: 'all' };
 let saveTimer = null;
 
 const $ = (s) => document.querySelector(s);
@@ -203,7 +235,91 @@ function persistHidden() {
   state.overrides.hidden = state.groups.flatMap((g) => g.items.filter((x) => x.hidden).map((x) => x.id));
 }
 
+/* ---------- 个人资料：头像 / 简历 ---------- */
+async function uploadProfile(slot, file) {
+  setSaveState('上传中…');
+  try {
+    const res = await fetch(`/api/profile/upload?slot=${slot}`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/octet-stream' },
+      body: await file.arrayBuffer(),
+    });
+    const data = await res.json();
+    if (!data.ok) throw new Error(data.error || '上传失败');
+    state.profile = data.profile;
+    setSaveState('已替换');
+    render();
+    setTimeout(() => setSaveState(''), 1600);
+  } catch (err) {
+    setSaveState('失败：' + err.message);
+  }
+}
+
+function renderProfile() {
+  const total = state.groups.reduce((n, g) => n + g.items.length, 0);
+  $('#stat').textContent = `个人资料 · ${total} 件作品不受影响`;
+
+  const main = $('#main');
+  const slots = state.profile || [];
+  if (!slots.length) {
+    main.innerHTML = '<p style="color:var(--mute)">还没有媒体记录，先上传一次。</p>';
+    return;
+  }
+
+  const grid = document.createElement('div');
+  grid.className = 'profile-grid';
+
+  for (const s of slots) {
+    const card = document.createElement('div');
+    card.className = 'card profile-card';
+    const ratio = s.w && s.h ? `${s.w} / ${s.h}` : '4 / 3';
+    // 带时间戳：文件名固定，换图后浏览器会命中旧缓存，预览会一直是上一张
+    const src = s.exists ? `/asset/profile/${s.file}?t=${Date.now()}` : '';
+    card.innerHTML = `
+      <div class="preview" title="${ratio}">
+        ${src ? `<img src="${src}" alt="${s.label}" />` : ''}
+      </div>
+      <div class="info">
+        <h3>${s.label}</h3>
+        <dl>
+          <dt>文件</dt><dd>${s.file}</dd>
+          <dt>尺寸</dt><dd>${s.w ?? '—'} × ${s.h ?? '—'}</dd>
+          <dt>体积</dt><dd>${(s.bytes / 1024).toFixed(0)} KB</dd>
+          <dt>指纹</dt><dd>${s.v ?? '—'}</dd>
+        </dl>
+        <label class="upload-btn">${s.exists ? '替换图片' : '上传图片'}
+          <input type="file" accept="image/*" hidden data-slot="${s.slot}" />
+        </label>
+        <p class="tip">长边压到 ${s.maxEdge}px / WebP q88，宽高自动记进清单。<br/>也可以把图片直接拖到这张卡片上。</p>
+      </div>`;
+
+    card.querySelector('input[type=file]').addEventListener('change', (e) => {
+      const file = e.target.files?.[0];
+      if (file) uploadProfile(s.slot, file);
+      e.target.value = '';
+    });
+
+    card.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      card.classList.add('drag');
+    });
+    card.addEventListener('dragleave', () => card.classList.remove('drag'));
+    card.addEventListener('drop', (e) => {
+      e.preventDefault();
+      card.classList.remove('drag');
+      const file = e.dataTransfer?.files?.[0];
+      if (file) uploadProfile(s.slot, file);
+    });
+
+    grid.appendChild(card);
+  }
+
+  main.replaceChildren(grid);
+}
+
 function render() {
+  if (state.active === 'profile') return renderProfile();
+
   const items = groupItems();
   const total = state.groups.reduce((n, g) => n + g.items.length, 0);
   const hiddenN = state.groups.reduce((n, g) => n + g.items.filter((x) => x.hidden).length, 0);
@@ -283,10 +399,14 @@ function escapeAttr(v) {
 function renderNav() {
   const nav = $('#nav');
   const total = state.groups.reduce((n, g) => n + g.items.length, 0);
-  const rows = [{ key: 'all', name: '全部作品', n: total }, ...state.groups.map((g) => ({ key: g.key, name: g.name, n: g.items.length }))];
+  const rows = [
+    { key: 'all', name: '全部作品', n: total },
+    ...state.groups.map((g) => ({ key: g.key, name: g.name, n: g.items.length })),
+    { key: 'profile', name: '个人资料', n: '' },
+  ];
   nav.innerHTML =
-    rows.map((r) => `<button type="button" data-k="${r.key}" class="${r.key === state.active ? 'on' : ''}">${r.name}<span>${r.n}</span></button>`).join('') +
-    `<div class="hint">改标题、隐藏、上下移动顺序都会自动保存到 <code>src/data/overrides.json</code>。<br/><br/>改完点右上角「发布」，工具会依次跑同步、压图、构建、推送。</div>`;
+    rows.map((r) => `<button type="button" data-k="${r.key}" class="${r.key === state.active ? 'on' : ''}">${r.name}<span>${r.n ?? ''}</span></button>`).join('') +
+    `<div class="hint">改标题、隐藏、上下移动顺序都会自动保存到 <code>src/data/overrides.json</code>。<br/><br/>「个人资料」里可以替换头像与简历图。<br/><br/>改完点右上角「发布」，工具会依次跑同步、压图、构建、推送。</div>`;
 
   nav.querySelectorAll('button').forEach((b) => {
     b.addEventListener('click', () => {
@@ -301,6 +421,7 @@ async function load() {
   const data = await api('/api/state');
   state.groups = data.groups || [];
   state.overrides = data.overrides || { hidden: [], titles: {}, order: {} };
+  state.profile = data.profile || [];
   state.generatedAt = data.generatedAt;
   if (data.error) {
     $('#main').innerHTML = `<p style="color:#e08585">${data.error}</p>`;

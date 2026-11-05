@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { createPortal } from 'react-dom';
 import { useTranslation } from 'react-i18next';
 import { ContactIcon } from './ContactIcon';
 import { ZoomableImage } from '@/components/work/ZoomableImage';
-import { asset } from '@/lib/asset';
+import { media } from '@/data/media';
 import { getLenis } from '@/hooks/useSmoothScroll';
 
 interface ResumeDialogProps {
@@ -93,11 +93,17 @@ export function ResumeDialog({ open, onClose }: ResumeDialogProps) {
         role="dialog"
         aria-modal="true"
         aria-labelledby="resume-title"
-        className="relative flex h-[min(92svh,calc(94vw_*_1.414_+_113px))] w-[min(94vw,calc((92svh_-_113px)*0.708_+_28px))] flex-col overflow-hidden border border-line-strong bg-[#0b0812] transition-all duration-300"
-        style={{
-          opacity: entered ? 1 : 0,
-          transform: entered ? 'translateY(0) scale(1)' : 'translateY(14px) scale(0.985)',
-        }}
+        className="relative flex h-[min(92svh,calc(94vw_*_var(--resume-ar)_+_113px))] w-[min(94vw,calc((92svh_-_113px)*_var(--resume-ar-inv)_+_28px))] flex-col overflow-hidden border border-line-strong bg-[#0b0812] transition-all duration-300"
+        style={
+          {
+            // 弹窗比例跟着实际简历图走：换一张长宽比不同的简历，
+            // 也不会把图裁掉或留一圈黑边
+            '--resume-ar': String(media.resume.h / media.resume.w),
+            '--resume-ar-inv': String(media.resume.w / media.resume.h),
+            opacity: entered ? 1 : 0,
+            transform: entered ? 'translateY(0) scale(1)' : 'translateY(14px) scale(0.985)',
+          } as CSSProperties
+        }
       >
         <div className="noise-layer pointer-events-none absolute inset-0" aria-hidden="true" />
 
@@ -127,9 +133,9 @@ export function ResumeDialog({ open, onClose }: ResumeDialogProps) {
           {/* 绝对定位给百分比高度一个确定基准：flex 项的 auto 高度不会让 h-full 生效 */}
           <div className="absolute inset-2 border border-line/60 sm:inset-3">
             <ZoomableImage
-              src={asset('/profile/resume.jpg')}
-              width={1280}
-              height={1810}
+              src={media.resume.src}
+              width={media.resume.w}
+              height={media.resume.h}
               alt={t('resume.imageAlt')}
             />
           </div>

@@ -45,7 +45,7 @@ npm run preview      # 预览构建产物
 双击项目根目录的 **`admin.bat`**，浏览器会自动打开 `http://127.0.0.1:5180`。
 
 它不是后台管理系统：没有数据库、没有登录、没有服务器。数据源始终是  
-`E://作品集`（素材）与仓库里的 JSON（内容），工具只改 `src/data/overrides.json` 这一层。
+`E://作品集`（素材）与仓库里的 JSON（内容），工具只改 `src/data/overrides.json` 这一层；「个人资料」面板会额外写 `public/profile/` 与 `src/data/profile-media.json`。
 
 | 能做什么    | 怎么操作             | 写到哪里                               |
 | ------- | ---------------- | ---------------------------------- |
@@ -53,7 +53,18 @@ npm run preview      # 预览构建产物
 | 改中英标题   | 直接改输入框，自动保存      | `overrides.json` 的 `titles`（只存改过的） |
 | 调顺序     | 卡片下方 ↑ ↓         | `overrides.json` 的 `order`         |
 | 隐藏 / 显示 | 卡片下方「隐藏」         | `overrides.json` 的 `hidden`        |
+| 换头像 / 简历 | 左侧「个人资料」→ 选图或拖进去 | `public/profile/*.webp` + `profile-media.json` |
 | 发布      | 右上角「发布」          | 跑 sync → 压图 → 构建 → commit → push   |
+
+### 个人资料（头像 / 简历）
+
+左侧导航最底部的「个人资料」有两个槽位，点「替换图片」或把图片拖到卡片上即可。
+
+- 上传后自动按长边 1600 压成 WebP q88，宽高与内容指纹写进 `src/data/profile-media.json`；
+- 页面用这份宽高做占位，所以换一张长宽比不同的简历也不会让弹窗跳动或裁切；
+- URL 带 `?v=<指纹>`，换图后一定拿到新图，不会和缓存里的旧图混用；
+- 命令行同样可用：`node tools/admin/profile-assets.mjs resume <图片路径>`；
+- 换完仍需点右上角「发布」才会到线上。
 
 **增 / 删作品**仍然是操作素材目录：
 
@@ -181,9 +192,9 @@ E://design-portfolio
 | 文案   | 全部使用 `FoldText`：Hello / 我是 何宥纬 / Witt He / 电商美工 … / 曾经也是 … / 核心能力 / 生活特质                                                                                                       |
 | 姓名描边 | `.name-outline` 用 `-webkit-text-stroke: 0.032em`，填充透明，描边取主色；英文名 `Witt He` 为实心主色大字                                                                                              |
 | 布局   | PC：文本在左、照片与联系方式在右；移动端：照片与联系方式在上、文本在下（`order-1 / lg:order-2`）                                                                                                                   |
-| 照片   | `public/profile/portrait.jpg`，3:4 裁切容器，压饱和 + 冷调以融入暗紫体系                                                                                                                         |
+| 照片   | `public/profile/portrait.webp`（1199×1600，125 KB），3:4 裁切容器，压饱和 + 冷调以融入暗紫体系。地址与宽高由 `src/data/profile-media.json` 提供，在录入工具「个人资料」里替换 |
 | 联系方式 | 邮箱 / 微信号 / 简历三行固定在照片下方，每行前置一个与文字同色同尺寸的圆角图标（`ContactIcon`）                                                                                                                      |
-| 简历弹窗 | 「查看简历」打开 `ResumeDialog`：焦点陷阱、Esc 关闭、锁滚动、关闭后焦点归还；整幅 `public/profile/resume.jpg`（1280×1810）**一屏完整呈现、不需要滚动**，滚轮 / 双指可放大到 4×，双击还原。弹窗宽高按图片比例收紧（`min(94vw, 92svh 折算宽)`），并给内层一个确定高度基准 |
+| 简历弹窗 | 「查看简历」打开 `ResumeDialog`：焦点陷阱、Esc 关闭、锁滚动、关闭后焦点归还；整幅 `public/profile/resume.webp`（1131×1600，213 KB）**一屏完整呈现、不需要滚动**，滚轮 / 双指可放大到 4×，双击还原。弹窗宽高按图片比例收紧（`min(94vw, 92svh 折算宽)`），比例取自 `profile-media.json`，换不同长宽比的简历不会裁切或留边 |
 | 技能图标 | 10 个白色单色圆角徽标（Ps / Ai / Lr / Lv / WB + HTML5 / CSS3 / JS / Vue / React）。安全区放得下就静态一行，放不下（窄屏）自动切换为横向循环播放                                                                          |
 
 > React Bits 的 `FoldText` 按字拆分时默认给词级容器加 `whitespace-nowrap`，中文整段没有空格会导致无法折行并撑破容器 —— 本项目在 `splitBy="char"` 时取消了该限制。
